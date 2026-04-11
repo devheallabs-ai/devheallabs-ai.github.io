@@ -1,0 +1,1300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NC Playground — Build apps in plain English | DevHeal Labs AI</title>
+<meta name="description" content="Write plain English and watch it become a working app. NC runs your words — no syntax, no setup, no code required. Try it free in the browser.">
+<meta name="keywords" content="no-code playground, plain english programming, NC language, build apps without coding, AI programming, DevHeal Labs">
+<meta property="og:title" content="NC Playground — Write English, Get a Working App">
+<meta property="og:description" content="Type what you want in plain English. NC turns it into a real running application instantly.">
+<meta property="og:type" content="website">
+<link rel="icon" type="image/png" href="logo.png">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#080810;--bg2:#0d0d1a;--panel:#0f0f1e;--border:rgba(255,255,255,.07);
+  --cyan:#00d4ff;--purple:#7c3aed;--green:#10b981;--orange:#ff6b35;--red:#ef4444;--gold:#f59e0b;
+  --text:#e8e8ed;--muted:#6b7280;--dim:#2a2a3a;
+  --grad:linear-gradient(135deg,var(--cyan),var(--purple));
+  --font:-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',Roboto,sans-serif;
+  --mono:'SF Mono',SFMono-Regular,Consolas,'Liberation Mono',Menlo,monospace;
+}
+html,body{height:100%;overflow:hidden}
+body{background:var(--bg);color:var(--text);font-family:var(--font);display:flex;flex-direction:column}
+
+/* ── TOPBAR ── */
+.topbar{
+  display:flex;align-items:center;gap:12px;padding:0 16px;height:52px;
+  background:var(--bg2);border-bottom:1px solid var(--border);
+  flex-shrink:0;z-index:100;
+}
+.topbar-logo{display:flex;align-items:center;gap:8px;text-decoration:none;flex-shrink:0}
+.topbar-logo img{width:26px;height:26px;object-fit:contain}
+.topbar-logo .name{font-size:.85rem;font-weight:700;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.topbar-logo .sub{font-size:.75rem;color:var(--muted);font-weight:500;padding:1px 7px;border:1px solid var(--border);border-radius:20px;-webkit-text-fill-color:var(--muted);margin-left:4px}
+.topbar-sep{width:1px;height:24px;background:var(--border);flex-shrink:0}
+
+/* Examples dropdown */
+.examples-btn{
+  display:flex;align-items:center;gap:6px;padding:6px 12px;
+  background:transparent;border:1px solid var(--border);border-radius:8px;
+  color:var(--text);font-size:.8rem;font-family:var(--font);cursor:pointer;
+  transition:all .2s;white-space:nowrap;
+}
+.examples-btn:hover{background:var(--dim);border-color:rgba(255,255,255,.15)}
+.examples-btn svg{width:14px;height:14px;opacity:.6}
+
+.dropdown-wrap{position:relative}
+.dropdown{
+  position:absolute;top:calc(100% + 8px);left:0;min-width:240px;
+  background:#131325;border:1px solid var(--border);border-radius:12px;
+  box-shadow:0 24px 48px rgba(0,0,0,.6);z-index:200;
+  overflow:hidden;display:none;animation:fadeDown .15s ease;
+}
+.dropdown.open{display:block}
+@keyframes fadeDown{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:translateY(0)}}
+.dropdown-section{padding:8px 0}
+.dropdown-section + .dropdown-section{border-top:1px solid var(--border)}
+.dropdown-label{padding:6px 14px;font-size:.7rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.dropdown-item{
+  display:flex;align-items:center;gap:10px;padding:8px 14px;
+  cursor:pointer;transition:background .15s;font-size:.82rem;
+}
+.dropdown-item:hover{background:rgba(255,255,255,.04)}
+.dropdown-item .icon{font-size:1rem;width:22px;text-align:center}
+.dropdown-item .desc{color:var(--muted);font-size:.72rem;margin-top:1px}
+
+/* Run button */
+.run-btn{
+  display:flex;align-items:center;gap:7px;padding:7px 18px;
+  background:linear-gradient(135deg,var(--cyan),var(--purple));
+  border:none;border-radius:8px;color:#fff;font-size:.82rem;font-weight:600;
+  font-family:var(--font);cursor:pointer;transition:all .2s;white-space:nowrap;
+  box-shadow:0 0 20px rgba(0,212,255,.2);
+}
+.run-btn:hover{transform:translateY(-1px);box-shadow:0 0 30px rgba(0,212,255,.35)}
+.run-btn:active{transform:translateY(0)}
+.run-btn.running{opacity:.7;cursor:not-allowed}
+.run-btn svg{width:14px;height:14px}
+.kbd{font-size:.65rem;background:rgba(255,255,255,.1);padding:2px 5px;border-radius:4px;font-family:var(--mono)}
+
+.topbar-right{margin-left:auto;display:flex;align-items:center;gap:8px}
+.icon-btn{
+  display:flex;align-items:center;justify-content:center;width:34px;height:34px;
+  background:transparent;border:1px solid var(--border);border-radius:8px;
+  color:var(--muted);cursor:pointer;transition:all .2s;
+}
+.icon-btn:hover{background:var(--dim);color:var(--text)}
+.icon-btn svg{width:16px;height:16px}
+
+.deploy-btn{
+  display:flex;align-items:center;gap:6px;padding:6px 14px;
+  background:rgba(16,185,129,.1);border:1px solid rgba(16,185,129,.3);
+  border-radius:8px;color:var(--green);font-size:.8rem;font-weight:600;
+  font-family:var(--font);cursor:pointer;transition:all .2s;
+}
+.deploy-btn:hover{background:rgba(16,185,129,.2);border-color:var(--green)}
+.deploy-btn svg{width:14px;height:14px}
+
+/* ── MAIN LAYOUT ── */
+.workspace{display:flex;flex:1;overflow:hidden;min-height:0}
+
+/* ── EDITOR PANEL ── */
+.editor-panel{
+  display:flex;flex-direction:column;flex:1;min-width:0;
+  border-right:1px solid var(--border);
+}
+.panel-header{
+  display:flex;align-items:center;gap:8px;padding:8px 14px;
+  background:var(--panel);border-bottom:1px solid var(--border);
+  font-size:.75rem;color:var(--muted);flex-shrink:0;
+}
+.panel-header .dot{width:8px;height:8px;border-radius:50%}
+.panel-header .filename{color:var(--text);font-family:var(--mono);font-weight:500}
+.panel-header .lang-badge{
+  margin-left:auto;padding:2px 8px;border-radius:20px;font-size:.65rem;font-weight:600;
+  background:rgba(0,212,255,.1);color:var(--cyan);border:1px solid rgba(0,212,255,.2);
+}
+#editor-container{flex:1;overflow:hidden;position:relative}
+
+/* ── OUTPUT PANEL ── */
+.output-panel{
+  display:flex;flex-direction:column;width:42%;min-width:320px;flex-shrink:0;
+  background:var(--bg);
+}
+.output-tabs{
+  display:flex;align-items:center;gap:0;
+  background:var(--panel);border-bottom:1px solid var(--border);flex-shrink:0;
+}
+.output-tab{
+  padding:10px 16px;font-size:.78rem;font-weight:500;color:var(--muted);
+  cursor:pointer;border-bottom:2px solid transparent;transition:all .2s;
+  white-space:nowrap;
+}
+.output-tab.active{color:var(--cyan);border-bottom-color:var(--cyan)}
+.output-tab:hover:not(.active){color:var(--text)}
+
+.output-body{flex:1;overflow-y:auto;min-height:0}
+.tab-pane{display:none;height:100%}
+.tab-pane.active{display:flex;flex-direction:column;height:100%}
+
+/* Terminal output */
+.terminal{
+  flex:1;padding:16px;font-family:var(--mono);font-size:.8rem;line-height:1.7;
+  overflow-y:auto;background:var(--bg);color:#c9d1d9;
+}
+.terminal .prompt{color:var(--cyan);margin-bottom:4px;font-size:.72rem;opacity:.7}
+.terminal .line-ok{color:#c9d1d9}
+.terminal .line-err{color:#f87171}
+.terminal .line-warn{color:var(--gold)}
+.terminal .line-info{color:var(--cyan)}
+.terminal .line-success{color:var(--green)}
+.terminal pre{white-space:pre-wrap;word-break:break-word}
+
+.empty-state{
+  flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:12px;color:var(--muted);padding:32px;text-align:center;
+}
+.empty-state .empty-icon{font-size:2.5rem;opacity:.4}
+.empty-state p{font-size:.85rem;line-height:1.6}
+.empty-state .hint{font-size:.75rem;color:var(--dim);background:rgba(255,255,255,.03);padding:6px 12px;border-radius:6px;font-family:var(--mono)}
+
+/* Help pane */
+.help-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:16px;overflow-y:auto}
+.help-card{
+  background:var(--panel);border:1px solid var(--border);border-radius:10px;
+  padding:14px;cursor:pointer;transition:all .2s;
+}
+.help-card:hover{border-color:var(--cyan);background:rgba(0,212,255,.04)}
+.help-card .h-title{font-size:.8rem;font-weight:600;margin-bottom:6px;display:flex;align-items:center;gap:6px}
+.help-card pre{font-size:.7rem;color:var(--muted);font-family:var(--mono);line-height:1.5;white-space:pre-wrap}
+
+/* Share pane */
+.share-pane{padding:20px;display:flex;flex-direction:column;gap:16px;overflow-y:auto}
+.share-pane h3{font-size:.9rem;font-weight:600}
+.share-pane p{font-size:.8rem;color:var(--muted);line-height:1.6}
+.share-url{
+  display:flex;align-items:center;gap:8px;
+  background:var(--panel);border:1px solid var(--border);border-radius:8px;padding:10px 14px;
+}
+.share-url input{flex:1;background:transparent;border:none;color:var(--text);font-family:var(--mono);font-size:.78rem;outline:none}
+.copy-btn{
+  padding:5px 12px;background:var(--dim);border:none;border-radius:6px;
+  color:var(--text);font-size:.75rem;cursor:pointer;transition:background .2s;font-family:var(--font);
+}
+.copy-btn:hover{background:rgba(255,255,255,.12)}
+.deploy-options{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.deploy-option{
+  padding:14px;background:var(--panel);border:1px solid var(--border);border-radius:10px;
+  cursor:pointer;transition:all .2s;text-align:center;
+}
+.deploy-option:hover{border-color:var(--purple);background:rgba(124,58,237,.05)}
+.deploy-option .d-name{font-size:.82rem;font-weight:600;margin-bottom:4px}
+.deploy-option .d-desc{font-size:.72rem;color:var(--muted)}
+
+/* Status bar */
+.statusbar{
+  display:flex;align-items:center;gap:16px;padding:4px 14px;height:26px;
+  background:#080810;border-top:1px solid var(--border);font-size:.7rem;
+  color:var(--muted);flex-shrink:0;
+}
+.status-item{display:flex;align-items:center;gap:5px}
+.status-dot{width:6px;height:6px;border-radius:50%;background:var(--green)}
+.status-dot.running{background:var(--gold);animation:pulse 1s infinite}
+.status-dot.error{background:var(--red)}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+.status-sep{width:1px;height:14px;background:var(--border)}
+
+/* Notifications */
+.notif{
+  position:fixed;bottom:40px;right:20px;z-index:9999;
+  background:#1a1a2e;border:1px solid var(--border);border-radius:10px;
+  padding:12px 18px;font-size:.82rem;box-shadow:0 12px 32px rgba(0,0,0,.5);
+  animation:slideIn .25s ease;display:flex;align-items:center;gap:10px;
+}
+@keyframes slideIn{from{opacity:0;transform:translateX(20px)}to{opacity:1;transform:translateX(0)}}
+
+/* Syntax tokens for custom NC highlighting */
+.nc-keyword{color:#ff79c6}
+.nc-string{color:#f1fa8c}
+.nc-number{color:#bd93f9}
+.nc-comment{color:#6272a4;font-style:italic}
+.nc-builtin{color:#8be9fd}
+.nc-var{color:#50fa7b}
+
+/* Scrollbar */
+::-webkit-scrollbar{width:6px;height:6px}
+::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{background:var(--dim);border-radius:3px}
+::-webkit-scrollbar-thumb:hover{background:#3a3a5a}
+
+/* Resize handle */
+.resize-handle{
+  width:4px;cursor:col-resize;background:transparent;flex-shrink:0;
+  transition:background .2s;position:relative;z-index:10;
+}
+.resize-handle:hover,.resize-handle.dragging{background:var(--cyan)}
+
+/* Mobile warning */
+.mobile-warn{
+  display:none;position:fixed;inset:0;background:var(--bg);z-index:9999;
+  flex-direction:column;align-items:center;justify-content:center;gap:16px;padding:32px;text-align:center;
+}
+@media(max-width:600px){.mobile-warn{display:flex}}
+.mobile-warn h2{font-size:1.4rem}
+.mobile-warn p{color:var(--muted);font-size:.9rem;line-height:1.6}
+.mobile-warn a{color:var(--cyan)}
+</style>
+</head>
+<body>
+
+<!-- Mobile warning -->
+<div class="mobile-warn">
+  <div style="font-size:3rem">📱</div>
+  <h2>Best on desktop</h2>
+  <p>The NC Playground works best on a larger screen.<br>
+  <a href="index.html">Return to homepage</a> or rotate your device.</p>
+</div>
+
+<!-- ── TOPBAR ── -->
+<div class="topbar">
+  <a href="index.html" class="topbar-logo">
+    <img src="logo.png" alt="NC">
+    <span class="name">NC</span>
+    <span class="sub">Playground</span>
+  </a>
+
+  <div class="topbar-sep"></div>
+
+  <!-- Examples dropdown -->
+  <div class="dropdown-wrap" id="examplesWrap">
+    <button class="examples-btn" id="examplesBtn" onclick="toggleDropdown()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h8"/></svg>
+      Examples
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+    </button>
+    <div class="dropdown" id="dropdown">
+      <div class="dropdown-section">
+        <div class="dropdown-label">Getting Started</div>
+        <div class="dropdown-item" onclick="loadExample('hello')">
+          <span class="icon">👋</span>
+          <div><div>Hello World</div><div class="desc">Your first NC program</div></div>
+        </div>
+        <div class="dropdown-item" onclick="loadExample('variables')">
+          <span class="icon">📦</span>
+          <div><div>Variables & Logic</div><div class="desc">Store, compare, decide</div></div>
+        </div>
+      </div>
+      <div class="dropdown-section">
+        <div class="dropdown-label">Build Apps</div>
+        <div class="dropdown-item" onclick="loadExample('api')">
+          <span class="icon">🌐</span>
+          <div><div>REST API</div><div class="desc">Build a full HTTP API</div></div>
+        </div>
+        <div class="dropdown-item" onclick="loadExample('chatbot')">
+          <span class="icon">🤖</span>
+          <div><div>AI Chatbot</div><div class="desc">Chat app with memory</div></div>
+        </div>
+        <div class="dropdown-item" onclick="loadExample('crud')">
+          <span class="icon">🗃️</span>
+          <div><div>CRUD App</div><div class="desc">Create, read, update, delete</div></div>
+        </div>
+        <div class="dropdown-item" onclick="loadExample('dashboard')">
+          <span class="icon">📊</span>
+          <div><div>Dashboard API</div><div class="desc">Real-time data endpoint</div></div>
+        </div>
+      </div>
+      <div class="dropdown-section">
+        <div class="dropdown-label">Automation</div>
+        <div class="dropdown-item" onclick="loadExample('pipeline')">
+          <span class="icon">⚙️</span>
+          <div><div>Data Pipeline</div><div class="desc">Fetch, transform, store</div></div>
+        </div>
+        <div class="dropdown-item" onclick="loadExample('webhook')">
+          <span class="icon">🔗</span>
+          <div><div>Webhook Handler</div><div class="desc">Process incoming events</div></div>
+        </div>
+        <div class="dropdown-item" onclick="loadExample('scheduler')">
+          <span class="icon">⏰</span>
+          <div><div>Scheduled Tasks</div><div class="desc">Run jobs on a timer</div></div>
+        </div>
+      </div>
+      <div class="dropdown-section">
+        <div class="dropdown-label">AI Features</div>
+        <div class="dropdown-item" onclick="loadExample('classifier')">
+          <span class="icon">🏷️</span>
+          <div><div>Text Classifier</div><div class="desc">Categorize any input</div></div>
+        </div>
+        <div class="dropdown-item" onclick="loadExample('summarizer')">
+          <span class="icon">📝</span>
+          <div><div>Summarizer</div><div class="desc">Summarize long text</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="topbar-sep"></div>
+
+  <button class="run-btn" id="runBtn" onclick="runCode()">
+    <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+    Run
+    <span class="kbd">⌘↵</span>
+  </button>
+
+  <div class="topbar-right">
+    <button class="icon-btn" title="Format code" onclick="formatCode()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="21" y1="10" x2="3" y2="10"/><line x1="21" y1="6" x2="3" y2="6"/><line x1="21" y1="14" x2="3" y2="14"/><line x1="21" y1="18" x2="11" y2="18"/></svg>
+    </button>
+    <button class="icon-btn" title="Clear output" onclick="clearOutput()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+    </button>
+    <div class="topbar-sep"></div>
+    <button class="deploy-btn" onclick="showTab('share')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+      Deploy
+    </button>
+    <a href="index.html" class="icon-btn" title="Back to site">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+    </a>
+  </div>
+</div>
+
+<!-- ── WORKSPACE ── -->
+<div class="workspace" id="workspace">
+
+  <!-- Editor Panel -->
+  <div class="editor-panel" id="editorPanel">
+    <div class="panel-header">
+      <div class="dot" style="background:#ff5f57"></div>
+      <div class="dot" style="background:#febc2e;margin-left:4px"></div>
+      <div class="dot" style="background:#28c840;margin-left:4px"></div>
+      <span class="filename" style="margin-left:12px">app.nc</span>
+      <span class="lang-badge">Plain English</span>
+    </div>
+    <div id="editor-container">
+      <textarea id="nc-editor" spellcheck="false" autocomplete="off" autocorrect="off" autocapitalize="off"></textarea>
+    </div>
+  </div>
+
+  <!-- Resize handle -->
+  <div class="resize-handle" id="resizeHandle"></div>
+
+  <!-- Output Panel -->
+  <div class="output-panel" id="outputPanel">
+    <div class="output-tabs">
+      <div class="output-tab active" id="tab-output" onclick="showTab('output')">▶ Output</div>
+      <div class="output-tab" id="tab-help" onclick="showTab('help')">📖 Reference</div>
+      <div class="output-tab" id="tab-share" onclick="showTab('share')">🚀 Deploy</div>
+      <div style="margin-left:auto;padding:0 12px;display:flex;align-items:center;gap:6px">
+        <span id="exec-time" style="font-size:.7rem;color:var(--muted)"></span>
+      </div>
+    </div>
+
+    <div class="output-body">
+      <!-- Output tab -->
+      <div class="tab-pane active" id="pane-output">
+        <div class="terminal" id="terminal">
+          <div class="empty-state" id="empty-state">
+            <div class="empty-icon">▶</div>
+            <p>Write plain English above, then click <strong>Run</strong> or press <strong>Ctrl+Enter</strong></p>
+            <div class="hint">ask AI to "say hello"</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Help/Reference tab -->
+      <div class="tab-pane" id="pane-help">
+        <div class="help-grid" id="helpGrid"></div>
+      </div>
+
+      <!-- Share/Deploy tab -->
+      <div class="tab-pane" id="pane-share">
+        <div class="share-pane">
+          <h3>🚀 Share &amp; Deploy</h3>
+          <p>Share your playground link or deploy your NC app to a live server in seconds.</p>
+
+          <div>
+            <div style="font-size:.78rem;color:var(--muted);margin-bottom:8px;font-weight:500">Share link (encodes your code)</div>
+            <div class="share-url">
+              <input type="text" id="shareUrl" readonly placeholder="Click to generate link...">
+              <button class="copy-btn" onclick="copyShareUrl()">Copy</button>
+            </div>
+            <button onclick="generateShareUrl()" style="margin-top:8px;padding:7px 16px;background:var(--dim);border:1px solid var(--border);border-radius:8px;color:var(--text);font-size:.78rem;cursor:pointer;font-family:var(--font)">Generate link</button>
+          </div>
+
+          <div>
+            <div style="font-size:.78rem;color:var(--muted);margin-bottom:10px;font-weight:500">Deploy your app (1-click)</div>
+            <div class="deploy-options">
+              <div class="deploy-option" onclick="deployTo('railway')">
+                <div class="d-name">🚂 Railway</div>
+                <div class="d-desc">Free tier · auto-deploy from GitHub</div>
+              </div>
+              <div class="deploy-option" onclick="deployTo('render')">
+                <div class="d-name">🎨 Render</div>
+                <div class="d-desc">Free tier · zero config</div>
+              </div>
+              <div class="deploy-option" onclick="deployTo('fly')">
+                <div class="d-name">🪰 Fly.io</div>
+                <div class="d-desc">Global edge · low latency</div>
+              </div>
+              <div class="deploy-option" onclick="deployTo('docker')">
+                <div class="d-name">🐳 Docker</div>
+                <div class="d-desc">Self-host anywhere</div>
+              </div>
+            </div>
+          </div>
+
+          <div style="background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:14px">
+            <div style="font-size:.78rem;font-weight:600;margin-bottom:8px">Install NC locally</div>
+            <div style="font-family:var(--mono);font-size:.75rem;color:var(--muted);line-height:2">
+              <div><span style="color:var(--muted)"># macOS / Linux</span></div>
+              <div style="color:var(--cyan)">curl -fsSL https://nc-lang.dev/install.sh | bash</div>
+              <div style="margin-top:8px"><span style="color:var(--muted)"># Windows</span></div>
+              <div style="color:var(--cyan)">irm https://nc-lang.dev/install.ps1 | iex</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── STATUS BAR ── -->
+<div class="statusbar">
+  <div class="status-item">
+    <div class="status-dot" id="statusDot"></div>
+    <span id="statusText">Ready</span>
+  </div>
+  <div class="status-sep"></div>
+  <div class="status-item" id="lineCol">Ln 1, Col 1</div>
+  <div class="status-sep"></div>
+  <div class="status-item" id="charCount">0 chars</div>
+  <div class="status-sep"></div>
+  <div class="status-item" style="margin-left:auto">
+    <span style="color:var(--cyan)">NC</span> &nbsp;Plain English · No-Code
+    &nbsp;·&nbsp; <a href="https://github.com/devheallabs-ai/nc" target="_blank" style="color:var(--muted);text-decoration:none">GitHub</a>
+    &nbsp;·&nbsp; <a href="index.html" style="color:var(--muted);text-decoration:none">devheallabs.in</a>
+  </div>
+</div>
+
+<script>
+// ════════════════════════════════════════════════════════
+//  NC Playground — Editor + Runner
+// ════════════════════════════════════════════════════════
+
+// ── Examples library ────────────────────────────────────
+const EXAMPLES = {
+  hello: {
+    name: 'Hello World',
+    code: `// Your first NC program — plain English, zero syntax
+// Press Run (Ctrl+Enter) to execute
+
+show "Hello from NC!"
+show "Today is: " + datetime_format(datetime_now(), "%Y-%m-%d")
+
+set name to "World"
+show "Hello, " + name + "! Welcome to no-code programming."
+
+// Math works naturally
+set result to 42 * 1.5 + 10
+show "The answer is: " + result
+
+// Lists and loops
+set fruits to ["apple", "banana", "mango", "grape"]
+for each fruit in fruits:
+    show "  🍎 " + fruit`
+  },
+
+  variables: {
+    name: 'Variables & Logic',
+    code: `// Variables, conditions, and loops — plain English style
+
+set score to 87
+set name to "Alice"
+set passed to true
+
+if score is greater than 90:
+    show name + " got an A!"
+else if score is greater than 75:
+    show name + " got a B — well done!"
+else:
+    show name + " needs more practice"
+
+// Loops
+set total to 0
+repeat 5 times:
+    set total to total + 10
+
+show "Total after loop: " + total
+
+// Working with lists
+set numbers to [3, 7, 2, 9, 1, 5]
+set sorted to sort(numbers)
+show "Sorted: " + sorted
+show "Max: " + max(numbers)
+show "Min: " + min(numbers)
+
+// String operations
+set message to "  hello world  "
+show trim(message)
+show upper(message)
+show str_title("plain english is powerful")`
+  },
+
+  api: {
+    name: 'REST API',
+    code: `// Build a complete REST API — no framework, no boilerplate
+// This is a LIVE server — run it and call the endpoints!
+
+configure:
+    store_url is "file://./data.json"
+
+// GET /health
+on GET "/health":
+    respond with {
+        status: "ok",
+        version: "1.0.0",
+        time: datetime_now()
+    }
+
+// GET /users
+on GET "/users":
+    gather users from "users"
+    if users is nothing:
+        set users to []
+    respond with users
+
+// POST /users
+on POST "/users":
+    set user to request.body
+    set user.id to uuid_v4()
+    set user.created_at to datetime_now()
+    store user into "user:" + user.id
+    respond with user
+
+// GET /users/:id
+on GET "/users/:id":
+    gather user from "user:" + request.params.id
+    if user is nothing:
+        respond 404 with {error: "User not found"}
+    respond with user
+
+serve on port 8080`
+  },
+
+  chatbot: {
+    name: 'AI Chatbot',
+    code: `// AI-powered chatbot with conversation memory
+// Connect to any AI (OpenAI, Anthropic, Ollama, etc.)
+
+configure:
+    ai_url is "https://api.openai.com/v1/chat/completions"
+    ai_key is env("OPENAI_API_KEY")
+    ai_model is "gpt-4o-mini"
+
+// Chat endpoint — keeps last 10 messages in memory
+on POST "/chat":
+    set message to request.body.message
+    set session to request.body.session_id or uuid_v4()
+
+    // Load conversation history
+    gather history from "chat:" + session
+    if history is nothing:
+        set history to []
+
+    // Add user message
+    append {role: "user", content: message} to history
+
+    // Ask AI with full conversation context
+    ask AI to "respond helpfully" using history
+
+    // Save updated history (keep last 10 exchanges)
+    if length(history) > 20:
+        set history to last(history, 20)
+    store history into "chat:" + session
+
+    respond with {
+        reply: AI.response,
+        session_id: session,
+        message_count: length(history)
+    }
+
+// Clear history
+on DELETE "/chat/:session":
+    delete "chat:" + request.params.session
+    respond with {cleared: true}
+
+serve on port 8080`
+  },
+
+  crud: {
+    name: 'CRUD App',
+    code: `// Full CRUD (Create, Read, Update, Delete) application
+// Store: local JSON file — no database setup needed
+
+configure:
+    store_url is "file://./todos.json"
+
+// List all todos
+on GET "/todos":
+    gather all from "todos_list"
+    if all is nothing:
+        set all to []
+    respond with all
+
+// Create todo
+on POST "/todos":
+    set todo to {
+        id: uuid_v4(),
+        title: request.body.title,
+        done: false,
+        created: datetime_now()
+    }
+    gather list from "todos_list"
+    if list is nothing:
+        set list to []
+    append todo to list
+    store list into "todos_list"
+    respond 201 with todo
+
+// Update todo
+on PUT "/todos/:id":
+    gather list from "todos_list"
+    for each item in list:
+        if item.id is request.params.id:
+            set item.done to request.body.done
+            set item.title to request.body.title or item.title
+    store list into "todos_list"
+    respond with {updated: true}
+
+// Delete todo
+on DELETE "/todos/:id":
+    gather list from "todos_list"
+    set list to filter list where id is not request.params.id
+    store list into "todos_list"
+    respond with {deleted: true}
+
+serve on port 8080`
+  },
+
+  dashboard: {
+    name: 'Dashboard API',
+    code: `// Real-time dashboard data API
+// Returns metrics, stats, and live data
+
+configure:
+    store_url is "file://./metrics.json"
+
+// Main dashboard endpoint
+on GET "/dashboard":
+    set now to datetime_now()
+
+    // Generate sample metrics (replace with real data)
+    set daily_users to randint(1200, 1800)
+    set revenue today to randint(4500, 8000)
+    set active_sessions to randint(45, 120)
+    set error_rate to rand_float() * 2.5
+
+    respond with {
+        timestamp: now,
+        metrics: {
+            daily_users: daily_users,
+            revenue: revenue_today,
+            active_sessions: active_sessions,
+            error_rate: error_rate,
+            uptime_pct: 99.94
+        },
+        trend: "up"
+    }
+
+// Log an event
+on POST "/events":
+    set event to request.body
+    set event.timestamp to datetime_now()
+    set event.id to uuid_v4()
+
+    // Store event in file DB
+    gather events from "events"
+    if events is nothing:
+        set events to []
+    append event to events
+    // Keep last 1000 events
+    if length(events) > 1000:
+        set events to last(events, 1000)
+    store events into "events"
+
+    respond with {recorded: true, id: event.id}
+
+// Get recent events
+on GET "/events":
+    gather events from "events"
+    if events is nothing:
+        set events to []
+    respond with events
+
+serve on port 8080`
+  },
+
+  pipeline: {
+    name: 'Data Pipeline',
+    code: `// Automated data pipeline — fetch, transform, store
+
+// Step 1: Fetch data from external API
+show "Fetching data..."
+gather posts from "https://jsonplaceholder.typicode.com/posts"
+
+// Step 2: Transform — keep only what we need
+set processed to []
+for each post in posts:
+    if length(post.title) is greater than 20:
+        set clean to {
+            id: post.id,
+            title: str_title(post.title),
+            preview: post.body[:100] + "...",
+            word_count: length(split(post.body, " ")),
+            processed_at: datetime_now()
+        }
+        append clean to processed
+
+show "Processed " + length(processed) + " posts"
+
+// Step 3: Sort and filter
+set top_posts to sort_by(processed, "word_count")
+set top_posts to last(top_posts, 5)
+
+show "Top 5 longest posts:"
+for each post in top_posts:
+    show "  #" + post.id + " — " + post.title + " (" + post.word_count + " words)"
+
+// Step 4: Store results
+store processed into "processed_posts"
+show "Pipeline complete. " + length(processed) + " items stored."`
+  },
+
+  webhook: {
+    name: 'Webhook Handler',
+    code: `// Webhook endpoint — process incoming events from any service
+// Works with GitHub, Stripe, Slack, or any HTTP webhook
+
+configure:
+    store_url is "file://./events.json"
+
+// Main webhook handler
+on POST "/webhook":
+    set payload to request.body
+    set event_type to request.headers["x-event-type"] or payload.type or "unknown"
+
+    log_info("Received event: " + event_type)
+
+    // Route by event type
+    if event_type is "payment.completed":
+        set order_id to payload.data.order_id
+        set amount to payload.data.amount
+        show "💳 Payment received: $" + amount + " for order " + order_id
+
+    else if event_type is "user.signup":
+        set email to payload.data.email
+        show "🎉 New user signed up: " + email
+
+    else if event_type is "deploy.success":
+        show "🚀 Deployment successful: " + payload.data.version
+
+    else:
+        show "📥 Unknown event type: " + event_type
+
+    // Store every event for audit trail
+    gather log from "webhook_log"
+    if log is nothing:
+        set log to []
+    append {type: event_type, data: payload, time: datetime_now()} to log
+    store log into "webhook_log"
+
+    respond with {received: true, type: event_type}
+
+// View stored events
+on GET "/events":
+    gather log from "webhook_log"
+    respond with log or []
+
+serve on port 8080`
+  },
+
+  scheduler: {
+    name: 'Scheduled Tasks',
+    code: `// Scheduled background tasks
+// Run jobs on a timer — no cron, no setup
+
+show "Starting task scheduler..."
+
+// Task 1: Hourly health check
+every 3600 seconds:
+    show "[" + datetime_format(datetime_now(), "%H:%M:%S") + "] Health check..."
+    gather status from "https://httpbin.org/get"
+    if status is not nothing:
+        show "  ✅ Service is healthy"
+    else:
+        show "  ❌ Service is down — alerting..."
+
+// Task 2: Clean up old data every day
+every 86400 seconds:
+    show "Running daily cleanup..."
+    gather events from "events"
+    if events is not nothing:
+        set cutoff to datetime_now() - 2592000  // 30 days
+        set events to filter events where timestamp is greater than cutoff
+        store events into "events"
+        show "Cleanup complete"
+
+// Task 3: Log a heartbeat every minute
+every 60 seconds:
+    log_debug("Heartbeat at " + datetime_format(datetime_now(), "%Y-%m-%d %H:%M:%S"))
+
+show "Scheduler running. Press Ctrl+C to stop."`
+  },
+
+  classifier: {
+    name: 'Text Classifier',
+    code: `// AI-powered text classifier
+// Categorize any text into predefined categories
+
+on POST "/classify":
+    set text to request.body.text
+    set categories to request.body.categories or ["positive", "negative", "neutral"]
+
+    if text is nothing or text is "":
+        respond 400 with {error: "text is required"}
+
+    // Build classification prompt
+    set prompt to "Classify this text into one of these categories: "
+            + join(categories, ", ")
+            + ". Text: " + text
+            + ". Respond with only the category name."
+
+    ask AI to prompt
+
+    respond with {
+        text: text,
+        category: trim(AI.response),
+        categories: categories,
+        confidence: 0.92
+    }
+
+// Batch classify
+on POST "/classify/batch":
+    set items to request.body.items
+    set categories to request.body.categories or ["positive", "negative", "neutral"]
+    set results to []
+
+    for each item in items:
+        set prompt to "Classify: " + item + " into: " + join(categories, ", ") + ". One word answer."
+        ask AI to prompt
+        append {text: item, category: trim(AI.response)} to results
+
+    respond with results
+
+serve on port 8080`
+  },
+
+  summarizer: {
+    name: 'Summarizer',
+    code: `// AI text summarizer — one-line summaries or full abstracts
+
+on POST "/summarize":
+    set text to request.body.text
+    set style to request.body.style or "paragraph"
+    set max_words to request.body.max_words or 100
+
+    if text is nothing:
+        respond 400 with {error: "text is required"}
+
+    if style is "bullet":
+        ask AI to "Summarize in 5 bullet points (max " + max_words + " words total): " + text
+    else if style is "one-line":
+        ask AI to "Summarize in ONE sentence (max 20 words): " + text
+    else:
+        ask AI to "Write a " + max_words + "-word summary of: " + text
+
+    respond with {
+        original_length: length(split(text, " ")),
+        summary: AI.response,
+        style: style,
+        reduced_to: length(split(AI.response, " ")) + " words"
+    }
+
+// Quick demo
+on GET "/demo":
+    set sample to "NC is a plain-English programming language that lets anyone build real applications without learning traditional syntax. You write what you want in natural language, and NC interprets your intent and executes it. It has built-in AI, HTTP, database, and a complete standard library."
+    respond with {
+        original: sample,
+        note: "POST to /summarize with your own text"
+    }
+
+serve on port 8080`
+  }
+};
+
+// ── Reference cards ──────────────────────────────────────
+const REFERENCE = [
+  { title:'🌐 HTTP Server', code:`serve on port 8080:
+  on GET "/hello":
+      respond with "Hi!"
+  on POST "/data":
+      set body to request.body
+      respond with {ok: true}` },
+  { title:'🗃️ Store & Retrieve', code:`store "hello" into "key"
+gather value from "key"
+// or use file DB:
+configure:
+  store_url is "file://./data.json"` },
+  { title:'🤖 Ask AI', code:`ask AI to "say hello"
+ask AI to "summarize" using text
+show AI.response` },
+  { title:'🔁 Loops & Lists', code:`for each item in list:
+    show item
+repeat 5 times:
+    show "again"
+set nums to [1, 2, 3, 4, 5]` },
+  { title:'⚡ Math & Random', code:`set x to math_pi() * r * r
+set n to randint(1, 100)
+set choice to rand_choice(list)
+show round(3.14159, 2)` },
+  { title:'📅 Date & Time', code:`set now to datetime_now()
+set fmt to datetime_format(now, "%Y-%m-%d")
+set diff to datetime_diff(a, b)` },
+  { title:'🔑 Hashing & UUID', code:`set id to uuid_v4()
+set h to hash_sha256("data")
+set token to base64_encode("hello")` },
+  { title:'📋 String Tools', code:`show upper("hello")
+show str_title("plain english")
+show str_format("{0} is {1}", name, age)
+show url_encode("hello world")` },
+];
+
+// ── Editor setup (enhanced textarea) ────────────────────
+const editor = document.getElementById('nc-editor');
+
+// Style the textarea as a code editor
+Object.assign(editor.style, {
+  width: '100%', height: '100%', padding: '16px 20px',
+  background: '#0d0d1c', color: '#e8e8ed', border: 'none', outline: 'none',
+  fontFamily: "'SF Mono',SFMono-Regular,Consolas,'Liberation Mono',Menlo,monospace",
+  fontSize: '13.5px', lineHeight: '1.7', resize: 'none',
+  tabSize: '4', whiteSpace: 'pre',
+});
+
+// Load default example
+loadExample('hello');
+
+// Keyboard shortcuts
+editor.addEventListener('keydown', e => {
+  // Run: Ctrl+Enter or Cmd+Enter
+  if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') {
+    e.preventDefault(); runCode();
+  }
+  // Tab → insert spaces
+  if (e.key === 'Tab') {
+    e.preventDefault();
+    const s = editor.selectionStart, end = editor.selectionEnd;
+    editor.value = editor.value.substring(0, s) + '    ' + editor.value.substring(end);
+    editor.selectionStart = editor.selectionEnd = s + 4;
+  }
+  // Auto-close brackets/quotes
+  const pairs = {'(':')', '[':']', '{':'}', '"':'"', "'":"'"};
+  if (pairs[e.key] && editor.selectionStart === editor.selectionEnd) {
+    e.preventDefault();
+    const s = editor.selectionStart;
+    editor.value = editor.value.substring(0, s) + e.key + pairs[e.key] + editor.value.substring(s);
+    editor.selectionStart = editor.selectionEnd = s + 1;
+  }
+});
+
+// Status bar — line/col and char count
+editor.addEventListener('input', updateStatus);
+editor.addEventListener('click', updateStatus);
+editor.addEventListener('keyup', updateStatus);
+function updateStatus() {
+  const text = editor.value;
+  const pos = editor.selectionStart;
+  const before = text.substring(0, pos);
+  const line = (before.match(/\n/g) || []).length + 1;
+  const col = pos - before.lastIndexOf('\n');
+  document.getElementById('lineCol').textContent = `Ln ${line}, Col ${col}`;
+  document.getElementById('charCount').textContent = `${text.length} chars`;
+}
+
+// ── Tab switching ────────────────────────────────────────
+function showTab(name) {
+  ['output','help','share'].forEach(t => {
+    document.getElementById('tab-'+t).classList.toggle('active', t === name);
+    document.getElementById('pane-'+t).classList.toggle('active', t === name);
+  });
+  if (name === 'share') generateShareUrl();
+}
+
+// ── Examples dropdown ────────────────────────────────────
+function toggleDropdown() {
+  document.getElementById('dropdown').classList.toggle('open');
+}
+document.addEventListener('click', e => {
+  if (!document.getElementById('examplesWrap').contains(e.target))
+    document.getElementById('dropdown').classList.remove('open');
+});
+
+function loadExample(key) {
+  if (EXAMPLES[key]) {
+    editor.value = EXAMPLES[key].code;
+    updateStatus();
+    document.getElementById('dropdown').classList.remove('open');
+    clearOutput();
+  }
+}
+
+// ── Run code ─────────────────────────────────────────────
+const PLAYGROUND_API = 'https://play-api.nc-lang.dev/run';
+// Fallback: simulate for demo when API unavailable
+
+async function runCode() {
+  const btn = document.getElementById('runBtn');
+  if (btn.classList.contains('running')) return;
+
+  const code = editor.value.trim();
+  if (!code) return;
+
+  showTab('output');
+  btn.classList.add('running');
+  btn.innerHTML = `<svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><rect x="6" y="6" width="12" height="12"/></svg> Running...`;
+  setStatus('running', 'Running...');
+  clearOutput(false);
+
+  const start = Date.now();
+
+  try {
+    const resp = await fetch(PLAYGROUND_API, {
+      method: 'POST',
+      headers: {'Content-Type':'application/json'},
+      body: JSON.stringify({ code }),
+      signal: AbortSignal.timeout(10000)
+    });
+    const data = await resp.json();
+    const elapsed = ((Date.now() - start) / 1000).toFixed(2);
+    document.getElementById('exec-time').textContent = `${elapsed}s`;
+
+    if (data.output) renderOutput(data.output, false);
+    if (data.error)  renderOutput(data.error, true);
+    if (!data.output && !data.error) renderOutput('(no output)', false);
+
+    setStatus(data.error ? 'error' : 'ok', data.error ? 'Error' : `Done in ${elapsed}s`);
+  } catch (err) {
+    // Demo mode: simulate output for showcase
+    const elapsed = ((Date.now() - start) / 1000).toFixed(2);
+    document.getElementById('exec-time').textContent = `${elapsed}s`;
+    const simulated = simulateRun(code);
+    renderOutput(simulated.out, false);
+    if (simulated.err) renderOutput(simulated.err, true);
+    renderOutput('\n⚠️  Live runner offline — showing demo output.\n   Deploy your own runner: nc-apps/playground-server/', false, true);
+    setStatus('ok', `Simulated in ${elapsed}s`);
+  }
+
+  btn.classList.remove('running');
+  btn.innerHTML = `<svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><polygon points="5 3 19 12 5 21 5 3"/></svg> Run <span class="kbd">⌘↵</span>`;
+}
+
+// ── Output renderer ───────────────────────────────────────
+function renderOutput(text, isError, isInfo) {
+  const term = document.getElementById('terminal');
+  const es = document.getElementById('empty-state');
+  if (es) es.style.display = 'none';
+
+  const lines = text.split('\n');
+  lines.forEach(line => {
+    if (!line && lines.length === 1) return;
+    const div = document.createElement('div');
+    div.style.cssText = 'padding:1px 0;font-family:var(--mono);font-size:13px;line-height:1.7;white-space:pre-wrap;word-break:break-all';
+    if (isError) div.style.color = '#f87171';
+    else if (isInfo) div.style.color = '#6b7280';
+    else if (line.startsWith('[') && line.includes('INFO')) div.style.color = '#00d4ff';
+    else if (line.startsWith('[') && line.includes('WARN')) div.style.color = '#f59e0b';
+    else if (line.startsWith('[') && line.includes('ERROR')) div.style.color = '#f87171';
+    else if (line.includes('✅') || line.includes('done') || line.includes('complete')) div.style.color = '#10b981';
+    else div.style.color = '#c9d1d9';
+    div.textContent = line;
+    term.appendChild(div);
+  });
+  term.scrollTop = term.scrollHeight;
+}
+
+function clearOutput(showEmpty = true) {
+  const term = document.getElementById('terminal');
+  term.innerHTML = showEmpty
+    ? `<div class="empty-state" id="empty-state"><div class="empty-icon">▶</div><p>Write plain English above, then click <strong>Run</strong> or press <strong>Ctrl+Enter</strong></p><div class="hint">ask AI to "say hello"</div></div>`
+    : `<div style="padding:8px 0;font-size:.72rem;color:#4a4a6a;font-family:var(--mono)">$ nc app.nc</div>`;
+  document.getElementById('exec-time').textContent = '';
+}
+
+// ── Status bar helpers ────────────────────────────────────
+function setStatus(state, text) {
+  const dot = document.getElementById('statusDot');
+  dot.className = 'status-dot' + (state === 'running' ? ' running' : state === 'error' ? ' error' : '');
+  document.getElementById('statusText').textContent = text;
+}
+
+// ── Demo simulation (when API offline) ───────────────────
+function simulateRun(code) {
+  const lines = code.split('\n');
+  const outputs = [];
+
+  // Simulate common NC patterns
+  for (const line of lines) {
+    const l = line.trim();
+    if (!l || l.startsWith('//') || l.startsWith('#')) continue;
+
+    if (l.startsWith('show ')) {
+      const val = l.slice(5).replace(/^"|"$/g, '').replace(/^'|'$/g, '');
+      // Evaluate simple string + number concatenation for demo
+      if (val.includes('"') || val.includes("'")) {
+        outputs.push(evalExprSimple(val));
+      } else {
+        outputs.push(val);
+      }
+    } else if (l.includes('serve on port')) {
+      const port = l.match(/\d+/)?.[0] || '8080';
+      outputs.push(`🚀 NC server started on http://localhost:${port}`);
+      outputs.push(`   Press Ctrl+C to stop`);
+      outputs.push(`   Endpoints defined in your code are now live`);
+      break;
+    } else if (l.startsWith('every ')) {
+      outputs.push('⏰ Scheduler started — tasks will run at configured intervals');
+      break;
+    } else if (l.includes('gather') && l.includes('from "http')) {
+      outputs.push('⬇  Fetching data...');
+      outputs.push('✅ Received 100 items');
+    } else if (l.includes('log_info(')) {
+      const msg = l.match(/log_info\("([^"]+)"\)/)?.[1];
+      if (msg) outputs.push(`[${new Date().toISOString()}] INFO ${msg}`);
+    } else if (l.includes('log_warn(')) {
+      const msg = l.match(/log_warn\("([^"]+)"\)/)?.[1];
+      if (msg) outputs.push(`[${new Date().toISOString()}] WARN ${msg}`);
+    }
+  }
+
+  if (!outputs.length) outputs.push('(program executed — no output statements)');
+  return { out: outputs.join('\n'), err: '' };
+}
+
+function evalExprSimple(expr) {
+  // Very basic string evaluation for demo purposes
+  try {
+    // Replace NC-style concatenation + with JS-safe version for simple literals
+    return expr.replace(/^["']|["']$/g, '').replace(/["']\s*\+\s*["']/g, '');
+  } catch { return expr; }
+}
+
+// ── Format code ───────────────────────────────────────────
+function formatCode() {
+  const lines = editor.value.split('\n');
+  let indent = 0;
+  const result = lines.map(line => {
+    const t = line.trim();
+    if (!t) return '';
+    const isClose = t.startsWith('end ') || t === 'end';
+    if (isClose) indent = Math.max(0, indent - 1);
+    const out = '    '.repeat(indent) + t;
+    if (t.endsWith(':') && !t.startsWith('//')) indent++;
+    return out;
+  });
+  editor.value = result.join('\n');
+  notify('Code formatted ✨');
+}
+
+// ── Reference cards ───────────────────────────────────────
+const grid = document.getElementById('helpGrid');
+REFERENCE.forEach(card => {
+  const el = document.createElement('div');
+  el.className = 'help-card';
+  el.innerHTML = `<div class="h-title">${card.title}</div><pre>${escapeHtml(card.code)}</pre>`;
+  el.onclick = () => { editor.value = card.code; updateStatus(); showTab('output'); };
+  grid.appendChild(el);
+});
+
+function escapeHtml(s) {
+  return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+// ── Share URL ─────────────────────────────────────────────
+function generateShareUrl() {
+  const code = editor.value;
+  const encoded = btoa(unescape(encodeURIComponent(code)));
+  const url = `${location.origin}${location.pathname}?code=${encoded}`;
+  document.getElementById('shareUrl').value = url;
+}
+
+function copyShareUrl() {
+  const input = document.getElementById('shareUrl');
+  if (!input.value) generateShareUrl();
+  navigator.clipboard?.writeText(input.value).then(() => notify('Link copied! 📋'));
+}
+
+// Load from URL param
+(function() {
+  const params = new URLSearchParams(location.search);
+  const code = params.get('code');
+  if (code) {
+    try {
+      editor.value = decodeURIComponent(escape(atob(code)));
+      updateStatus();
+    } catch {}
+  }
+})();
+
+// ── Deploy ────────────────────────────────────────────────
+function deployTo(platform) {
+  const urls = {
+    railway: 'https://railway.app/new?template=https://github.com/devheallabs-ai/nc',
+    render:  'https://render.com/deploy?repo=https://github.com/devheallabs-ai/nc',
+    fly:     'https://fly.io/docs/getting-started/',
+    docker:  'https://nc-lang.dev#docker'
+  };
+  notify(`Opening ${platform} deploy page... 🚀`);
+  setTimeout(() => window.open(urls[platform], '_blank'), 500);
+}
+
+// ── Notifications ─────────────────────────────────────────
+function notify(msg) {
+  const n = document.createElement('div');
+  n.className = 'notif';
+  n.textContent = msg;
+  document.body.appendChild(n);
+  setTimeout(() => n.remove(), 2500);
+}
+
+// ── Resize panel handle ───────────────────────────────────
+(function() {
+  const handle = document.getElementById('resizeHandle');
+  const workspace = document.getElementById('workspace');
+  const outputPanel = document.getElementById('outputPanel');
+  let dragging = false, startX = 0, startW = 0;
+
+  handle.addEventListener('mousedown', e => {
+    dragging = true; startX = e.clientX;
+    startW = outputPanel.offsetWidth;
+    handle.classList.add('dragging');
+    document.body.style.userSelect = 'none';
+  });
+  document.addEventListener('mousemove', e => {
+    if (!dragging) return;
+    const delta = startX - e.clientX;
+    const newW = Math.max(280, Math.min(startW + delta, workspace.offsetWidth - 300));
+    outputPanel.style.width = newW + 'px';
+  });
+  document.addEventListener('mouseup', () => {
+    dragging = false;
+    handle.classList.remove('dragging');
+    document.body.style.userSelect = '';
+  });
+})();
+
+updateStatus();
+</script>
+</body>
+</html>
