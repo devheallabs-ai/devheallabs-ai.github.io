@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://devheallabs.in/</loc><changefreq>monthly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://devheallabs.in/technology.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://devheallabs.in/research.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://devheallabs.in/enterprise.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://devheallabs.in/ip.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://devheallabs.in/benchmarks.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://devheallabs.in/developers.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://devheallabs.in/roadmap.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://devheallabs.in/company.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://devheallabs.in/whitepaper.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://devheallabs.in/playground.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+</urlset>
