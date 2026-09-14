@@ -3,11 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Page not found — DevHeal Labs</title>
-<meta name="description" content="The page you are looking for does not exist or has been moved.">
-<meta name="robots" content="noindex">
+<title>Roadmap — DevHeal Labs</title>
+<meta name="description" content="DevHeal Labs' transparent roadmap: NC and developer tooling today, Studio/Simulation/Evaluation/AgentOS/Recovery next, an AI Systems Engineering platform beyond that.">
 <link rel="icon" type="image/png" href="/favicon.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:title" content="Roadmap — DevHeal Labs">
+<meta property="og:description" content="DevHeal Labs' transparent roadmap: NC and developer tooling today, Studio/Simulation/Evaluation/AgentOS/Recovery next, an AI Systems Engineering platform beyond that.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://devheallabs.in/roadmap/">
+<meta property="og:image" content="https://devheallabs.in/logo.png">
+<meta property="og:site_name" content="DevHeal Labs">
+<meta name="twitter:card" content="summary">
+<link rel="canonical" href="https://devheallabs.in/roadmap/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
 <link rel="stylesheet" href="/assets/style.css">
@@ -20,9 +27,11 @@
     <ul class="nav-links">
       <li><a href="/#products">Products</a></li>
       <li><a href="/technology/">Technology</a></li>
+      <li><a href="/#ai-systems-engineering">AI Systems Engineering</a></li>
       <li><a href="/research/">Research</a></li>
       <li><a href="/enterprise/">Enterprise</a></li>
       <li><a href="/developers/">Developers</a></li>
+      <li><a href="/benchmarks/">Benchmarks</a></li>
       <li><a href="/company/">Company</a></li>
       <li><a href="mailto:support@devheallabs.in" class="nav-cta">Talk to DevHeal</a></li>
     </ul>
@@ -34,26 +43,53 @@
   </div>
 </nav>
 
-<section class="page-hero" style="border-bottom:none">
+<section class="page-hero">
   <div class="container">
-    <div class="kicker">Error 404</div>
-    <h1>Page not found</h1>
-    <p class="lead">The page you are looking for does not exist or has been moved. Let's get you back on track.</p>
-    <div class="hero-buttons" style="margin-top:28px">
-      <a href="/" class="btn btn-primary">Back to home</a>
-      <a href="/technology/" class="btn btn-ghost">Explore the platform</a>
-    </div>
+    <div class="kicker sr">Roadmap</div>
+    <h1 class="sr d1">A transparent roadmap</h1>
+    <p class="lead sr d2">Dates are directional, not commitments. This is intent, not a shipped changelog — see <a href="/technology/" style="color:var(--cyan)">Technology</a> for what's actually available today.</p>
   </div>
 </section>
 
-<section style="padding-top:0">
+<section>
   <div class="container">
-    <div class="sec-label">Try these instead</div>
     <div class="grid-3">
-      <a href="/technology/" class="card"><h3 style="font-size:1rem;margin-bottom:6px">Technology</h3><p style="color:var(--muted);font-size:.88rem;margin:0">What's shipping today, what's in development, and what's still research.</p></a>
-      <a href="/whitepaper/" class="card"><h3 style="font-size:1rem;margin-bottom:6px">White Paper</h3><p style="color:var(--muted);font-size:.88rem;margin:0">The measured results behind our research projects, with their limits.</p></a>
-      <a href="/developers/" class="card"><h3 style="font-size:1rem;margin-bottom:6px">Developers</h3><p style="color:var(--muted);font-size:.88rem;margin:0">Build your first AI system with NC — install, build, run, deploy.</p></a>
+      <div class="card sr d1">
+        <span class="badge badge-available">2026</span>
+        <h3 style="margin:16px 0 12px;font-size:1.15rem;font-weight:800">Foundation</h3>
+        <ul style="color:var(--muted);font-size:.88rem;line-height:2;list-style:none">
+          <li>&#8226; NC language &amp; runtime</li>
+          <li>&#8226; Developer tooling</li>
+          <li>&#8226; NC AI runtime</li>
+          <li>&#8226; Agent capabilities in HiveANT / SwarmOps</li>
+          <li>&#8226; Studio foundation (design phase)</li>
+          <li>&#8226; Evaluation foundation (design phase)</li>
+        </ul>
+      </div>
+      <div class="card sr d2">
+        <span class="badge badge-research">2027</span>
+        <h3 style="margin:16px 0 12px;font-size:1.15rem;font-weight:800">Engineering Layers</h3>
+        <ul style="color:var(--muted);font-size:.88rem;line-height:2;list-style:none">
+          <li>&#8226; DevHeal Studio</li>
+          <li>&#8226; Simulation Engine</li>
+          <li>&#8226; Evaluation Engine</li>
+          <li>&#8226; AgentOS</li>
+          <li>&#8226; Enterprise deployment options</li>
+          <li>&#8226; Recovery Engine</li>
+        </ul>
+      </div>
+      <div class="card sr d3">
+        <span class="badge badge-soon">2028</span>
+        <h3 style="margin:16px 0 12px;font-size:1.15rem;font-weight:800">Platform &amp; Ecosystem</h3>
+        <ul style="color:var(--muted);font-size:.88rem;line-height:2;list-style:none">
+          <li>&#8226; Full AI Systems Engineering platform</li>
+          <li>&#8226; Enterprise ecosystem</li>
+          <li>&#8226; AI System Certification</li>
+          <li>&#8226; Marketplace / ecosystem</li>
+        </ul>
+      </div>
     </div>
+    <p class="callout sr d3" style="margin-top:40px">Have a use case that needs one of these layers sooner? <a href="mailto:support@devheallabs.in" style="color:var(--cyan)">Talk to DevHeal</a> — roadmap priority is shaped by what teams are actually trying to build.</p>
   </div>
 </section>
 
