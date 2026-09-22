@@ -3,24 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Benchmarks — DevHeal Labs</title>
-<meta name="description" content="Measure. Reproduce. Publish. DevHeal Labs publishes only figures it measures itself, with the command to reproduce them.">
+<title>Design Partner Programme &mdash; DevHeal Labs AI</title>
+<meta name="description" content="A structured first engagement for organisations willing to be early. Pick one problem, define success up front, run a constrained pilot, measure honestly.">
 <link rel="icon" type="image/png" href="/favicon.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<meta property="og:title" content="Benchmarks — DevHeal Labs">
-<meta property="og:description" content="Measure. Reproduce. Publish. DevHeal Labs publishes only figures it measures itself, with the command to reproduce them.">
+<meta property="og:title" content="Design Partner Programme &mdash; DevHeal Labs AI">
+<meta property="og:description" content="A structured first engagement for organisations willing to be early. Pick one problem, define success up front, run a constrained pilot, measure honestly.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://devheallabs.in/benchmarks/">
+<meta property="og:url" content="https://devheallabs.in/design-partner/">
 <meta property="og:image" content="https://devheallabs.in/logo.png">
-<meta property="og:site_name" content="DevHeal Labs">
+<meta property="og:site_name" content="DevHeal Labs AI">
 <meta name="twitter:card" content="summary">
-<link rel="canonical" href="https://devheallabs.in/benchmarks/">
+<link rel="canonical" href="https://devheallabs.in/design-partner/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap">
 <link rel="stylesheet" href="/assets/style.css">
 </head>
 <body>
-
 <nav class="nav" id="nav">
   <div class="nav-inner">
     <a href="/" class="nav-logo"><img src="/logo.png" alt="DevHeal Labs AI" class="logo-icon"> DevHeal<span>Labs AI</span></a>
@@ -66,81 +65,91 @@
     <button class="hamburger" aria-label="Menu">&#9776;</button>
   </div>
 </nav>
-
 <section class="page-hero">
   <div class="container">
-    <div class="kicker sr">Benchmarks</div>
-    <h1 class="sr d1">Measure. Reproduce. Publish.</h1>
-    <p class="lead sr d2">We publish only numbers we measure ourselves, and we say how to reproduce them. Where a figure has not been measured under a documented method yet, we say that instead of estimating.</p>
+    <div class="kicker sr">Design Partner Programme</div>
+    <h1 class="sr d1">You would be <span class="gt">among the first</span></h1>
+    <p class="lead sr d2">We are not going to pretend otherwise. We have technology, a clear problem thesis and no reference customers. A design partnership is how those become evidence &mdash; the engagement produces the proof rather than requiring it up front.</p>
+    <div class="hero-buttons sr d3">
+      <a href="mailto:support@devheallabs.in?subject=Design%20Partner%20enquiry" class="btn btn-primary">Start the conversation</a>
+      <a href="/proof/" class="btn btn-ghost">See where the evidence stands</a>
+    </div>
   </div>
 </section>
 
 <section>
   <div class="container">
-    <h2 class="sec-title sr">Local inference vs. the usual alternatives</h2>
-    <p class="sec-desc wide sr d1">This compares <em>deployment models</em>, not specific vendors — and it is a cost and compute comparison, not a capability benchmark. Large hosted models remain more capable on many tasks than a laptop-scale local model.</p>
-
-    <div class="tbl-wrap sr d2">
-      <table class="dh">
-        <thead>
-          <tr><th>Metric</th><th style="color:var(--cyan)">NC AI (local CPU)</th><th>Hosted AI subscription</th><th>Hosted AI, pay-per-token</th><th>Self-hosted open-weight model</th></tr>
-        </thead>
-        <tbody>
-          <tr><td><strong>Recurring cost</strong></td><td class="pos">None</td><td>Typically a monthly seat fee</td><td>Scales with usage</td><td>No licence fee; GPU hardware required</td></tr>
-          <tr><td><strong>Hardware required</strong></td><td class="pos">Any CPU — no GPU</td><td>None (vendor-managed)</td><td>None (vendor-managed)</td><td>Datacenter-class GPU</td></tr>
-          <tr><td><strong>Where data goes</strong></td><td class="pos">Stays on your machine</td><td>Sent to the provider</td><td>Sent to the provider</td><td>Stays on your infrastructure</td></tr>
-          <tr><td><strong>Works offline</strong></td><td class="pos">Yes</td><td>No</td><td>No</td><td>Yes, after download</td></tr>
-          <tr><td><strong>Credentials needed</strong></td><td class="pos">None</td><td>Account + payment method</td><td>API key + payment method</td><td>None</td></tr>
-          <tr><td><strong>Runtime footprint</strong></td><td class="pos">2.1MB binary</td><td>N/A — hosted</td><td>N/A — hosted</td><td>Multi-GB model files</td></tr>
-        </tbody>
-      </table>
-    </div>
-
-    <div class="callout sr d3">
-      <strong>Why no vendor names or head-to-head numbers?</strong> Third-party pricing and performance change constantly, and quoting them turns a technical page into a marketing claim we would have to keep re-verifying. The comparison above describes deployment models, which is the decision teams actually make. Our own figures are the ones we publish and stand behind.
-    </div>
-
-    <div class="grid-3 sr d3" style="margin-top:24px">
-      <div class="card">
-        <div style="font-size:2.2rem;font-weight:900;margin-bottom:6px" class="gt">$0</div>
-        <div style="font-weight:700;margin-bottom:14px">NC AI — recurring cost</div>
-        <ul style="list-style:none;color:var(--muted);font-size:.86rem;line-height:2">
-          <li>&#10003; No per-seat or per-token billing</li><li>&#10003; Runs on any CPU</li><li>&#10003; Data stays local</li><li>&#10003; No internet required</li>
-        </ul>
-      </div>
-      <div class="card">
-        <div style="font-size:2.2rem;font-weight:900;margin-bottom:6px;color:var(--warn)">Per seat</div>
-        <div style="font-weight:700;margin-bottom:14px">Hosted subscription</div>
-        <ul style="list-style:none;color:var(--muted);font-size:.86rem;line-height:2">
-          <li>&#10007; Usually rate limited</li><li>&#10007; Data leaves your network</li><li>&#10007; Requires connectivity</li>
-        </ul>
-      </div>
-      <div class="card">
-        <div style="font-size:2.2rem;font-weight:900;margin-bottom:6px;color:var(--warn)">Per token</div>
-        <div style="font-weight:700;margin-bottom:14px">Hosted API</div>
-        <ul style="list-style:none;color:var(--muted);font-size:.86rem;line-height:2">
-          <li>&#10007; Cost scales with usage</li><li>&#10007; Provider dependency</li><li>&#10007; Requires connectivity</li>
-        </ul>
-      </div>
-    </div>
-
-    <p class="sec-desc sr d3" style="margin-top:36px;font-size:.85rem;color:var(--dim)">Figures for NC AI are measured on a consumer laptop CPU (ARM64) using the runtime's own benchmark command. Reproduce them yourself: <code style="background:var(--surface-2);border:1px solid var(--line);padding:3px 7px;border-radius:5px">nc ai benchmark</code>. Characteristics listed for other deployment models are general properties of those models, not measurements of any particular product.</p>
+    <div class="sec-label sr">Why this instead of a sales process</div>
+    <h2 class="sec-title sr d1">A normal enterprise sale needs proof we do not have</h2>
+    <p class="sec-desc wide sr d2">Procurement asks who else uses this. We cannot answer that yet. Rather than dress up a demo as a deployment, we would rather invert it: pick one real, bounded problem, agree what success looks like before starting, and find out honestly whether the technology helps.</p>
+    <p class="sec-desc wide sr d2">If it does not, that is a useful answer and we would tell you.</p>
   </div>
 </section>
 
 <section class="sec-alt">
   <div class="container">
-    <h2 class="sec-title sr">By the Numbers</h2>
-    <div class="stats-grid sr d1">
-      <div class="stat"><div class="stat-val">80+</div><div class="stat-label">NC Functions</div></div>
-      <div class="stat"><div class="stat-val">2.1MB</div><div class="stat-label">Binary Size<br><span style="font-size:.72rem;opacity:.7">Windows x64, full build</span></div></div>
-      <div class="stat"><div class="stat-val">0</div><div class="stat-label">Runtime Dependencies</div></div>
-      <div class="stat"><div class="stat-val">98</div><div class="stat-label">Test Files Passing</div></div>
+    <div class="sec-label sr">How it works</div>
+    <h2 class="sec-title sr d1">Six steps, no surprises</h2>
+    <div class="grid-3 sr d2">
+      <div class="card"><h3 style="margin:0 0 8px;font-size:1rem;font-weight:800">1 &middot; Pick one problem</h3><p style="color:var(--muted);font-size:.88rem;line-height:1.7">One real, bounded problem you already have. Not a survey of everything we could theoretically do.</p></div>
+      <div class="card"><h3 style="margin:0 0 8px;font-size:1rem;font-weight:800">2 &middot; Define success first</h3><p style="color:var(--muted);font-size:.88rem;line-height:1.7">In your metric, written down before we start, so it cannot be moved afterwards to make the result look better.</p></div>
+      <div class="card"><h3 style="margin:0 0 8px;font-size:1rem;font-weight:800">3 &middot; Constrained pilot</h3><p style="color:var(--muted);font-size:.88rem;line-height:1.7">The smallest deployment that can produce a real signal. Where actions are involved, read-only or shadow mode first.</p></div>
+      <div class="card"><h3 style="margin:0 0 8px;font-size:1rem;font-weight:800">4 &middot; Measure</h3><p style="color:var(--muted);font-size:.88rem;line-height:1.7">Against step two. Including when the answer is that it did not help.</p></div>
+      <div class="card"><h3 style="margin:0 0 8px;font-size:1rem;font-weight:800">5 &middot; Decide</h3><p style="color:var(--muted);font-size:.88rem;line-height:1.7">Continue, stop or adjust. No obligation to continue, and no pressure to.</p></div>
+      <div class="card"><h3 style="margin:0 0 8px;font-size:1rem;font-weight:800">6 &middot; Publish &mdash; only if you agree</h3><p style="color:var(--muted);font-size:.88rem;line-height:1.7">Written consent, and only figures you confirm. You can decline entirely and still keep the work.</p></div>
     </div>
-    <p class="callout sr d2" style="margin-top:36px">We haven't yet published a formal Environment / Hardware / Workload / Reproduction-instructions writeup for every number on this site. As that documentation is finished, it will be linked from here rather than replacing the summary numbers above.</p>
   </div>
 </section>
 
+<section>
+  <div class="container">
+    <div class="sec-label sr">The exchange</div>
+    <h2 class="sec-title sr d1">What each side gets</h2>
+    <div class="grid-2 sr d2">
+      <div class="card">
+        <h3 style="margin:0 0 10px;font-size:1.02rem;font-weight:800">You get</h3>
+        <ul style="list-style:none;color:var(--muted);font-size:.88rem;line-height:2">
+          <li>&#10003; Direct access to the engineers who built the technology</li>
+          <li>&#10003; Influence over what we prioritise next</li>
+          <li>&#10003; Early access to what is not yet published</li>
+          <li>&#10003; No licence cost during the pilot</li>
+          <li>&#10003; An honest answer, including a negative one</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3 style="margin:0 0 10px;font-size:1.02rem;font-weight:800">We get</h3>
+        <ul style="list-style:none;color:var(--muted);font-size:.88rem;line-height:2">
+          <li>&#10003; A real problem instead of a hypothetical one</li>
+          <li>&#10003; Evidence that our thesis holds &mdash; or does not</li>
+          <li>&#10003; Roadmap direction grounded in use</li>
+          <li>&#10003; Potentially, our first case study</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec-alt">
+  <div class="container">
+    <div class="sec-label sr">Fit</div>
+    <h2 class="sec-title sr d1">Who this suits &mdash; and who it does not</h2>
+    <div class="grid-2 sr d2">
+      <div class="card"><span class="badge badge-available">Good fit</span><h3 style="margin:14px 0 8px;font-size:1rem;font-weight:800">Teams who can decide quickly</h3><p style="color:var(--muted);font-size:.88rem;line-height:1.7">Technical founders, platform leads, SRE teams with a specific recurring cost. Organisations comfortable evaluating something early on its technical merits.</p></div>
+      <div class="card"><span class="badge badge-soon">Not yet</span><h3 style="margin:14px 0 8px;font-size:1rem;font-weight:800">Procurement-led evaluations</h3><p style="color:var(--muted);font-size:.88rem;line-height:1.7">If your process requires customer references, a support SLA and a completed security questionnaire, we cannot meet that today. Worth revisiting later.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="container">
+    <h2 class="sr">Tell us the problem first</h2>
+    <p class="sr d1">Not which product you want &mdash; what is actually costing you. If we are not the right answer, we will say so.</p>
+    <div class="hero-buttons sr d2" style="margin-bottom:0">
+      <a href="mailto:support@devheallabs.in?subject=Design%20Partner%20enquiry" class="btn btn-primary">Email us the problem</a>
+      <a href="/services/" class="btn btn-ghost">See scoped engagements</a>
+    </div>
+  </div>
+</section>
 <footer>
   <div class="container">
     <div class="footer-grid">

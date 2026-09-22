@@ -3,24 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Benchmarks — DevHeal Labs</title>
-<meta name="description" content="Measure. Reproduce. Publish. DevHeal Labs publishes only figures it measures itself, with the command to reproduce them.">
+<title>Autonomous Operations &mdash; DevHeal Labs AI</title>
+<meta name="description" content="Incident investigation consumes infrastructure teams. What HiveANT and SwarmOps are designed to do, and an honest statement that neither is published or deployed.">
 <link rel="icon" type="image/png" href="/favicon.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<meta property="og:title" content="Benchmarks — DevHeal Labs">
-<meta property="og:description" content="Measure. Reproduce. Publish. DevHeal Labs publishes only figures it measures itself, with the command to reproduce them.">
+<meta property="og:title" content="Autonomous Operations &mdash; DevHeal Labs AI">
+<meta property="og:description" content="Incident investigation consumes infrastructure teams. What HiveANT and SwarmOps are designed to do, and an honest statement that neither is published or deployed.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://devheallabs.in/benchmarks/">
+<meta property="og:url" content="https://devheallabs.in/solutions/autonomous-operations/">
 <meta property="og:image" content="https://devheallabs.in/logo.png">
-<meta property="og:site_name" content="DevHeal Labs">
+<meta property="og:site_name" content="DevHeal Labs AI">
 <meta name="twitter:card" content="summary">
-<link rel="canonical" href="https://devheallabs.in/benchmarks/">
+<link rel="canonical" href="https://devheallabs.in/solutions/autonomous-operations/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap">
 <link rel="stylesheet" href="/assets/style.css">
 </head>
 <body>
-
 <nav class="nav" id="nav">
   <div class="nav-inner">
     <a href="/" class="nav-logo"><img src="/logo.png" alt="DevHeal Labs AI" class="logo-icon"> DevHeal<span>Labs AI</span></a>
@@ -66,81 +65,97 @@
     <button class="hamburger" aria-label="Menu">&#9776;</button>
   </div>
 </nav>
-
 <section class="page-hero">
   <div class="container">
-    <div class="kicker sr">Benchmarks</div>
-    <h1 class="sr d1">Measure. Reproduce. Publish.</h1>
-    <p class="lead sr d2">We publish only numbers we measure ourselves, and we say how to reproduce them. Where a figure has not been measured under a documented method yet, we say that instead of estimating.</p>
+    <div class="kicker sr">Solution &middot; Autonomous Operations</div>
+    <h1 class="sr d1">Investigation is where <span class="gt">the time goes</span></h1>
+    <p class="lead sr d2">Most of the time between an alert firing and a system recovering is not spent fixing. It is spent correlating signals, forming a hypothesis and checking it &mdash; and that work scales with the number of systems, not the size of the team.</p>
+    <div class="hero-buttons sr d3">
+      <a href="/design-partner/" class="btn btn-primary">Discuss a pilot</a>
+      <a href="#status" class="btn btn-ghost">Where this actually stands</a>
+    </div>
+  </div>
+</section>
+
+<section id="status">
+  <div class="container">
+    <div class="callout sr">
+      <strong>Status: beta.</strong> HiveANT and SwarmOps both work and are ready to evaluate in a real environment. We would run a pilot read-only or in shadow mode first, because letting software take remediation actions in your infrastructure is a trust you should extend gradually, not on day one.
+    </div>
   </div>
 </section>
 
 <section>
   <div class="container">
-    <h2 class="sec-title sr">Local inference vs. the usual alternatives</h2>
-    <p class="sec-desc wide sr d1">This compares <em>deployment models</em>, not specific vendors — and it is a cost and compute comparison, not a capability benchmark. Large hosted models remain more capable on many tasks than a laptop-scale local model.</p>
-
-    <div class="tbl-wrap sr d2">
-      <table class="dh">
-        <thead>
-          <tr><th>Metric</th><th style="color:var(--cyan)">NC AI (local CPU)</th><th>Hosted AI subscription</th><th>Hosted AI, pay-per-token</th><th>Self-hosted open-weight model</th></tr>
-        </thead>
-        <tbody>
-          <tr><td><strong>Recurring cost</strong></td><td class="pos">None</td><td>Typically a monthly seat fee</td><td>Scales with usage</td><td>No licence fee; GPU hardware required</td></tr>
-          <tr><td><strong>Hardware required</strong></td><td class="pos">Any CPU — no GPU</td><td>None (vendor-managed)</td><td>None (vendor-managed)</td><td>Datacenter-class GPU</td></tr>
-          <tr><td><strong>Where data goes</strong></td><td class="pos">Stays on your machine</td><td>Sent to the provider</td><td>Sent to the provider</td><td>Stays on your infrastructure</td></tr>
-          <tr><td><strong>Works offline</strong></td><td class="pos">Yes</td><td>No</td><td>No</td><td>Yes, after download</td></tr>
-          <tr><td><strong>Credentials needed</strong></td><td class="pos">None</td><td>Account + payment method</td><td>API key + payment method</td><td>None</td></tr>
-          <tr><td><strong>Runtime footprint</strong></td><td class="pos">2.1MB binary</td><td>N/A — hosted</td><td>N/A — hosted</td><td>Multi-GB model files</td></tr>
-        </tbody>
-      </table>
+    <div class="sec-label sr">Who has this problem</div>
+    <h2 class="sec-title sr d1">Teams carrying the pager</h2>
+    <div class="grid-3 sr d2">
+      <div class="card"><h3 style="margin:0 0 8px;font-size:1rem;font-weight:800">SRE leads</h3><p style="color:var(--muted);font-size:.88rem;line-height:1.7">Measured on MTTR and on-call load, both dominated by investigation time.</p></div>
+      <div class="card"><h3 style="margin:0 0 8px;font-size:1rem;font-weight:800">Platform engineering</h3><p style="color:var(--muted);font-size:.88rem;line-height:1.7">The same class of incident recurs across services and each is investigated afresh.</p></div>
+      <div class="card"><h3 style="margin:0 0 8px;font-size:1rem;font-weight:800">Heads of infrastructure</h3><p style="color:var(--muted);font-size:.88rem;line-height:1.7">Headcount cannot scale with system count, so the gap widens.</p></div>
     </div>
-
-    <div class="callout sr d3">
-      <strong>Why no vendor names or head-to-head numbers?</strong> Third-party pricing and performance change constantly, and quoting them turns a technical page into a marketing claim we would have to keep re-verifying. The comparison above describes deployment models, which is the decision teams actually make. Our own figures are the ones we publish and stand behind.
-    </div>
-
-    <div class="grid-3 sr d3" style="margin-top:24px">
-      <div class="card">
-        <div style="font-size:2.2rem;font-weight:900;margin-bottom:6px" class="gt">$0</div>
-        <div style="font-weight:700;margin-bottom:14px">NC AI — recurring cost</div>
-        <ul style="list-style:none;color:var(--muted);font-size:.86rem;line-height:2">
-          <li>&#10003; No per-seat or per-token billing</li><li>&#10003; Runs on any CPU</li><li>&#10003; Data stays local</li><li>&#10003; No internet required</li>
-        </ul>
-      </div>
-      <div class="card">
-        <div style="font-size:2.2rem;font-weight:900;margin-bottom:6px;color:var(--warn)">Per seat</div>
-        <div style="font-weight:700;margin-bottom:14px">Hosted subscription</div>
-        <ul style="list-style:none;color:var(--muted);font-size:.86rem;line-height:2">
-          <li>&#10007; Usually rate limited</li><li>&#10007; Data leaves your network</li><li>&#10007; Requires connectivity</li>
-        </ul>
-      </div>
-      <div class="card">
-        <div style="font-size:2.2rem;font-weight:900;margin-bottom:6px;color:var(--warn)">Per token</div>
-        <div style="font-weight:700;margin-bottom:14px">Hosted API</div>
-        <ul style="list-style:none;color:var(--muted);font-size:.86rem;line-height:2">
-          <li>&#10007; Cost scales with usage</li><li>&#10007; Provider dependency</li><li>&#10007; Requires connectivity</li>
-        </ul>
-      </div>
-    </div>
-
-    <p class="sec-desc sr d3" style="margin-top:36px;font-size:.85rem;color:var(--dim)">Figures for NC AI are measured on a consumer laptop CPU (ARM64) using the runtime's own benchmark command. Reproduce them yourself: <code style="background:var(--surface-2);border:1px solid var(--line);padding:3px 7px;border-radius:5px">nc ai benchmark</code>. Characteristics listed for other deployment models are general properties of those models, not measurements of any particular product.</p>
   </div>
 </section>
 
 <section class="sec-alt">
   <div class="container">
-    <h2 class="sec-title sr">By the Numbers</h2>
-    <div class="stats-grid sr d1">
-      <div class="stat"><div class="stat-val">80+</div><div class="stat-label">NC Functions</div></div>
-      <div class="stat"><div class="stat-val">2.1MB</div><div class="stat-label">Binary Size<br><span style="font-size:.72rem;opacity:.7">Windows x64, full build</span></div></div>
-      <div class="stat"><div class="stat-val">0</div><div class="stat-label">Runtime Dependencies</div></div>
-      <div class="stat"><div class="stat-val">98</div><div class="stat-label">Test Files Passing</div></div>
+    <div class="sec-label sr">The shape of the problem</div>
+    <h2 class="sec-title sr d1">Where the minutes go</h2>
+    <div class="grid-2 sr d2">
+      <div class="card">
+        <span class="badge badge-soon">Today</span>
+        <h3 style="margin:14px 0 10px;font-size:1.02rem;font-weight:800">Manual investigation</h3>
+        <div class="flow" style="flex-direction:column;gap:6px;margin:0">
+          <div class="flow-node">Alert fires</div>
+          <div class="flow-node">Human paged</div>
+          <div class="flow-node">Gather signals</div>
+          <div class="flow-node">Correlate</div>
+          <div class="flow-node">Hypothesise</div>
+          <div class="flow-node">Verify</div>
+          <div class="flow-node">Remediate</div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="badge badge-beta">Beta</span>
+        <h3 style="margin:14px 0 10px;font-size:1.02rem;font-weight:800">Agent-assisted investigation</h3>
+        <div class="flow" style="flex-direction:column;gap:6px;margin:0">
+          <div class="flow-node">Signal received</div>
+          <div class="flow-node">Agents gather in parallel</div>
+          <div class="flow-node">Correlate automatically</div>
+          <div class="flow-node">Hypothesis proposed</div>
+          <div class="flow-node accent">Human decides</div>
+          <div class="flow-node">Action within authority</div>
+          <div class="flow-node">Outcome recorded</div>
+        </div>
+      </div>
     </div>
-    <p class="callout sr d2" style="margin-top:36px">We haven't yet published a formal Environment / Hardware / Workload / Reproduction-instructions writeup for every number on this site. As that documentation is finished, it will be linked from here rather than replacing the summary numbers above.</p>
+    <div class="callout sr d3" style="margin-top:24px">
+      The intent is to compress the investigation phase and leave the decision with a human. We have <strong>not</strong> published a time-saving figure, because we have not measured one in a customer environment &mdash; and an invented number would not survive your first pilot anyway. Measuring it against your own baseline is part of what a pilot is for.
+    </div>
   </div>
 </section>
 
+<section>
+  <div class="container">
+    <div class="sec-label sr">What exists</div>
+    <h2 class="sec-title sr d1">HiveANT and SwarmOps</h2>
+    <div class="grid-2 sr d2">
+      <div class="card"><span class="badge badge-beta">Beta</span><h3 style="margin:14px 0 8px;font-size:1.02rem;font-weight:800">HiveANT</h3><p style="color:var(--muted);font-size:.88rem;line-height:1.7">Twelve specialised agent types &mdash; detection, investigation, root-cause analysis, fix generation, validation, prediction &mdash; coordinated by Ant Colony and Bee Colony optimisation, with a five-layer cognitive memory so what was learned last time is still there next time. Digital-twin analysis predicts a fix’s blast radius before it is applied.</p></div>
+      <div class="card"><span class="badge badge-beta">Beta</span><h3 style="margin:14px 0 8px;font-size:1.02rem;font-weight:800">SwarmOps</h3><p style="color:var(--muted);font-size:.88rem;line-height:1.7">Watches your metrics and log stores for anomalies, correlates across metrics, logs and traces to locate the cause, and executes remediation within the authority you grant. Retrieval over your own runbooks and past incidents gives each investigation context; reinforcement learning ranks what actually worked.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="container">
+    <h2 class="sr">Try it against a real incident queue</h2>
+    <p class="sr d1">A scoped read-only pilot is where we would start &mdash; no write access, nothing automated &mdash; so you can judge whether the investigation is actually useful before anything touches production.</p>
+    <div class="hero-buttons sr d2" style="margin-bottom:0">
+      <a href="/design-partner/" class="btn btn-primary">Discuss a pilot</a>
+      <a href="/research/" class="btn btn-ghost">See the research</a>
+    </div>
+  </div>
+</section>
 <footer>
   <div class="container">
     <div class="footer-grid">

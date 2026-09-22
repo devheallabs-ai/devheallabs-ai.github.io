@@ -3,17 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Page not found — DevHeal Labs</title>
-<meta name="description" content="The page you are looking for does not exist or has been moved.">
-<meta name="robots" content="noindex">
+<title>Agent Governance &mdash; DevHeal Labs AI</title>
+<meta name="description" content="Authentication proves which agent acts but does not bound how much one input shapes a privileged action. AGP does, and refuses the action before it commits.">
 <link rel="icon" type="image/png" href="/favicon.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:title" content="Agent Governance &mdash; DevHeal Labs AI">
+<meta property="og:description" content="Authentication proves which agent acts but does not bound how much one input shapes a privileged action. AGP does, and refuses the action before it commits.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://devheallabs.in/solutions/agent-governance/">
+<meta property="og:image" content="https://devheallabs.in/logo.png">
+<meta property="og:site_name" content="DevHeal Labs AI">
+<meta name="twitter:card" content="summary">
+<link rel="canonical" href="https://devheallabs.in/solutions/agent-governance/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap">
 <link rel="stylesheet" href="/assets/style.css">
 </head>
 <body>
-
 <nav class="nav" id="nav">
   <div class="nav-inner">
     <a href="/" class="nav-logo"><img src="/logo.png" alt="DevHeal Labs AI" class="logo-icon"> DevHeal<span>Labs AI</span></a>
@@ -59,30 +65,78 @@
     <button class="hamburger" aria-label="Menu">&#9776;</button>
   </div>
 </nav>
-
-<section class="page-hero" style="border-bottom:none">
+<section class="page-hero">
   <div class="container">
-    <div class="kicker">Error 404</div>
-    <h1>Page not found</h1>
-    <p class="lead">The page you are looking for does not exist or has been moved. Let's get you back on track.</p>
-    <div class="hero-buttons" style="margin-top:28px">
-      <a href="/" class="btn btn-primary">Back to home</a>
-      <a href="/technology/" class="btn btn-ghost">Explore the platform</a>
+    <div class="kicker sr">Solution &middot; Agent Governance</div>
+    <h1 class="sr d1">Authentication proves <span class="gt">who</span>. It does not bound <span class="gt">how much</span>.</h1>
+    <p class="lead sr d2">The industry has largely solved proving which agent is acting. It has not solved bounding how much any single input &mdash; a retrieved document, a tool result, a prior message &mdash; is allowed to shape a privileged action before that action commits.</p>
+    <div class="hero-buttons sr d3">
+      <a href="/design-partner/" class="btn btn-primary">Evaluate AGP</a>
+      <a href="/ip/" class="btn btn-ghost">See the IP position</a>
     </div>
   </div>
 </section>
 
-<section style="padding-top:0">
+<section>
   <div class="container">
-    <div class="sec-label">Try these instead</div>
-    <div class="grid-3">
-      <a href="/technology/" class="card"><h3 style="font-size:1rem;margin-bottom:6px">Technology</h3><p style="color:var(--muted);font-size:.88rem;margin:0">What's shipping today, what's in development, and what's still research.</p></a>
-      <a href="/whitepaper/" class="card"><h3 style="font-size:1rem;margin-bottom:6px">White Paper</h3><p style="color:var(--muted);font-size:.88rem;margin:0">The measured results behind our research projects, with their limits.</p></a>
-      <a href="/developers/" class="card"><h3 style="font-size:1rem;margin-bottom:6px">Developers</h3><p style="color:var(--muted);font-size:.88rem;margin:0">Build your first AI system with NC — install, build, run, deploy.</p></a>
+    <div class="callout sr" style="border-left:3px solid var(--study)">
+      <strong>Status: beta.</strong> AGP works and is ready to evaluate. It sits in front of your existing agents rather than requiring them to be rewritten, so you can put it in a path and observe what it would have refused before you let it refuse anything.
     </div>
   </div>
 </section>
 
+<section class="sec-alt">
+  <div class="container">
+    <div class="sec-label sr">The problem</div>
+    <h2 class="sec-title sr d1">Why identity is not enough</h2>
+    <p class="sec-desc wide sr d2">An agent with write access reads a document. The document contains instructions. The agent acts. Every identity check passed &mdash; the agent was exactly who it claimed to be. What was never bounded is how much that one document was allowed to influence what the agent then did.</p>
+    <div class="grid-3 sr d2">
+      <div class="card"><h3 style="margin:0 0 8px;font-size:1rem;font-weight:800">Who is acting?</h3><p style="color:var(--muted);font-size:.88rem;line-height:1.7">Solved. Agent identity and credentials are well understood.</p></div>
+      <div class="card"><h3 style="margin:0 0 8px;font-size:1rem;font-weight:800">What may it access?</h3><p style="color:var(--muted);font-size:.88rem;line-height:1.7">Largely solved. Scoped credentials and permissions.</p></div>
+      <div class="card"><h3 style="margin:0 0 8px;font-size:1rem;font-weight:800">How much may one input shape an action?</h3><p style="color:var(--muted);font-size:.88rem;line-height:1.7">Not solved. This is the gap the research addresses.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="sec-label sr">The approach</div>
+    <h2 class="sec-title sr d1">Influence budgets and causal receipts</h2>
+    <p class="sec-desc wide sr d2">The design treats every input-to-output influence as a signed compute edge carrying a per-input cap and contributing to an aggregate influence budget. A privileged action is refused <em>before it commits</em> when the budget is exceeded, and every decision produces a causal receipt that can be audited afterwards.</p>
+    <div class="flow sr d2">
+      <div class="flow-node">Input received</div>
+      <div class="flow-arrow">&rarr;</div>
+      <div class="flow-node">Influence measured</div>
+      <div class="flow-arrow">&rarr;</div>
+      <div class="flow-node">Budget checked</div>
+      <div class="flow-arrow">&rarr;</div>
+      <div class="flow-node accent">Commit or refuse</div>
+    </div>
+    <div class="callout sr d3" style="margin-top:22px">
+      Start by running it in observe-only mode: it records what it would have refused without blocking anything, so you can calibrate the budgets against your real traffic before enforcement is switched on.
+    </div>
+  </div>
+</section>
+
+<section class="sec-alt">
+  <div class="container">
+    <div class="sec-label sr">Why this matters now</div>
+    <h2 class="sec-title sr d1">The gap is in your architecture today</h2>
+    <p class="sec-desc wide sr d2">If you are deploying agents with write access to systems that matter, this gap exists whether or not you use our product. Identity is checked, permissions are scoped, and the question of how much a single retrieved document may steer a privileged action is simply not asked.</p>
+    <p class="sec-desc wide sr d2">The useful first conversation is about your architecture, not our roadmap. Sometimes the answer is a design change on your side and no product at all &mdash; we will say so when that is true.</p>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="container">
+    <h2 class="sr">Give your agents boundaries</h2>
+    <p class="sr d1">Start in observe-only mode against real traffic and see what it would have stopped.</p>
+    <div class="hero-buttons sr d2" style="margin-bottom:0">
+      <a href="/design-partner/" class="btn btn-primary">Start a pilot</a>
+      <a href="/ip/" class="btn btn-ghost">See the IP position</a>
+    </div>
+  </div>
+</section>
 <footer>
   <div class="container">
     <div class="footer-grid">

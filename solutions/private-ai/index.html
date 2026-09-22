@@ -3,24 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Developers — Build Your First AI System | DevHeal Labs</title>
-<meta name="description" content="Discover, install, build, run, evaluate, simulate and deploy your first AI system with NC — DevHeal Labs' AI-native programming language.">
+<title>Private &amp; Local AI &mdash; DevHeal Labs AI</title>
+<meta name="description" content="When data cannot go to a hosted provider, inference has to run locally. What NC AI does, where it wins, and where a hosted model is the better answer.">
 <link rel="icon" type="image/png" href="/favicon.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<meta property="og:title" content="Developers — Build Your First AI System | DevHeal Labs">
-<meta property="og:description" content="Discover, install, build, run, evaluate, simulate and deploy your first AI system with NC — DevHeal Labs' AI-native programming language.">
+<meta property="og:title" content="Private &amp; Local AI &mdash; DevHeal Labs AI">
+<meta property="og:description" content="When data cannot go to a hosted provider, inference has to run locally. What NC AI does, where it wins, and where a hosted model is the better answer.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://devheallabs.in/developers/">
+<meta property="og:url" content="https://devheallabs.in/solutions/private-ai/">
 <meta property="og:image" content="https://devheallabs.in/logo.png">
-<meta property="og:site_name" content="DevHeal Labs">
+<meta property="og:site_name" content="DevHeal Labs AI">
 <meta name="twitter:card" content="summary">
-<link rel="canonical" href="https://devheallabs.in/developers/">
+<link rel="canonical" href="https://devheallabs.in/solutions/private-ai/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap">
 <link rel="stylesheet" href="/assets/style.css">
 </head>
 <body>
-
 <nav class="nav" id="nav">
   <div class="nav-inner">
     <a href="/" class="nav-logo"><img src="/logo.png" alt="DevHeal Labs AI" class="logo-icon"> DevHeal<span>Labs AI</span></a>
@@ -66,34 +65,89 @@
     <button class="hamburger" aria-label="Menu">&#9776;</button>
   </div>
 </nav>
-
 <section class="page-hero">
   <div class="container">
-    <div class="kicker sr">Developers</div>
-    <h1 class="sr d1">Build Your First AI System</h1>
-    <p class="lead sr d2">Discover &#8594; Install &#8594; Build &#8594; Run &#8594; Evaluate &#8594; Simulate &#8594; Deploy. The first three steps take minutes today; the last two are where the platform is still being built.</p>
-    <div class="hero-buttons sr d3" style="justify-content:flex-start;margin-top:28px;margin-bottom:0">
-      <a href="/playground/" class="btn btn-primary">Try the Playground</a>
-      <a href="https://github.com/devheallabs-ai/nc" target="_blank" rel="noopener" class="btn btn-ghost">View on GitHub</a>
+    <div class="kicker sr">Solution &middot; Private &amp; Local AI</div>
+    <h1 class="sr d1">When the data <span class="gt">cannot leave</span></h1>
+    <p class="lead sr d2">For some workloads the question is not which model performs best. It is whether sending the data anywhere is permitted at all &mdash; and that decides whether the project proceeds.</p>
+    <div class="hero-buttons sr d3">
+      <a href="https://ncai.devheallabs.in" class="btn btn-primary" target="_blank" rel="noopener">Run AI locally</a>
+      <a href="#limits" class="btn btn-ghost">Read the limitations first</a>
     </div>
   </div>
 </section>
 
 <section>
   <div class="container">
-    <div class="grid-4">
-      <div class="card sr d1"><span class="badge badge-available">Step 1</span><h3 style="margin:14px 0 8px;font-size:1rem;font-weight:800">Discover</h3><p style="color:var(--muted);font-size:.85rem;line-height:1.7">Read the <a href="/technology/" style="color:var(--cyan)">Technology</a> page or try NC live in the <a href="/playground/" style="color:var(--cyan)">browser playground</a> — no install needed.</p></div>
-      <div class="card sr d2"><span class="badge badge-available">Step 2</span><h3 style="margin:14px 0 8px;font-size:1rem;font-weight:800">Install</h3><p style="color:var(--muted);font-size:.85rem;line-height:1.7">Single binary, no runtime dependencies. See <a href="https://github.com/devheallabs-ai/nc#documentation" target="_blank" rel="noopener" style="color:var(--cyan)">install docs</a> on GitHub.</p></div>
-      <div class="card sr d3"><span class="badge badge-available">Step 3</span><h3 style="margin:14px 0 8px;font-size:1rem;font-weight:800">Build</h3><p style="color:var(--muted);font-size:.85rem;line-height:1.7">Write a service, an agent, or a UI in plain English. See examples in <a href="https://github.com/devheallabs-ai/nc-apps" target="_blank" rel="noopener" style="color:var(--cyan)">nc-apps</a>.</p></div>
-      <div class="card sr d4"><span class="badge badge-available">Step 4</span><h3 style="margin:14px 0 8px;font-size:1rem;font-weight:800">Run</h3><p style="color:var(--muted);font-size:.85rem;line-height:1.7">NC compiles to a single binary — run it locally or wherever you deploy binaries today.</p></div>
-      <div class="card sr d1"><span class="badge badge-research">Step 5</span><h3 style="margin:14px 0 8px;font-size:1rem;font-weight:800">Evaluate</h3><p style="color:var(--muted);font-size:.85rem;line-height:1.7">A dedicated <a href="/technology/#evaluation" style="color:var(--cyan)">Evaluation Engine</a> is on the roadmap — today, evaluate manually against your own test scenarios.</p></div>
-      <div class="card sr d2"><span class="badge badge-research">Step 6</span><h3 style="margin:14px 0 8px;font-size:1rem;font-weight:800">Simulate</h3><p style="color:var(--muted);font-size:.85rem;line-height:1.7">The DevHeal Simulator is in research — see <a href="/technology/#simulator" style="color:var(--cyan)">Technology</a>.</p></div>
-      <div class="card sr d3"><span class="badge badge-beta">Step 7</span><h3 style="margin:14px 0 8px;font-size:1rem;font-weight:800">Deploy</h3><p style="color:var(--muted);font-size:.85rem;line-height:1.7">Ship the binary anywhere. For self-healing operations at runtime, layer in HiveANT or SwarmOps.</p></div>
-      <div class="card sr d4"><span class="badge badge-available">Resources</span><h3 style="margin:14px 0 8px;font-size:1rem;font-weight:800">Docs &amp; Examples</h3><p style="color:var(--muted);font-size:.85rem;line-height:1.7"><a href="https://github.com/devheallabs-ai/nc#documentation" target="_blank" rel="noopener" style="color:var(--cyan)">Documentation</a> · <a href="https://github.com/devheallabs-ai/nc-ai" target="_blank" rel="noopener" style="color:var(--cyan)">API Reference</a> · <a href="https://github.com/devheallabs-ai" target="_blank" rel="noopener" style="color:var(--cyan)">All repos</a></p></div>
+    <div class="sec-label sr">Who has this problem</div>
+    <h2 class="sec-title sr d1">Teams where the constraint is the gatekeeper</h2>
+    <div class="grid-3 sr d2">
+      <div class="card"><h3 style="margin:0 0 8px;font-size:1rem;font-weight:800">Security architects</h3><p style="color:var(--muted);font-size:.88rem;line-height:1.7">Asked to approve an AI workload that would send regulated data to a third party.</p></div>
+      <div class="card"><h3 style="margin:0 0 8px;font-size:1rem;font-weight:800">Regulated-industry platform owners</h3><p style="color:var(--muted);font-size:.88rem;line-height:1.7">Data residency and contractual restrictions constrain where inference may run.</p></div>
+      <div class="card"><h3 style="margin:0 0 8px;font-size:1rem;font-weight:800">Edge and disconnected systems</h3><p style="color:var(--muted);font-size:.88rem;line-height:1.7">Connectivity is intermittent or absent, so a hosted call is not an option.</p></div>
+    </div>
+    <div class="callout sr d3" style="margin-top:30px">
+      <strong>Why it matters.</strong> This is rarely a performance question. It is a permission question &mdash; and a blocked project delivers nothing regardless of how good the model would have been.
     </div>
   </div>
 </section>
 
+<section class="sec-alt">
+  <div class="container">
+    <div class="sec-label sr">Alternatives</div>
+    <h2 class="sec-title sr d1">How teams solve this today</h2>
+    <div class="tbl-wrap sr d2">
+      <table class="dh">
+        <thead><tr><th>Approach</th><th>What it requires</th><th>Where it falls short</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Hosted provider + DPA</strong></td><td>Legal review, vendor assurance</td><td>Data still leaves; some rules disallow it outright</td></tr>
+          <tr><td><strong>Self-host an open-weight model</strong></td><td>GPU hardware, serving stack, ops ownership</td><td>Real infrastructure cost and a system to run</td></tr>
+          <tr><td><strong>Do without</strong></td><td>Nothing</td><td>The capability is simply not delivered</td></tr>
+          <tr><td style="color:var(--accent)"><strong>NC AI</strong></td><td>Install one binary</td><td>Smaller model &mdash; see limitations below</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="sec-label sr">Our approach</div>
+    <h2 class="sec-title sr d1">Inference inside the binary</h2>
+    <p class="sec-desc wide sr d2">NC AI is the inference engine inside the NC runtime. There is no serving stack to deploy, no GPU requirement, and no account to create.</p>
+    <div class="grid-4 sr d2">
+      <div class="stat"><div class="stat-val">CPU</div><div class="stat-label">No GPU required</div></div>
+      <div class="stat"><div class="stat-val">~20MB</div><div class="stat-label">Model on disk</div></div>
+      <div class="stat"><div class="stat-val">0</div><div class="stat-label">Accounts or API keys</div></div>
+      <div class="stat"><div class="stat-val">Local</div><div class="stat-label">Data stays on the machine</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec-alt" id="limits">
+  <div class="container">
+    <div class="sec-label sr">Limitations</div>
+    <h2 class="sec-title sr d1">Read this before you evaluate</h2>
+    <div class="callout sr d2">
+      <strong>Output quality is the trade.</strong> A model of this size, running on a CPU, is materially less capable than a large hosted model on most generative tasks. If your requirement is best-available generation quality, a hosted provider is the right answer and we will tell you so.
+    </div>
+    <div class="grid-2 sr d3" style="margin-top:22px">
+      <div class="card"><h3 style="margin:0 0 8px;font-size:1rem;font-weight:800">Where local wins</h3><p style="color:var(--muted);font-size:.88rem;line-height:1.7">The constraint is regulatory, contractual or connectivity-driven; the task is bounded and structured; cost predictability matters more than peak capability.</p></div>
+      <div class="card"><h3 style="margin:0 0 8px;font-size:1rem;font-weight:800">Where it does not</h3><p style="color:var(--muted);font-size:.88rem;line-height:1.7">Open-ended generation, long-context reasoning, or anything where output quality is the product. Use a hosted model.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="container">
+    <h2 class="sr">Verify it on your own machine</h2>
+    <p class="sr d1">Install it, disconnect the network, and confirm it still runs. That is the claim.</p>
+    <div class="hero-buttons sr d2" style="margin-bottom:0">
+      <a href="https://ncai.devheallabs.in" class="btn btn-primary" target="_blank" rel="noopener">Run AI locally</a>
+      <a href="/design-partner/" class="btn btn-ghost">Discuss a private AI pilot</a>
+    </div>
+  </div>
+</section>
 <footer>
   <div class="container">
     <div class="footer-grid">

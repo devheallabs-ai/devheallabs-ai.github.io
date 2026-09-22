@@ -3,17 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Page not found — DevHeal Labs</title>
-<meta name="description" content="The page you are looking for does not exist or has been moved.">
-<meta name="robots" content="noindex">
+<title>AI-Native Development &mdash; DevHeal Labs AI</title>
+<meta name="description" content="Agents and AI instructions as language primitives rather than libraries. The structural argument, the evidence, and the honest counter-argument.">
 <link rel="icon" type="image/png" href="/favicon.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:title" content="AI-Native Development &mdash; DevHeal Labs AI">
+<meta property="og:description" content="Agents and AI instructions as language primitives rather than libraries. The structural argument, the evidence, and the honest counter-argument.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://devheallabs.in/solutions/ai-native-development/">
+<meta property="og:image" content="https://devheallabs.in/logo.png">
+<meta property="og:site_name" content="DevHeal Labs AI">
+<meta name="twitter:card" content="summary">
+<link rel="canonical" href="https://devheallabs.in/solutions/ai-native-development/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap">
 <link rel="stylesheet" href="/assets/style.css">
 </head>
 <body>
-
 <nav class="nav" id="nav">
   <div class="nav-inner">
     <a href="/" class="nav-logo"><img src="/logo.png" alt="DevHeal Labs AI" class="logo-icon"> DevHeal<span>Labs AI</span></a>
@@ -59,30 +65,90 @@
     <button class="hamburger" aria-label="Menu">&#9776;</button>
   </div>
 </nav>
-
-<section class="page-hero" style="border-bottom:none">
+<section class="page-hero">
   <div class="container">
-    <div class="kicker">Error 404</div>
-    <h1>Page not found</h1>
-    <p class="lead">The page you are looking for does not exist or has been moved. Let's get you back on track.</p>
-    <div class="hero-buttons" style="margin-top:28px">
-      <a href="/" class="btn btn-primary">Back to home</a>
-      <a href="/technology/" class="btn btn-ghost">Explore the platform</a>
+    <div class="kicker sr">Solution &middot; AI-Native Development</div>
+    <h1 class="sr d1">Agents as <span class="gt">language primitives</span></h1>
+    <p class="lead sr d2">Mainstream language abstractions predate AI instructions, tool-calling and agent loops. So all three arrive as libraries &mdash; each with its own conventions, versioning and orchestration model.</p>
+    <div class="hero-buttons sr d3">
+      <a href="https://nc.devheallabs.in" class="btn btn-primary" target="_blank" rel="noopener">Explore NC</a>
+      <a href="#compare" class="btn btn-ghost">See the difference</a>
     </div>
   </div>
 </section>
 
-<section style="padding-top:0">
+<section>
   <div class="container">
-    <div class="sec-label">Try these instead</div>
-    <div class="grid-3">
-      <a href="/technology/" class="card"><h3 style="font-size:1rem;margin-bottom:6px">Technology</h3><p style="color:var(--muted);font-size:.88rem;margin:0">What's shipping today, what's in development, and what's still research.</p></a>
-      <a href="/whitepaper/" class="card"><h3 style="font-size:1rem;margin-bottom:6px">White Paper</h3><p style="color:var(--muted);font-size:.88rem;margin:0">The measured results behind our research projects, with their limits.</p></a>
-      <a href="/developers/" class="card"><h3 style="font-size:1rem;margin-bottom:6px">Developers</h3><p style="color:var(--muted);font-size:.88rem;margin:0">Build your first AI system with NC — install, build, run, deploy.</p></a>
+    <div class="sec-label sr">The structural argument</div>
+    <h2 class="sec-title sr d1">This is a bet, and we state it as one</h2>
+    <p class="sec-desc wide sr d2">Every significant shift in what software does has eventually changed the programming model rather than being absorbed permanently into libraries. Concurrency did. Memory safety did. Our position is that agentic execution follows the same path.</p>
+    <p class="sec-desc wide sr d2">We could be wrong. If agent frameworks mature into a stable, universal layer, the library approach wins and this bet does not pay off. We think the abstraction belongs lower down, and we have built accordingly.</p>
+  </div>
+</section>
+
+<section class="sec-alt" id="compare">
+  <div class="container">
+    <div class="sec-label sr">Concretely</div>
+    <h2 class="sec-title sr d1">What a language-level primitive looks like</h2>
+    <div class="term sr d2" style="max-width:780px">
+      <div class="dots"><i></i><i></i><i></i></div>
+      <pre><span class="cm">// tools and agents are keywords, not imports</span>
+
+<span class="kw">@tool</span> <span class="st">"Search the web"</span>
+<span class="kw">function</span> <span class="fn">search_web</span>(query)
+    <span class="kw">return</span> http get <span class="st">"https://example.org/search?q="</span> + query
+<span class="kw">end</span>
+
+<span class="kw">agent</span> researcher
+    tools: search_web, summarize
+<span class="kw">end</span>
+
+<span class="kw">run agent</span> researcher with <span class="st">"Research NC and summarize"</span></pre>
+    </div>
+    <div class="callout sr d3" style="margin-top:24px">
+      The tool registry, the reasoning loop and the model call are part of the runtime. There is no orchestration library to install, version, or keep in step with a provider SDK. You can verify this by reading the language reference &mdash; these are keywords in the grammar.
     </div>
   </div>
 </section>
 
+<section>
+  <div class="container">
+    <div class="sec-label sr">Business effect</div>
+    <h2 class="sec-title sr d1">Why this matters commercially</h2>
+    <div class="tbl-wrap sr d2">
+      <table class="dh">
+        <thead><tr><th>Design decision</th><th>Operational effect</th><th>Business effect</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Agents in the grammar</strong></td><td>Agent code is readable by anyone who reads the language</td><td>Review and handover stop depending on framework expertise</td></tr>
+          <tr><td><strong>Provider-independent AI instruction</strong></td><td>Switching model provider is configuration, not a rewrite</td><td>Reduced lock-in to any single AI vendor</td></tr>
+          <tr><td><strong>Runtime owns the loop</strong></td><td>One execution model instead of several</td><td>Fewer failure modes to understand and operate</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="sec-alt">
+  <div class="container">
+    <div class="sec-label sr">Limitations</div>
+    <h2 class="sec-title sr d1">The honest counter-argument</h2>
+    <div class="grid-2 sr d2">
+      <div class="card"><h3 style="margin:0 0 8px;font-size:1rem;font-weight:800">A new language is a real cost</h3><p style="color:var(--muted);font-size:.88rem;line-height:1.7">Tooling, hiring, ecosystem and institutional knowledge all start from zero. For most organisations that is the deciding factor, and it should be weighed honestly.</p></div>
+      <div class="card"><h3 style="margin:0 0 8px;font-size:1rem;font-weight:800">Frameworks are catching up</h3><p style="color:var(--muted);font-size:.88rem;line-height:1.7">Agent frameworks improve quickly. The gap we are addressing may narrow. We think the abstraction level still matters; we do not claim the question is settled.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="container">
+    <h2 class="sr">Judge it by reading the code</h2>
+    <p class="sr d1">The agent example above is about fifteen lines. Compare it with the same thing in your current stack.</p>
+    <div class="hero-buttons sr d2" style="margin-bottom:0">
+      <a href="https://nc.devheallabs.in" class="btn btn-primary" target="_blank" rel="noopener">Explore NC</a>
+      <a href="/playground/" class="btn btn-ghost">Open the playground</a>
+    </div>
+  </div>
+</section>
 <footer>
   <div class="container">
     <div class="footer-grid">
