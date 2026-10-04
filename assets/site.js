@@ -38,9 +38,29 @@
   var burger = document.querySelector('.hamburger');
   var links = document.querySelector('.nav-links');
   if (burger && links) {
-    burger.addEventListener('click', function () { links.classList.toggle('open'); });
+    links.id = links.id || 'primary-navigation';
+    burger.setAttribute('aria-controls', links.id);
+    function setMenu(open) {
+      links.classList.toggle('open', open);
+      burger.setAttribute('aria-expanded', String(open));
+      burger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    }
+    setMenu(false);
+    burger.addEventListener('click', function () { setMenu(!links.classList.contains('open')); });
     links.querySelectorAll('a').forEach(function (a) {
-      a.addEventListener('click', function () { links.classList.remove('open'); });
+      a.addEventListener('click', function () { setMenu(false); });
+    });
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape' && links.classList.contains('open')) {
+        setMenu(false);
+        burger.focus();
+      }
+    });
+    document.addEventListener('click', function (event) {
+      if (!event.target.closest('.nav-inner')) setMenu(false);
+    });
+    window.addEventListener('resize', function () {
+      if (window.innerWidth > 1180) setMenu(false);
     });
   }
 
@@ -100,10 +120,17 @@
   }
 
   // ── Mark the current page in the nav (skip same-page anchors) ──
-  var path = location.pathname.split('/').pop() || 'index.html';
+  function normalizePath(path) {
+    return path.replace(/\/index\.html$/, '/').replace(/\.html$/, '/').replace(/\/?$/, '/');
+  }
+  var path = normalizePath(location.pathname);
   document.querySelectorAll('.nav-links a[href]').forEach(function (a) {
     var href = a.getAttribute('href');
     if (href.indexOf('#') !== -1 || href.indexOf('mailto:') === 0) return;
-    if (href === path && path !== 'index.html') a.classList.add('active');
+    var url = new URL(href, location.href);
+    if (url.origin === location.origin && normalizePath(url.pathname) === path) {
+      a.classList.add('active');
+      a.setAttribute('aria-current', 'page');
+    }
   });
 })();
