@@ -17,7 +17,7 @@
 <link rel="canonical" href="https://devheallabs.com/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap">
-<link rel="stylesheet" href="/assets/style.css">
+<link rel="stylesheet" href="/assets/style.css?v=20261004-dummu">
 </head>
 <body>
 <a class="skip-link" href="#main-content">Skip to content</a>
@@ -37,6 +37,7 @@
       </li>
       <li class="nav-has-drop"><a href="/products/">Products</a>
         <ul class="nav-drop">
+          <li><a href="/products/dummu/">Dummu<span class="nd-sub">Autonomous platform &amp; agent building</span></a></li>
           <li><a href="/products/#build">NC &middot; NC UI &middot; NC AI<span class="nd-sub">Build &mdash; language, interface, local inference</span></a></li>
           <li><a href="/products/#operate">HiveANT &middot; SwarmOps<span class="nd-sub">Operate &mdash; autonomous incident response</span></a></li>
           <li><a href="/products/#govern">AGP &middot; AgentOS<span class="nd-sub">Govern &amp; run &mdash; agent boundaries and runtime</span></a></li>
@@ -109,7 +110,7 @@
   <div class="container">
     <div class="sec-label">Evidence you can inspect</div>
     <h2 class="sec-title">Try it. Read it. Test it.</h2>
-    <p class="sec-desc">Working examples and public source are available today. Production outcomes still need to be established through pilots.</p>
+    <p class="sec-desc">Explore NC examples and public source. Dummu has a client deployment with reported MTTR improvement; evaluate each product against your own baseline.</p>
     <div class="grid-3">
       <a class="p-card" href="/playground/"><span class="badge badge-available">Examples</span><h3>Explore the language</h3><p>Open the playground to edit sample programs. To verify runtime behaviour, install NC and run the code locally.</p><span class="p-link">Open the playground &rarr;</span></a>
       <a class="p-card" href="https://github.com/devheallabs-ai/nc" target="_blank" rel="noopener"><span class="badge badge-available">Public source</span><h3>Inspect the implementation</h3><p>Read the compiler and runtime source, installation instructions, and tests in the NC repository.</p><span class="p-link">View NC on GitHub &rarr;</span></a>
@@ -119,12 +120,20 @@
   </div>
 </section>
 
-<section class="sec-alt" id="products">
-  <div class="container stack-summary">
-    <div><div class="sec-label">One foundation</div><h2 class="sec-title">A language, runtime, and local inference engine.</h2></div>
-    <div><p class="sec-desc">NC is the starting point. NC UI adds interface generation, and NC AI adds local inference. The wider portfolio explores operations, governance, and domain applications on that foundation.</p><p class="hero-note">All products are in beta. Check each product&rsquo;s evidence and evaluation requirements.</p><a class="section-link" href="/products/">Explore the full stack &rarr;</a></div>
+<section id="products" class="sec-alt">
+  <div class="container">
+    <div class="sec-label">Featured product</div>
+    <div class="flagship"><div class="flagship-inner">
+      <span class="badge badge-beta">Beta &middot; Evaluation</span>
+      <h2 style="margin-top:20px">Dummu</h2>
+      <p class="flagship-lede">An autonomous platform for operations, agents, and continuous learning.</p>
+      <p class="body">For SRE, platform engineering, and IT operations teams. Dummu connects incident signals to recommendations and approved remediation, and lets teams build operational agents from natural-language instructions, with tools and action boundaries they control.</p>
+      <p class="body">Policy checks, approvals, dry-run, kill switches, and tamper-evident audit records sit in the execution path. Continuous reinforcement learning uses resolution outcomes, time taken, tool efficiency, and operator feedback to improve diagnostic choices.</p>
+      <div class="hero-buttons"><a href="/products/dummu/" class="btn btn-primary">Explore Dummu &rarr;</a><a href="/contact/" class="btn btn-ghost">Request a demonstration</a></div>
+    </div></div>
   </div>
 </section>
+
 
 <section class="cta-band" id="start">
   <div class="container">
@@ -140,20 +149,11 @@
 </main>
 <footer>
   <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand"><div class="f-logo">DevHeal<span> Labs AI</span></div><div class="f-tag">Autonomous by Design</div><p>Engineering infrastructure for autonomous AI systems.</p></div>
-      <div class="f-col"><h5>Solutions</h5><ul><li><a href="/solutions/ai-development/">AI Development</a></li><li><a href="/solutions/private-ai/">Private &amp; Local AI</a></li><li><a href="/solutions/ai-native-development/">AI-Native Development</a></li><li><a href="/solutions/autonomous-operations/">Autonomous Operations</a></li><li><a href="/solutions/agent-governance/">Agent Governance</a></li></ul></div>
-      <div class="f-col"><h5>Products</h5><ul><li><a href="/products/">All products</a></li><li><a href="/products/#build">NC &middot; NC UI &middot; NC AI</a></li><li><a href="/products/#operate">HiveANT &middot; SwarmOps</a></li><li><a href="/products/#govern">AGP &middot; AgentOS</a></li><li><a href="/products/#apply">NeuralEdge &middot; NOVA</a></li></ul></div>
-      <div class="f-col"><h5>Industries</h5><ul><li><a href="/industries/financial-services/">Financial Services</a></li><li><a href="/industries/technology/">Technology &amp; SaaS</a></li><li><a href="/industries/healthcare/">Healthcare</a></li><li><a href="/industries/industrial/">Manufacturing</a></li></ul></div>
-      <div class="f-col"><h5>Evidence</h5><ul><li><a href="/why-devheal/">Why DevHeal</a></li><li><a href="/proof/">Proof</a></li><li><a href="/benchmarks/">Benchmarks</a></li><li><a href="/ip/">Patents &amp; IP</a></li><li><a href="/research/">Research</a></li></ul></div>
-      <div class="f-col"><h5>Engage</h5><ul><li><a href="/design-partner/">Design Partner</a></li><li><a href="/services/">Engagements</a></li><li><a href="/enterprise/">Enterprise</a></li><li><a href="/company/#contact">Contact</a></li></ul></div>
+    <div class="footer-simple">
+      <a href="/" class="footer-logo" aria-label="DevHeal Labs AI home"><img src="/logo.png" alt="" width="68" height="62"><span class="f-logo">DevHeal<span> Labs AI</span></span></a>
+      <nav class="footer-essential" aria-label="Footer navigation"><a href="/products/">Products</a><a href="/company/">Company</a><a href="/contact/">Contact Us</a></nav>
+      <address class="footer-address">IDA Mallapur, Hyderabad,<br>Telangana, India</address>
     </div>
-    <address class="footer-contacts" aria-label="Contact DevHeal Labs AI">
-      <div><span>Sales</span><a href="mailto:sales@devheallabs.com">sales@devheallabs.com</a></div>
-      <div><span>General enquiries</span><a href="mailto:info@devheallabs.com">info@devheallabs.com</a></div>
-      <div><span>CEO</span><a href="mailto:sainarender.nuckala@devheallabs.com">sainarender.nuckala@devheallabs.com</a></div>
-    </address>
-    <div class="legal-block"><strong>DEVHEAL LABS AI PRIVATE LIMITED</strong><br>CIN: U62011TS2026PTC219968</div>
     <div class="footer-bottom"><span>&copy; 2026 DevHeal Labs AI Private Limited. All rights reserved.</span></div>
   </div>
 </footer>

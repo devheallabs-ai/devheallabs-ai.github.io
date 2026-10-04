@@ -17,7 +17,7 @@
 <link rel="canonical" href="https://devheallabs.in/products/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap">
-<link rel="stylesheet" href="/assets/style.css">
+<link rel="stylesheet" href="/assets/style.css?v=20261004-dummu">
 </head>
 <body>
 <nav class="nav" id="nav">
@@ -36,6 +36,7 @@
       </li>
       <li class="nav-has-drop"><a href="/products/">Products</a>
         <ul class="nav-drop">
+          <li><a href="/products/dummu/">Dummu<span class="nd-sub">Autonomous platform &amp; agent building</span></a></li>
           <li><a href="/products/#build">NC &middot; NC UI &middot; NC AI<span class="nd-sub">Build &mdash; language, interface, local inference</span></a></li>
           <li><a href="/products/#operate">HiveANT &middot; SwarmOps<span class="nd-sub">Operate &mdash; autonomous incident response</span></a></li>
           <li><a href="/products/#govern">AGP &middot; AgentOS<span class="nd-sub">Govern &amp; run &mdash; agent boundaries and runtime</span></a></li>
@@ -68,11 +69,11 @@
 <section class="page-hero">
   <div class="container">
     <div class="kicker sr">Products</div>
-    <h1 class="sr d1">Eight products. <span class="gt">One problem each.</span></h1>
+    <h1 class="sr d1">Our products. <span class="gt">Start with Dummu.</span></h1>
     <p class="lead sr d2">Every product below exists because a specific job was costing somebody real money or real risk. This page leads with that job &mdash; what breaks without it, who feels it, and what changes when it is handled.</p>
     <div class="hero-buttons sr d3">
       <a href="/design-partner/" class="btn btn-primary">Start a pilot</a>
-      <a href="#build" class="btn btn-ghost">See the portfolio</a>
+      <a href="#dummu" class="btn btn-ghost">See the portfolio</a>
     </div>
   </div>
 </section>
@@ -80,8 +81,22 @@
 <section>
   <div class="container">
     <div class="callout sr">
-      <strong>All products are in beta.</strong> They work, they are built on our own stack, and they are ready for evaluation in a real environment. Beta means we will be close to you while you use them &mdash; not that they are demos.
+      <strong>All products are in beta.</strong> Evaluate each product against your environment and requirements. Deployment models and available capabilities vary by product.
     </div>
+  </div>
+</section>
+
+<section id="dummu" class="sec-alt">
+  <div class="container">
+    <div class="sec-label">Featured product</div>
+    <div class="flagship"><div class="flagship-inner">
+      <span class="badge badge-beta">Beta &middot; Evaluation</span>
+      <h2 style="margin-top:20px">Dummu</h2>
+      <p class="flagship-lede">An autonomous platform for operations, agents, and continuous learning.</p>
+      <p class="body">For SRE, platform engineering, and IT operations teams. Dummu connects incident signals to recommendations and approved remediation, and lets teams build operational agents from natural-language instructions, with tools and action boundaries they control.</p>
+      <p class="body">Policy checks, approvals, dry-run, kill switches, and tamper-evident audit records sit in the execution path. Continuous reinforcement learning uses resolution outcomes, time taken, tool efficiency, and operator feedback to improve diagnostic choices.</p>
+      <div class="hero-buttons"><a href="/products/dummu/" class="btn btn-primary">Explore Dummu &rarr;</a><a href="/contact/" class="btn btn-ghost">Request a demonstration</a></div>
+    </div></div>
   </div>
 </section>
 
@@ -216,20 +231,7 @@
   </div>
 </section>
 
-<!-- Why buy -->
-<section id="why-buy">
-  <div class="container">
-    <div class="sec-label sr">Why buy from DevHeal</div>
-    <h2 class="sec-title sr d1">Four reasons that survive scrutiny</h2>
-    <div class="grid-2 sr d2">
-      <div class="card"><h3 style="margin:0 0 8px;font-size:1.02rem;font-weight:800">One stack, not eight vendors</h3><p style="color:var(--muted);font-size:.88rem;line-height:1.7">Every product here runs on the same language and runtime. Your agents, your interfaces, your operations tooling and your inference share one execution model &mdash; so there is one thing to learn, one thing to deploy and one thing to debug.</p></div>
-      <div class="card"><h3 style="margin:0 0 8px;font-size:1.02rem;font-weight:800">You are not renting someone else's model</h3><p style="color:var(--muted);font-size:.88rem;line-height:1.7">We build the compiler, the runtime and the inference engine. That means no provider whose pricing, availability or policy change becomes your emergency &mdash; and no per-token bill that grows with your success.</p></div>
-      <div class="card"><h3 style="margin:0 0 8px;font-size:1.02rem;font-weight:800">Autonomy was the starting point</h3><p style="color:var(--muted);font-size:.88rem;line-height:1.7">Agents and tools are keywords in the language, not a framework layered on afterwards. Governance and operations were designed alongside execution rather than retrofitted once agents started taking actions.</p></div>
-      <div class="card"><h3 style="margin:0 0 8px;font-size:1.02rem;font-weight:800">It deploys where you need it</h3><p style="color:var(--muted);font-size:.88rem;line-height:1.7">Single binary, no runtime dependencies, CPU-only inference. That covers your datacentre, an air-gapped environment and an edge device without three different architectures.</p></div>
-    </div>
-  </div>
-</section>
-
+<section><div class="container"><div class="sec-label">Choose your starting point</div><h2 class="sec-title">Operations platform or development foundation?</h2><p class="sec-desc">Choose Dummu as your autonomous platform for operations and governed agents in your Kubernetes environment. Choose NC, NC UI, and NC AI for the language, interface generation, and local inference foundation. Evaluate each product&rsquo;s deployment requirements separately.</p></div></section>
 <section class="cta-band">
   <div class="container">
     <h2 class="sr">Which job is costing you most?</h2>
@@ -242,15 +244,11 @@
 </section>
 <footer>
   <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand"><div class="f-logo">DevHeal<span> Labs AI</span></div><div class="f-tag">Autonomous by Design</div><p>Engineering infrastructure for autonomous AI systems.</p></div>
-      <div class="f-col"><h5>Solutions</h5><ul><li><a href="/solutions/ai-development/">AI Development</a></li><li><a href="/solutions/private-ai/">Private &amp; Local AI</a></li><li><a href="/solutions/ai-native-development/">AI-Native Development</a></li><li><a href="/solutions/autonomous-operations/">Autonomous Operations</a></li><li><a href="/solutions/agent-governance/">Agent Governance</a></li></ul></div>
-      <div class="f-col"><h5>Products</h5><ul><li><a href="/products/">All products</a></li><li><a href="/products/#build">NC &middot; NC UI &middot; NC AI</a></li><li><a href="/products/#operate">HiveANT &middot; SwarmOps</a></li><li><a href="/products/#govern">AGP &middot; AgentOS</a></li><li><a href="/products/#apply">NeuralEdge &middot; NOVA</a></li></ul></div>
-      <div class="f-col"><h5>Industries</h5><ul><li><a href="/industries/financial-services/">Financial Services</a></li><li><a href="/industries/technology/">Technology &amp; SaaS</a></li><li><a href="/industries/healthcare/">Healthcare</a></li><li><a href="/industries/industrial/">Manufacturing</a></li></ul></div>
-      <div class="f-col"><h5>Evidence</h5><ul><li><a href="/why-devheal/">Why DevHeal</a></li><li><a href="/proof/">Proof</a></li><li><a href="/benchmarks/">Benchmarks</a></li><li><a href="/ip/">Patents &amp; IP</a></li><li><a href="/research/">Research</a></li></ul></div>
-      <div class="f-col"><h5>Engage</h5><ul><li><a href="/design-partner/">Design Partner</a></li><li><a href="/services/">Engagements</a></li><li><a href="/enterprise/">Enterprise</a></li><li><a href="/company/#contact">Contact</a></li></ul></div>
+    <div class="footer-simple">
+      <a href="/" class="footer-logo" aria-label="DevHeal Labs AI home"><img src="/logo.png" alt="" width="68" height="62"><span class="f-logo">DevHeal<span> Labs AI</span></span></a>
+      <nav class="footer-essential" aria-label="Footer navigation"><a href="/products/">Products</a><a href="/company/">Company</a><a href="/contact/">Contact Us</a></nav>
+      <address class="footer-address">IDA Mallapur, Hyderabad,<br>Telangana, India</address>
     </div>
-    <div class="legal-block"><strong>DEVHEAL LABS AI PRIVATE LIMITED</strong><br>CIN: U62011TS2026PTC219968</div>
     <div class="footer-bottom"><span>&copy; 2026 DevHeal Labs AI Private Limited. All rights reserved.</span></div>
   </div>
 </footer>
