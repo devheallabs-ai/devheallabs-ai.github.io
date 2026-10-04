@@ -611,6 +611,9 @@ table.dh tbody tr:hover{background:var(--glass-2)}
 footer{border-top:1px solid var(--line);padding:56px 0 32px;background:var(--bg-subtle);position:relative}
 .footer-grid{display:grid;grid-template-columns:minmax(0,1.6fr) repeat(5,minmax(0,1fr));align-items:start;gap:24px;margin-bottom:40px}
 .footer-grid > *{min-width:0}
+.footer-brand .footer-logo{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+.footer-logo img{width:68px;height:62px;object-fit:contain;padding:5px;background:#fff;border:1px solid rgba(17,17,28,.08);border-radius:12px;flex-shrink:0}
+.footer-brand .footer-logo .f-logo{margin-bottom:0}
 .footer-contacts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;border-top:1px solid var(--line);padding:24px 0;font-style:normal}
 .footer-contacts > div{min-width:0}
 .footer-contacts span{display:block;font-family:var(--mono);font-size:.72rem;color:var(--text-dim);margin-bottom:8px}
