@@ -60,7 +60,7 @@
       if (!event.target.closest('.nav-inner')) setMenu(false);
     });
     window.addEventListener('resize', function () {
-      if (window.innerWidth > 1180) setMenu(false);
+      if (window.innerWidth > 1280) setMenu(false);
     });
   }
 

@@ -17,7 +17,7 @@
 <link rel="canonical" href="https://devheallabs.com/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap">
-<link rel="stylesheet" href="/assets/style.css?v=20261004-simple-footer">
+<link rel="stylesheet" href="/assets/style.css?v=20261004-dummu">
 </head>
 <body>
 <a class="skip-link" href="#main-content">Skip to content</a>
@@ -37,6 +37,7 @@
       </li>
       <li class="nav-has-drop"><a href="/products/">Products</a>
         <ul class="nav-drop">
+          <li><a href="/products/dummu/">Dummu<span class="nd-sub">Autonomous platform &amp; agent building</span></a></li>
           <li><a href="/products/#build">NC &middot; NC UI &middot; NC AI<span class="nd-sub">Build &mdash; language, interface, local inference</span></a></li>
           <li><a href="/products/#operate">HiveANT &middot; SwarmOps<span class="nd-sub">Operate &mdash; autonomous incident response</span></a></li>
           <li><a href="/products/#govern">AGP &middot; AgentOS<span class="nd-sub">Govern &amp; run &mdash; agent boundaries and runtime</span></a></li>
@@ -109,7 +110,7 @@
   <div class="container">
     <div class="sec-label">Evidence you can inspect</div>
     <h2 class="sec-title">Try it. Read it. Test it.</h2>
-    <p class="sec-desc">Working examples and public source are available today. Production outcomes still need to be established through pilots.</p>
+    <p class="sec-desc">Explore NC examples and public source. Dummu has a client deployment with reported MTTR improvement; evaluate each product against your own baseline.</p>
     <div class="grid-3">
       <a class="p-card" href="/playground/"><span class="badge badge-available">Examples</span><h3>Explore the language</h3><p>Open the playground to edit sample programs. To verify runtime behaviour, install NC and run the code locally.</p><span class="p-link">Open the playground &rarr;</span></a>
       <a class="p-card" href="https://github.com/devheallabs-ai/nc" target="_blank" rel="noopener"><span class="badge badge-available">Public source</span><h3>Inspect the implementation</h3><p>Read the compiler and runtime source, installation instructions, and tests in the NC repository.</p><span class="p-link">View NC on GitHub &rarr;</span></a>
@@ -119,12 +120,20 @@
   </div>
 </section>
 
-<section class="sec-alt" id="products">
-  <div class="container stack-summary">
-    <div><div class="sec-label">One foundation</div><h2 class="sec-title">A language, runtime, and local inference engine.</h2></div>
-    <div><p class="sec-desc">NC is the starting point. NC UI adds interface generation, and NC AI adds local inference. The wider portfolio explores operations, governance, and domain applications on that foundation.</p><p class="hero-note">All products are in beta. Check each product&rsquo;s evidence and evaluation requirements.</p><a class="section-link" href="/products/">Explore the full stack &rarr;</a></div>
+<section id="products" class="sec-alt">
+  <div class="container">
+    <div class="sec-label">Featured product</div>
+    <div class="flagship"><div class="flagship-inner">
+      <span class="badge badge-beta">Beta &middot; Evaluation</span>
+      <h2 style="margin-top:20px">Dummu</h2>
+      <p class="flagship-lede">An autonomous platform for operations, agents, and continuous learning.</p>
+      <p class="body">For SRE, platform engineering, and IT operations teams. Dummu connects incident signals to recommendations and approved remediation, and lets teams build operational agents from natural-language instructions, with tools and action boundaries they control.</p>
+      <p class="body">Policy checks, approvals, dry-run, kill switches, and tamper-evident audit records sit in the execution path. Continuous reinforcement learning uses resolution outcomes, time taken, tool efficiency, and operator feedback to improve diagnostic choices.</p>
+      <div class="hero-buttons"><a href="/products/dummu/" class="btn btn-primary">Explore Dummu &rarr;</a><a href="/contact/" class="btn btn-ghost">Request a demonstration</a></div>
+    </div></div>
   </div>
 </section>
+
 
 <section class="cta-band" id="start">
   <div class="container">
