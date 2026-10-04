@@ -4,22 +4,23 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>DevHeal Labs AI &mdash; Autonomous by Design</title>
-<meta name="description" content="DevHeal Labs AI builds the language, runtime and inference engine for AI systems that take actions. Start with the business problem; every claim is checkable.">
+<meta name="description" content="DevHeal Labs AI builds the language, runtime and inference engine for AI systems that take actions. Explore working examples, public source and a scoped pilot.">
 <link rel="icon" type="image/png" href="/favicon.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <meta property="og:title" content="DevHeal Labs AI &mdash; Autonomous by Design">
-<meta property="og:description" content="DevHeal Labs AI builds the language, runtime and inference engine for AI systems that take actions. Start with the business problem; every claim is checkable.">
+<meta property="og:description" content="DevHeal Labs AI builds the language, runtime and inference engine for AI systems that take actions. Explore working examples, public source and a scoped pilot.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://devheallabs.in/">
-<meta property="og:image" content="https://devheallabs.in/logo.png">
+<meta property="og:url" content="https://devheallabs.com/">
+<meta property="og:image" content="https://devheallabs.com/logo.png">
 <meta property="og:site_name" content="DevHeal Labs AI">
 <meta name="twitter:card" content="summary">
-<link rel="canonical" href="https://devheallabs.in/">
+<link rel="canonical" href="https://devheallabs.com/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap">
 <link rel="stylesheet" href="/assets/style.css">
 </head>
 <body>
+<a class="skip-link" href="#main-content">Skip to content</a>
 <nav class="nav" id="nav">
   <div class="nav-inner">
     <a href="/" class="nav-logo"><img src="/logo.png" alt="DevHeal Labs AI" class="logo-icon"> DevHeal<span>Labs AI</span></a>
@@ -65,215 +66,78 @@
     <button class="hamburger" aria-label="Menu">&#9776;</button>
   </div>
 </nav>
+<main id="main-content">
 <section class="hero" id="hero">
   <div class="hero-content hero-split">
     <div class="hero-copy">
-      <div class="hero-badge sr"><span class="dot"></span> Autonomous by Design</div>
-      <h1 class="sr d1">AI is learning to <span class="gt">act</span>, not just answer</h1>
-      <p class="hero-desc sr d2">That changes what software has to guarantee. DevHeal Labs AI builds the language, runtime and inference engine for systems that take actions &mdash; so autonomy is a property of the programming model, not a library bolted on top.</p>
-      <p class="motto sr d2" style="margin-bottom:34px"><b>People</b><span class="sep">+</span><b>AI</b><span class="sep">+</span><b>Possibilities</b></p>
-      <div class="hero-buttons sr d3">
-        <a href="/solutions/" class="btn btn-primary">Start with your problem <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-        <a href="https://nc.devheallabs.in" class="btn btn-ghost" target="_blank" rel="noopener">Install and try it</a>
+      <div class="hero-badge"><span class="dot"></span> Autonomous by Design</div>
+      <h1>Build AI systems.<br><span class="gt">Start with NC.</span></h1>
+      <p class="hero-desc">For developers building services and AI agents, NC brings the language and runtime together in one binary. Add local inference with NC AI, and build on your own infrastructure.</p>
+      <div class="hero-buttons">
+        <a href="/playground/?code=b24gR0VUICIvaGVhbHRoIjoKICAgIHJlc3BvbmQgd2l0aCB7c3RhdHVzOiAib2sifQoKc2VydmUgb24gcG9ydCA4MDgw" class="btn btn-primary">Explore the example &rarr;</a>
+        <a href="/design-partner/" class="btn btn-ghost">Start a pilot</a>
       </div>
+      <p class="hero-note">Beta &middot; Public source &middot; Install and evaluate locally</p>
     </div>
+    <div class="hero-visual code-demo">
+      <div class="hv-head"><span>A service in four lines</span><span>NC</span></div>
+      <pre class="demo-source"><code><span class="kw">on GET</span> <span class="st">"/health"</span>:
+    <span class="kw">respond with</span> {status: <span class="st">"ok"</span>}
 
-    <div class="hero-visual sr d2">
-      <div class="hv-head"><span>Two ways in</span><span>Pick one</span></div>
-      <ul class="hv-list">
-        <li><span class="hv-name"><strong>I have a problem</strong> &mdash; see if we address it</span><a href="/solutions/" style="color:var(--accent);font-weight:600;font-size:.82rem">Solutions &rarr;</a></li>
-        <li><span class="hv-name"><strong>I want to try it</strong> &mdash; install in one command</span><a href="https://nc.devheallabs.in" target="_blank" rel="noopener" style="color:var(--accent);font-weight:600;font-size:.82rem">NC &rarr;</a></li>
-        <li><span class="hv-name"><strong>Is any of this real?</strong> &mdash; the evidence ladder</span><a href="/proof/" style="color:var(--accent);font-weight:600;font-size:.82rem">Proof &rarr;</a></li>
-        <li><span class="hv-name"><strong>Why you?</strong> &mdash; and where we are early</span><a href="/why-devheal/" style="color:var(--accent);font-weight:600;font-size:.82rem">Why DevHeal &rarr;</a></li>
-      </ul>
-      <div class="hv-foot">Every product is in beta and ready to evaluate. We are early &mdash; you would be among the first, and we say so.</div>
+<span class="kw">serve on port</span> <span class="nu">8080</span></code></pre>
+      <div class="demo-response"><span class="demo-label">Expected response &middot; GET /health</span><pre><code>{"status": "ok"}</code></pre></div>
+      <div class="hv-foot">An excerpt from our HTTP example. <a href="/playground/?code=b24gR0VUICIvaGVhbHRoIjoKICAgIHJlc3BvbmQgd2l0aCB7c3RhdHVzOiAib2sifQoKc2VydmUgb24gcG9ydCA4MDgw">Open the editable code &rarr;</a></div>
     </div>
   </div>
 </section>
 
-<!-- The shift -->
-<section id="problem">
+<section class="sec-alt" id="solutions">
   <div class="container">
-    <div class="sec-label sr">The shift</div>
-    <h2 class="sec-title sr d1">From generating text to taking actions</h2>
-    <p class="sec-desc wide sr d2">A model that writes an answer is judged on quality. A system that files the ticket, changes the config or moves the money is judged on something else entirely &mdash; whether it should have been allowed to, and whether anyone can reconstruct why it did.</p>
-
-    <div class="flow sr d2">
-      <div class="flow-node">AI features</div>
-      <div class="flow-arrow">&rarr;</div>
-      <div class="flow-node">AI applications</div>
-      <div class="flow-arrow">&rarr;</div>
-      <div class="flow-node">Agents</div>
-      <div class="flow-arrow">&rarr;</div>
-      <div class="flow-node accent">Autonomous systems</div>
+    <div class="sec-label">What you can build</div>
+    <h2 class="sec-title">Start with a practical use.</h2>
+    <p class="sec-desc">Explore one workflow first, then evaluate it against the requirements of your own environment.</p>
+    <div class="grid-3">
+      <a class="p-card" href="/solutions/ai-development/"><div class="p-icon" aria-hidden="true">01</div><h3>Services and APIs</h3><p>Define routes, handle requests, and connect data using NC. Start with the HTTP example and build from there.</p><span class="p-link">Explore AI development &rarr;</span></a>
+      <a class="p-card" href="/solutions/private-ai/"><div class="p-icon" aria-hidden="true">02</div><h3>AI on your infrastructure</h3><p>Evaluate NC AI for local inference on ordinary processors, with your data kept on the machine.</p><span class="p-link">Explore private AI &rarr;</span></a>
+      <a class="p-card" href="/solutions/ai-native-development/"><div class="p-icon" aria-hidden="true">03</div><h3>Agents with tools</h3><p>Use agents and tools as language primitives. Review the execution model before granting access to a real workflow.</p><span class="p-link">Explore agent development &rarr;</span></a>
     </div>
-
-    <p class="sec-desc wide sr d3">Each step to the right adds capability and subtracts certainty. The engineering problems that appear are not model problems &mdash; they are infrastructure problems: execution, control, evaluation, recovery, audit.</p>
+    <a class="section-link" href="/solutions/">Browse all solutions &rarr;</a>
   </div>
 </section>
 
-<!-- The challenge -->
-<section class="sec-alt" id="challenge">
+<section id="proof">
   <div class="container">
-    <div class="sec-label sr">What autonomy introduces</div>
-    <h2 class="sec-title sr d1">Five problems that arrive with the capability</h2>
-    <div class="grid-3 sr d2">
-      <div class="card"><h3 style="margin:0 0 8px;font-size:1rem;font-weight:800">Complexity</h3><p style="color:var(--muted);font-size:.88rem;line-height:1.7">Every AI feature drags in a stack of frameworks, SDKs and deployment machinery before any of your own logic runs.</p></div>
-      <div class="card"><h3 style="margin:0 0 8px;font-size:1rem;font-weight:800">Control</h3><p style="color:var(--muted);font-size:.88rem;line-height:1.7">Knowing which agent acted is not the same as bounding how much one input was allowed to shape what it did.</p></div>
-      <div class="card"><h3 style="margin:0 0 8px;font-size:1rem;font-weight:800">Privacy</h3><p style="color:var(--muted);font-size:.88rem;line-height:1.7">Some data cannot be sent to a hosted provider &mdash; which decides whether the project happens at all.</p></div>
-      <div class="card"><h3 style="margin:0 0 8px;font-size:1rem;font-weight:800">Operations</h3><p style="color:var(--muted);font-size:.88rem;line-height:1.7">Systems produce signals faster than people can investigate them, and that gap widens with every service added.</p></div>
-      <div class="card"><h3 style="margin:0 0 8px;font-size:1rem;font-weight:800">Reliability</h3><p style="color:var(--muted);font-size:.88rem;line-height:1.7">Without evaluation and recovery you cannot grant autonomy &mdash; so the system stays human-gated and the value never lands.</p></div>
-      <div class="card"><h3 style="margin:0 0 8px;font-size:1rem;font-weight:800">Lock-in</h3><p style="color:var(--muted);font-size:.88rem;line-height:1.7">Building on one provider's API makes that provider's pricing, availability and policy your own.</p></div>
+    <div class="sec-label">Evidence you can inspect</div>
+    <h2 class="sec-title">Try it. Read it. Test it.</h2>
+    <p class="sec-desc">Working examples and public source are available today. Production outcomes still need to be established through pilots.</p>
+    <div class="grid-3">
+      <a class="p-card" href="/playground/"><span class="badge badge-available">Examples</span><h3>Explore the language</h3><p>Open the playground to edit sample programs. To verify runtime behaviour, install NC and run the code locally.</p><span class="p-link">Open the playground &rarr;</span></a>
+      <a class="p-card" href="https://github.com/devheallabs-ai/nc" target="_blank" rel="noopener"><span class="badge badge-available">Public source</span><h3>Inspect the implementation</h3><p>Read the compiler and runtime source, installation instructions, and tests in the NC repository.</p><span class="p-link">View NC on GitHub &rarr;</span></a>
+      <a class="p-card" href="/benchmarks/"><span class="badge badge-beta">Measured results</span><h3>Check the conditions</h3><p>Review our published measurements and their methods. Evaluate model quality and performance on your own hardware.</p><span class="p-link">Read the benchmarks &rarr;</span></a>
     </div>
+    <a class="section-link" href="/proof/">See the evidence and current limitations &rarr;</a>
   </div>
 </section>
 
-<!-- Solutions -->
-<section id="solutions">
-  <div class="container">
-    <div class="sec-label sr">Where we can help</div>
-    <h2 class="sec-title sr d1">Pick the problem that is costing you</h2>
-    <p class="sec-desc wide sr d2">Each page states who has the problem, what it costs, which product addresses it and what changes when it is handled.</p>
-
-    <div class="grid-3 sr d2">
-      <div class="card">
-        <span class="badge badge-beta">Beta</span>
-        <h3 style="margin:14px 0 8px;font-size:1.02rem;font-weight:800">AI development complexity</h3>
-        <p style="color:var(--muted);font-size:.88rem;line-height:1.7;margin-bottom:12px">Seven dependencies before your own logic runs.</p>
-        <a href="/solutions/ai-development/" style="color:var(--accent);font-weight:600;font-size:.88rem">See the problem &rarr;</a>
-      </div>
-      <div class="card">
-        <span class="badge badge-beta">Beta</span>
-        <h3 style="margin:14px 0 8px;font-size:1.02rem;font-weight:800">Private &amp; local AI</h3>
-        <p style="color:var(--muted);font-size:.88rem;line-height:1.7;margin-bottom:12px">When the data is not allowed to leave.</p>
-        <a href="/solutions/private-ai/" style="color:var(--accent);font-weight:600;font-size:.88rem">See the problem &rarr;</a>
-      </div>
-      <div class="card">
-        <span class="badge badge-beta">Beta</span>
-        <h3 style="margin:14px 0 8px;font-size:1.02rem;font-weight:800">AI-native development</h3>
-        <p style="color:var(--muted);font-size:.88rem;line-height:1.7;margin-bottom:12px">Agents as language primitives, not libraries.</p>
-        <a href="/solutions/ai-native-development/" style="color:var(--accent);font-weight:600;font-size:.88rem">See the problem &rarr;</a>
-      </div>
-      <div class="card">
-        <span class="badge badge-beta">Beta</span>
-        <h3 style="margin:14px 0 8px;font-size:1.02rem;font-weight:800">Autonomous operations</h3>
-        <p style="color:var(--muted);font-size:.88rem;line-height:1.7;margin-bottom:12px">Investigation is where incident time actually goes.</p>
-        <a href="/solutions/autonomous-operations/" style="color:var(--accent);font-weight:600;font-size:.88rem">See the problem &rarr;</a>
-      </div>
-      <div class="card">
-        <span class="badge badge-beta">Beta</span>
-        <h3 style="margin:14px 0 8px;font-size:1.02rem;font-weight:800">Agent governance</h3>
-        <p style="color:var(--muted);font-size:.88rem;line-height:1.7;margin-bottom:12px">Bounding how much any one input shapes a privileged action.</p>
-        <a href="/solutions/agent-governance/" style="color:var(--accent);font-weight:600;font-size:.88rem">See the problem &rarr;</a>
-      </div>
-      <div class="card" style="display:flex;flex-direction:column;justify-content:center;align-items:flex-start">
-        <h3 style="margin:0 0 8px;font-size:1.02rem;font-weight:800">Something else?</h3>
-        <p style="color:var(--muted);font-size:.88rem;line-height:1.7;margin-bottom:12px">If your problem is not here, we would rather tell you we are not the answer.</p>
-        <a href="/company/#contact" style="color:var(--accent);font-weight:600;font-size:.88rem">Describe it &rarr;</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Products -->
 <section class="sec-alt" id="products">
-  <div class="container">
-    <div class="sec-label sr">Products</div>
-    <h2 class="sec-title sr d1">Eight products, one stack underneath</h2>
-    <p class="sec-desc wide sr d2">All in beta and ready for evaluation in a real environment. Every one runs on the same language and runtime, so they share an execution model rather than being eight separate integrations.</p>
-
-    <h3 class="sr d2" style="margin:34px 0 4px;font-size:1.1rem;font-weight:800">Build</h3>
-    <p class="sr d2" style="color:var(--muted);font-size:.88rem;margin-bottom:18px">Ship AI systems without assembling a stack first.</p>
-    <div class="grid-3 sr d2">
-      <div class="card"><span class="badge badge-beta">Beta</span><h3 style="margin:14px 0 8px;font-size:1.02rem;font-weight:800">NC</h3><p style="color:var(--muted);font-size:.88rem;line-height:1.7">The language and runtime. <code>agent</code> and <code>@tool</code> are keywords, not a framework. One binary, no runtime dependencies.</p>
-        <a href="https://nc.devheallabs.in" target="_blank" rel="noopener" style="display:inline-block;margin-top:12px;color:var(--accent);font-weight:600;font-size:.88rem">Try NC &rarr;</a></div>
-      <div class="card"><span class="badge badge-beta">Beta</span><h3 style="margin:14px 0 8px;font-size:1.02rem;font-weight:800">NC UI</h3><p style="color:var(--muted);font-size:.88rem;line-height:1.7">Interface layer. Plain English in, static HTML/CSS/JS out &mdash; nothing proprietary runs on your server.</p>
-        <a href="https://ncui.devheallabs.in" target="_blank" rel="noopener" style="display:inline-block;margin-top:12px;color:var(--accent);font-weight:600;font-size:.88rem">Try NC UI &rarr;</a></div>
-      <div class="card"><span class="badge badge-beta">Beta</span><h3 style="margin:14px 0 8px;font-size:1.02rem;font-weight:800">NC AI</h3><p style="color:var(--muted);font-size:.88rem;line-height:1.7">Local inference in the same binary. Ordinary CPU, no account, no per-token bill, data never leaves the machine.</p>
-        <a href="https://ncai.devheallabs.in" target="_blank" rel="noopener" style="display:inline-block;margin-top:12px;color:var(--accent);font-weight:600;font-size:.88rem">Try NC AI &rarr;</a></div>
-    </div>
-
-    <h3 class="sr d3" style="margin:42px 0 4px;font-size:1.1rem;font-weight:800">Operate</h3>
-    <p class="sr d3" style="color:var(--muted);font-size:.88rem;margin-bottom:18px">Cut the time between something breaking and somebody understanding why.</p>
-    <div class="grid-2 sr d3">
-      <div class="card"><span class="badge badge-beta">Beta</span><h3 style="margin:14px 0 8px;font-size:1.02rem;font-weight:800">HiveANT</h3><p style="color:var(--muted);font-size:.88rem;line-height:1.7">Twelve agent types investigate in parallel, coordinated by swarm optimisation. Digital-twin analysis predicts a fix's blast radius before it is applied.</p></div>
-      <div class="card"><span class="badge badge-beta">Beta</span><h3 style="margin:14px 0 8px;font-size:1.02rem;font-weight:800">SwarmOps</h3><p style="color:var(--muted);font-size:.88rem;line-height:1.7">Detects anomalies, correlates across metrics, logs and traces, and remediates within the authority you grant. Learns which fixes actually worked.</p></div>
-    </div>
-
-    <h3 class="sr d3" style="margin:42px 0 4px;font-size:1.1rem;font-weight:800">Govern &amp; run</h3>
-    <p class="sr d3" style="color:var(--muted);font-size:.88rem;margin-bottom:18px">Let agents act without that becoming your largest unbounded risk.</p>
-    <div class="grid-2 sr d3">
-      <div class="card"><span class="badge badge-beta">Beta</span><h3 style="margin:14px 0 8px;font-size:1.02rem;font-weight:800">AGP</h3><p style="color:var(--muted);font-size:.88rem;line-height:1.7">Bounds how much any single input may shape a privileged action, refuses it before commit when the budget is exceeded, and leaves a causal receipt.</p></div>
-      <div class="card"><span class="badge badge-beta">Beta</span><h3 style="margin:14px 0 8px;font-size:1.02rem;font-weight:800">AgentOS</h3><p style="color:var(--muted);font-size:.88rem;line-height:1.7">One shared runtime under your agents &mdash; execution, state, memory, tools, identity, scheduling &mdash; instead of several bespoke ones drifting apart.</p></div>
-    </div>
-
-    <h3 class="sr d3" style="margin:42px 0 4px;font-size:1.1rem;font-weight:800">Apply</h3>
-    <p class="sr d3" style="color:var(--muted);font-size:.88rem;margin-bottom:18px">The stack aimed at a domain, and the architecture that makes it possible.</p>
-    <div class="grid-2 sr d3">
-      <div class="card"><span class="badge badge-beta">Beta</span><h3 style="margin:14px 0 8px;font-size:1.02rem;font-weight:800">NeuralEdge</h3><p style="color:var(--muted);font-size:.88rem;line-height:1.7">Financial intelligence: 30+ indicators, portfolio optimisation, risk metrics and sentiment behind 81+ API endpoints, as one deployable unit.</p></div>
-      <div class="card"><span class="badge badge-beta">Beta</span><h3 style="margin:14px 0 8px;font-size:1.02rem;font-weight:800">NOVA</h3><p style="color:var(--muted);font-size:.88rem;line-height:1.7">The hybrid state-space architecture behind NC AI &mdash; linear-time inference with an integrated knowledge graph, built for ordinary processors.</p></div>
-    </div>
-
-    <div class="hero-buttons sr d3" style="margin-top:32px;margin-bottom:0">
-      <a href="/products/" class="btn btn-primary">What each one solves</a>
-      <a href="/industries/" class="btn btn-ghost">How they get used</a>
-    </div>
+  <div class="container stack-summary">
+    <div><div class="sec-label">One foundation</div><h2 class="sec-title">A language, runtime, and local inference engine.</h2></div>
+    <div><p class="sec-desc">NC is the starting point. NC UI adds interface generation, and NC AI adds local inference. The wider portfolio explores operations, governance, and domain applications on that foundation.</p><p class="hero-note">All products are in beta. Check each product&rsquo;s evidence and evaluation requirements.</p><a class="section-link" href="/products/">Explore the full stack &rarr;</a></div>
   </div>
 </section>
 
-<!-- Why -->
-<section id="why">
+<section class="cta-band" id="start">
   <div class="container">
-    <div class="sec-label sr">Why DevHeal</div>
-    <h2 class="sec-title sr d1">Claims you can falsify in an afternoon</h2>
-    <p class="sec-desc wide sr d2">We have no customer logos to show you. So the differentiators are built to be checkable instead: install the binary and test each one yourself.</p>
-    <div class="grid-3 sr d2">
-      <div class="card"><h3 style="margin:0 0 8px;font-size:1rem;font-weight:800">Autonomy is the design principle</h3><p style="color:var(--muted);font-size:.88rem;line-height:1.7">Tools and agents are keywords in the grammar, not a library on top. Verify by reading the language reference.</p></div>
-      <div class="card"><h3 style="margin:0 0 8px;font-size:1rem;font-weight:800">We own the stack</h3><p style="color:var(--muted);font-size:.88rem;line-height:1.7">Our own compiler, VM and inference engine &mdash; not a wrapper over someone else's API. Verify by building from source.</p></div>
-      <div class="card"><h3 style="margin:0 0 8px;font-size:1rem;font-weight:800">CPU-only, one binary</h3><p style="color:var(--muted);font-size:.88rem;line-height:1.7">No GPU, no serving stack, no account. Verify by unplugging the network.</p></div>
-    </div>
-    <div class="hero-buttons sr d3" style="margin-top:30px;margin-bottom:0">
-      <a href="/why-devheal/" class="btn btn-primary">The full position</a>
-      <a href="/proof/" class="btn btn-ghost">The evidence ladder</a>
+    <div class="sec-label">Your next step</div>
+    <h2>Run an example.<br>Then bring a real problem.</h2>
+    <p>Explore NC at your own pace, or work with us on a scoped pilot with success criteria agreed before it starts.</p>
+    <div class="hero-buttons">
+      <a href="https://nc.devheallabs.in" class="btn btn-primary" target="_blank" rel="noopener">Install NC &rarr;</a>
+      <a href="/design-partner/" class="btn btn-ghost">Discuss a pilot</a>
     </div>
   </div>
 </section>
-
-<!-- Start -->
-<section class="sec-alt" id="start">
-  <div class="container">
-    <div class="sec-label sr">Getting started</div>
-    <h2 class="sec-title sr d1">Three ways in, by how much you want to commit</h2>
-    <div class="grid-3 sr d2">
-      <div class="card">
-        <h3 style="margin:0 0 8px;font-size:1.05rem;font-weight:800">Explore</h3>
-        <p style="color:var(--muted);font-size:.88rem;line-height:1.7;margin-bottom:12px">Install the binary, run the example, read the source. No conversation needed, and the fastest way to decide if any of this is real.</p>
-        <a href="https://nc.devheallabs.in" target="_blank" rel="noopener" style="color:var(--accent);font-weight:600;font-size:.88rem">Install NC &rarr;</a>
-      </div>
-      <div class="card">
-        <h3 style="margin:0 0 8px;font-size:1.05rem;font-weight:800">Pilot</h3>
-        <p style="color:var(--muted);font-size:.88rem;line-height:1.7;margin-bottom:12px">One real problem, success defined before we start, measured honestly at the end &mdash; including when the answer is no.</p>
-        <a href="/design-partner/" style="color:var(--accent);font-weight:600;font-size:.88rem">Design partner &rarr;</a>
-      </div>
-      <div class="card">
-        <h3 style="margin:0 0 8px;font-size:1.05rem;font-weight:800">Engage</h3>
-        <p style="color:var(--muted);font-size:.88rem;line-height:1.7;margin-bottom:12px">Scoped work with stated deliverables &mdash; assessment, evaluation, architecture review or custom development on our stack.</p>
-        <a href="/services/" style="color:var(--accent);font-weight:600;font-size:.88rem">Engagements &rarr;</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="cta-band">
-  <div class="container">
-    <h2 class="sr">Tell us the problem, not the product</h2>
-    <p class="sr d1">If we are not the right answer for it, we will say so. That is worth more to both of us than a pilot that was never going to work.</p>
-    <div class="hero-buttons sr d2" style="margin-bottom:0">
-      <a href="/design-partner/" class="btn btn-primary">Start a pilot</a>
-      <a href="/solutions/" class="btn btn-ghost">Browse the problems</a>
-    </div>
-  </div>
-</section>
+</main>
 <footer>
   <div class="container">
     <div class="footer-grid">
@@ -284,6 +148,11 @@
       <div class="f-col"><h5>Evidence</h5><ul><li><a href="/why-devheal/">Why DevHeal</a></li><li><a href="/proof/">Proof</a></li><li><a href="/benchmarks/">Benchmarks</a></li><li><a href="/ip/">Patents &amp; IP</a></li><li><a href="/research/">Research</a></li></ul></div>
       <div class="f-col"><h5>Engage</h5><ul><li><a href="/design-partner/">Design Partner</a></li><li><a href="/services/">Engagements</a></li><li><a href="/enterprise/">Enterprise</a></li><li><a href="/company/#contact">Contact</a></li></ul></div>
     </div>
+    <address class="footer-contacts" aria-label="Contact DevHeal Labs AI">
+      <div><span>Sales</span><a href="mailto:sales@devheallabs.com">sales@devheallabs.com</a></div>
+      <div><span>General enquiries</span><a href="mailto:info@devheallabs.com">info@devheallabs.com</a></div>
+      <div><span>CEO</span><a href="mailto:sainarender.nuckala@devheallabs.com">sainarender.nuckala@devheallabs.com</a></div>
+    </address>
     <div class="legal-block"><strong>DEVHEAL LABS AI PRIVATE LIMITED</strong><br>CIN: U62011TS2026PTC219968</div>
     <div class="footer-bottom"><span>&copy; 2026 DevHeal Labs AI Private Limited. All rights reserved.</span></div>
   </div>
