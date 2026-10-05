@@ -81,3 +81,9 @@ test('interactive cards and panel tabs use native keyboard controls', () => {
   assert.equal((html.match(/role="tabpanel" aria-labelledby=/g) || []).length, 3);
   assert.match(script, /const el = document.createElement\('button'\)/);
 });
+
+test('unconfigured runner downloads source without a network request', async () => {
+  let downloaded = false;
+  const ctx = harness({ PLAYGROUND_API: '', downloadCode() { downloaded = true; }, fetch() { throw new Error('Unexpected request'); } });
+  await ctx.runCode(); assert.equal(downloaded, true);
+});

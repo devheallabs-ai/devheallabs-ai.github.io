@@ -4,11 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Proof &mdash; DevHeal Labs AI</title>
-<meta name="description" content="Explore DevHeal demonstrations, public source, measured benchmarks and Dummu client experience.">
+<meta name="description" content="Explore DevHeal demonstrations, public source, benchmark methodology and Dummu client experience.">
 <link rel="icon" type="image/png" href="/favicon.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <meta property="og:title" content="Proof &mdash; DevHeal Labs AI">
-<meta property="og:description" content="Explore DevHeal demonstrations, public source, measured benchmarks and Dummu client experience.">
+<meta property="og:description" content="Explore DevHeal demonstrations, public source, benchmark methodology and Dummu client experience.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://devheallabs.com/proof/">
 <meta property="og:image" content="https://devheallabs.com/logo.png">
@@ -17,9 +17,10 @@
 <link rel="canonical" href="https://devheallabs.com/proof/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap">
-<link rel="stylesheet" href="/assets/style.css?v=20261005-catalogue">
+<link rel="stylesheet" href="/assets/style.css?v=20261005-review">
 </head>
 <body>
+<a class="skip-link" href="#main-content">Skip to content</a>
 <nav class="nav" id="nav" aria-label="Main navigation">
   <div class="nav-inner">
     <a href="/" class="nav-logo"><img src="/logo.png?v=20261005" alt="" class="logo-icon">DevHeal<span>Labs AI</span></a>
@@ -70,11 +71,12 @@
     <button class="hamburger" aria-label="Open menu" aria-expanded="false">&#9776;</button>
   </div>
 </nav>
+<main id="main-content">
 <section class="page-hero">
   <div class="container">
     <div class="kicker sr">Proof</div>
     <h1 class="sr d1">Explore our <span class="gt">engineering evidence</span></h1>
-    <p class="lead sr d2">Explore working demonstrations, public repositories, measured results, and Dummu client experience. Evidence is specific to each product and deployment.</p>
+    <p class="lead sr d2">Explore working demonstrations, public repositories, evaluation methods, and Dummu client experience. Evidence is specific to each product and deployment.</p>
   </div>
 </section>
 
@@ -84,7 +86,7 @@
     <h2 class="sec-title sr d1">Source, measurements and client experience</h2>
     <div class="grid-3 sr d2">
       <a class="card" href="/developers/"><h3>Working examples and source</h3><p>Explore NC examples, public repositories and reproducible tests.</p></a>
-      <a class="card" href="/benchmarks/"><h3>Measured benchmarks</h3><p>Review internally measured results with their methods and scope.</p></a>
+      <a class="card" href="/benchmarks/"><h3>Benchmark methodology</h3><p>Review internally evaluation methods with their methods and scope.</p></a>
       <a class="card" href="/products/dummu/"><h3>Dummu in use</h3><p>DevHeal reports reduced MTTR in a client deployment. Contact our team to discuss the deployment and outcomes.</p></a>
     </div>
   </div>
@@ -95,9 +97,9 @@
     <div class="sec-label sr">Hands-on verification</div>
     <h2 class="sec-title sr d1">What you can verify today</h2>
     <div class="grid-3 sr d2">
-      <div class="card"><h3 style="margin:14px 0 8px;font-size:1rem;font-weight:800">Install the binary</h3><p style="color:var(--muted);font-size:.88rem;line-height:1.7">One command. No account. Confirms the single-binary and no-dependency claims in about a minute.</p></div>
-      <div class="card"><h3 style="margin:14px 0 8px;font-size:1rem;font-weight:800">Run the example</h3><p style="color:var(--muted);font-size:.88rem;line-height:1.7">A working backend and interface in about 40 lines. Confirms the development-complexity claim.</p></div>
-      <div class="card"><h3 style="margin:14px 0 8px;font-size:1rem;font-weight:800">Disconnect the network</h3><p style="color:var(--muted);font-size:.88rem;line-height:1.7">Generation still works. Confirms the local-inference claim directly.</p></div>
+      <div class="card"><h3 style="margin:14px 0 8px;font-size:1rem;font-weight:800">Install the binary</h3><p style="color:var(--muted);font-size:.88rem;line-height:1.7">Use the <a href="https://nc.devheallabs.in">NC installation resources</a>. Record the installed version and platform before testing.</p></div>
+      <div class="card"><h3 style="margin:14px 0 8px;font-size:1rem;font-weight:800">Run the example</h3><p style="color:var(--muted);font-size:.88rem;line-height:1.7">Save <code>show &quot;Hello from NC!&quot;</code> as <code>app.nc</code>, then run <code>nc app.nc</code>. Explore the <a href="https://github.com/devheallabs-ai/nc/tree/main/examples">source examples</a> for larger workflows.</p></div>
+      <div class="card"><h3 style="margin:14px 0 8px;font-size:1rem;font-weight:800">Disconnect the network</h3><p style="color:var(--muted);font-size:.88rem;line-height:1.7">Configure local inference and its model files, then repeat the same request with network access disabled. Record output, latency, and configuration.</p></div>
     </div>
   </div>
 </section>
@@ -106,18 +108,12 @@
   <div class="container">
     <div class="sec-label sr">Our rule on numbers</div>
     <h2 class="sec-title sr d1">Measurements with context</h2>
-    <p class="sec-desc wide sr d2">Published results include their measurement method and scope. Use the benchmark conditions to understand how each result applies to your environment.</p>
+    <p class="sec-desc wide sr d2">Assess results together with their measurement method and scope. Use the benchmark conditions to understand how each result applies to your environment.</p>
     <div class="callout sr d2">
       <strong>Evaluate against your goals.</strong> Define the workflows and operating conditions that matter to your team, then compare results against an agreed baseline.
     </div>
-    <div class="grid-4 sr d3" style="margin-top:26px">
-      <div class="stat"><div class="stat-val">2.1MB</div><div class="stat-label">Binary &mdash; Windows x64, full build</div></div>
-      <div class="stat"><div class="stat-val">114</div><div class="stat-label">Tests passing</div></div>
-      <div class="stat"><div class="stat-val">0</div><div class="stat-label">Runtime dependencies</div></div>
-      <div class="stat"><div class="stat-val">~20MB</div><div class="stat-label">Model on disk</div></div>
-    </div>
-  </div>
-</section>
+    <p class="sec-desc"><a href="/benchmarks/">Review the measurement methodology and benchmark source.</a></p>
+</div></section>
 
 <section class="sec-alt">
   <div class="container">
@@ -127,7 +123,7 @@
     <div class="flow sr d2">
       <div class="flow-node">Real problem</div>
       <div class="flow-arrow">&rarr;</div>
-      <div class="flow-node">Scoped pilot</div>
+      <div class="flow-node">Scoped deployment</div>
       <div class="flow-arrow">&rarr;</div>
       <div class="flow-node">Measured outcome</div>
       <div class="flow-arrow">&rarr;</div>
@@ -139,13 +135,14 @@
 <section class="cta-band">
   <div class="container">
     <h2 class="sr">Check the claims yourself</h2>
-    <p class="sr d1">Everything at levels one to three is available right now, with no conversation required.</p>
+    <p class="sr d1">Explore the public source and examples, then evaluate the workflow against your own requirements.</p>
     <div class="hero-buttons sr d2" style="margin-bottom:0">
       <a href="https://nc.devheallabs.in" class="btn btn-primary" target="_blank" rel="noopener">Install NC</a>
-      <a href="/design-partner/" class="btn btn-ghost">Become a design partner</a>
+      <a href="/design-partner/" class="btn btn-ghost">Discuss an engagement</a>
     </div>
   </div>
 </section>
+</main>
 <footer>
   <div class="container">
     <div class="footer-simple">
@@ -157,6 +154,6 @@
   </div>
 </footer>
 
-<script src="/assets/site.js?v=20261005-catalogue"></script>
+<script src="/assets/site.js?v=20261005-review"></script>
 </body>
 </html>

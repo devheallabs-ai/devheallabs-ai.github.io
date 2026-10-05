@@ -17,9 +17,10 @@
 <link rel="canonical" href="https://devheallabs.com/research/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
-<link rel="stylesheet" href="/assets/style.css?v=20261005-catalogue">
+<link rel="stylesheet" href="/assets/style.css?v=20261005-review">
 </head>
 <body>
+<a class="skip-link" href="#main-content">Skip to content</a>
 
 <nav class="nav" id="nav" aria-label="Main navigation">
   <div class="nav-inner">
@@ -72,6 +73,7 @@
   </div>
 </nav>
 
+<main id="main-content">
 <section class="page-hero">
   <div class="container">
     <div class="kicker sr">Research</div>
@@ -111,7 +113,7 @@
       <div class="card sr d3">
 
         <h3 style="margin:14px 0 8px;font-size:1.05rem;font-weight:800">Simulation</h3>
-        <p style="color:var(--muted);font-size:.88rem;line-height:1.7"><strong>Problem:</strong> most agent testing is a handful of manual prompts. <strong>Hypothesis:</strong> scenario-based simulation (tool failures, policy violations, adversarial inputs) catches failure modes unit tests can't. See DevHeal Simulator on the <a href="/#products" style="color:var(--cyan)">Platform</a> page.</p>
+        <p style="color:var(--muted);font-size:.88rem;line-height:1.7"><strong>Problem:</strong> most agent testing is a handful of manual prompts. <strong>Hypothesis:</strong> scenario-based simulation (tool failures, policy violations, adversarial inputs) catches failure modes unit tests can't. See DevHeal Simulator on the <a href="/technology/#simulator" style="color:var(--cyan)">architecture</a> page.</p>
       </div>
       <div class="card sr d4">
 
@@ -186,7 +188,7 @@
     <p class="sec-desc wide sr d2">Earlier-stage work, published for the curious. Real code, no benchmarks (or only self-generated ones) yet — so no performance claims below, just what each one is.</p>
     <ul class="sr d3" style="list-style:none;max-width:760px">
       <li style="padding:16px 0;border-bottom:1px solid var(--border-soft)"><strong>SLSP</strong> — a dimensionality-reduction technique (Cayley-transform projection, fixed-point arithmetic, branch-free constant-time code path) proposed as a side-channel leakage probe for cryptographic implementations. The constant-time property is sound by construction but not yet empirically verified; the leakage-detection mechanism has only been demonstrated on synthetic, self-generated data — not against a real cryptographic target. Early-stage proof-of-concept.</li>
-      <li style="padding:16px 0;border-bottom:1px solid var(--border-soft)"><strong>SEVK-C</strong> — see <a href="/whitepaper/#sevk-c" style="color:var(--cyan)">the white paper</a>: a working prototype that gates LLM output behind typed evidence contracts before any tool call. No benchmark numbers published yet.</li>
+
       <li style="padding:16px 0"><strong>Architecture bench</strong> — several smaller internal model-architecture explorations. Source and design documentation exist; no benchmarks or built artifacts exist yet for any of them.</li>
     </ul>
   </div>
@@ -206,6 +208,7 @@
   </div>
 </section>
 
+</main>
 <footer>
   <div class="container">
     <div class="footer-simple">
@@ -217,6 +220,6 @@
   </div>
 </footer>
 
-<script src="/assets/site.js?v=20261005-catalogue"></script>
+<script src="/assets/site.js?v=20261005-review"></script>
 </body>
 </html>

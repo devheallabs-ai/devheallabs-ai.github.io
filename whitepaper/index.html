@@ -4,11 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Technical White Paper — DevHeal Labs</title>
-<meta name="description" content="What's actually novel in DevHeal Labs' research: ORBIT's orthogonal recurrence, UTL-C's byte-exact tokenization, Cognitive Crystal's continual learning, and SEVK-C's evidence-gated tool use — each with its measured result and its limits.">
+<meta name="description" content="What's actually novel in DevHeal Labs' research: ORBIT's orthogonal recurrence, UTL-C's byte-exact tokenization, Cognitive Crystal's continual learning, and SEVK-C's evidence-gated tool use — with technical methods and evaluation scope.">
 <link rel="icon" type="image/png" href="/favicon.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <meta property="og:title" content="Technical White Paper — DevHeal Labs">
-<meta property="og:description" content="What's actually novel in DevHeal Labs' research: ORBIT's orthogonal recurrence, UTL-C's byte-exact tokenization, Cognitive Crystal's continual learning, and SEVK-C's evidence-gated tool use — each with its measured result and its limits.">
+<meta property="og:description" content="What's actually novel in DevHeal Labs' research: ORBIT's orthogonal recurrence, UTL-C's byte-exact tokenization, Cognitive Crystal's continual learning, and SEVK-C's evidence-gated tool use — with technical methods and evaluation scope.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://devheallabs.com/whitepaper/">
 <meta property="og:image" content="https://devheallabs.com/logo.png">
@@ -17,9 +17,10 @@
 <link rel="canonical" href="https://devheallabs.com/whitepaper/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
-<link rel="stylesheet" href="/assets/style.css?v=20261005-catalogue">
+<link rel="stylesheet" href="/assets/style.css?v=20261005-review">
 </head>
 <body>
+<a class="skip-link" href="#main-content">Skip to content</a>
 
 <nav class="nav" id="nav" aria-label="Main navigation">
   <div class="nav-inner">
@@ -72,11 +73,12 @@
   </div>
 </nav>
 
+<main id="main-content">
 <section class="page-hero">
   <div class="container">
     <div class="kicker sr">Technical White Paper</div>
     <h1 class="sr d1">Technical Whitepaper</h1>
-    <p class="lead sr d2">Explore the architectures behind our work in inference, tokenization, continual learning, and governed tool use, with methods, measured results, and technical scope.</p>
+    <p class="lead sr d2">Explore the architectures behind our work in inference, tokenization, continual learning, and governed tool use, with methods, evaluation methods, and technical scope.</p>
   </div>
 </section>
 
@@ -89,20 +91,14 @@
         <h2 class="sec-title" style="margin-top:16px">ORBIT — Orthogonal Recurrence with Delta-Rule Memory</h2>
         <p style="color:var(--muted);font-size:1rem;line-height:1.8;margin-bottom:16px"><strong>Problem.</strong> Attention's cost grows with context length, and most linear-recurrence alternatives trade away exactness for speed — the fast "parallel scan" form of the recurrence doesn't always match what a step-by-step (sequential) computation would have produced.</p>
         <p style="color:var(--muted);font-size:1rem;line-height:1.8;margin-bottom:16px"><strong>Approach.</strong> ORBIT uses an orthogonal (Cayley/Givens) recurrence combined with a gated delta-rule episodic memory bank, keeping state size constant per step (O(1)) regardless of sequence length.</p>
-        <p style="color:var(--muted);font-size:1rem;line-height:1.8"><strong>Technical scope.</strong> ORBIT superseded an earlier internal architecture (codenamed PRISM) after PRISM's own internal critique found several of its mechanisms contributed little in practice. ORBIT has been trained and measured at small scale (up to roughly 28M parameters) on CPU; the 10M–1B parameter range is the design target, not yet an achieved result. Its own benchmark log is explicit that instruction-following is "not yet reliable" — this is a research architecture, not an assistant.</p>
+        <p style="color:var(--muted);font-size:1rem;line-height:1.8"><strong>Technical scope.</strong> ORBIT studies constant-state recurrence and episodic memory. Evaluate numerical equivalence and language-model quality independently using a fixed source revision and dataset.</p>
       </div>
       <div class="term sr d2">
         <div class="dots"><i></i><i></i><i></i></div>
-        <pre><span class="cm">// what we actually measured</span>
-<span class="fn">scan_vs_sequential_rmse</span>  <span class="nu">≈ 5e-7</span>
-<span class="cm">// the fast parallel form matches the exact
-// step-by-step form to within numerical noise</span>
-
-<span class="fn">wikitext2_ppl</span>
-  orbit  <span class="nu">8.44</span>
-  baseline <span class="nu">7.53</span>  <span class="cm">// published reference, still ahead</span>
-
-<span class="fn">trained_params</span>  <span class="nu">~28.6M</span>  <span class="cm">largest CPU run to date</span></pre>
+        <pre><span class="cm">// ORBIT evaluation protocol</span>
+Compare parallel and sequential recurrence.
+Record numerical error, task quality,
+model size, dataset, and source revision.</pre>
       </div>
     </div>
   </div>
@@ -114,18 +110,17 @@
     <div class="grid-2" style="align-items:flex-start">
       <div class="term sr d1">
         <div class="dots"><i></i><i></i><i></i></div>
-        <pre><span class="cm">// UAX #29 grapheme-boundary conformance</span>
-<span class="fn">pass_rate</span>    <span class="nu">94.78%</span>  <span class="cm">(726 / 766 tests)</span>
-<span class="fn">decode_speed</span> <span class="nu">~316 MB/s</span> <span class="cm">(CPU, aggregate)</span>
-<span class="fn">encode_speed</span> <span class="nu">~31 MB/s</span>
-<span class="fn">roundtrip</span>    <span class="kw">decode(encode(x)) == x</span></pre>
+        <pre><span class="cm">// UTL-C evaluation protocol</span>
+Test byte-exact round trips and Unicode
+grapheme boundaries. Compare compression
+on identical corpora and settings.</pre>
       </div>
       <div class="sr d2">
 
         <h2 class="sec-title" style="margin-top:16px">UTL-C — Byte-Exact Tokenization</h2>
         <p style="color:var(--muted);font-size:1rem;line-height:1.8;margin-bottom:16px"><strong>Problem.</strong> Most production tokenizers are not byte-exact and are rarely benchmarked against the Unicode text-segmentation standard directly — grapheme-boundary errors quietly corrupt multilingual and emoji-heavy text.</p>
         <p style="color:var(--muted);font-size:1rem;line-height:1.8;margin-bottom:16px"><strong>Approach.</strong> A tokenizer written in C with a guarantee that decoding an encoding always reproduces the original bytes exactly, benchmarked directly against the Unicode UAX #29 conformance suite rather than an internal proxy metric.</p>
-        <p style="color:var(--muted);font-size:1rem;line-height:1.8"><strong>Technical scope.</strong> Real, buildable, independently benchmarked — and by its own documentation "not yet enterprise ready." It trails standard subword tokenizers on plain-text compression by a few percent; its advantage is measured specifically in grapheme-conformance and structured-token handling, not raw compression.</p>
+        <p style="color:var(--muted);font-size:1rem;line-height:1.8"><strong>Technical scope.</strong> UTL-C focuses on byte-exact tokenization, grapheme boundaries, and structured-token handling. Evaluate compression separately from Unicode conformance.</p>
       </div>
     </div>
   </div>
@@ -140,16 +135,14 @@
         <h2 class="sec-title" style="margin-top:16px">Cognitive Crystal — Continual Learning Without Catastrophic Forgetting</h2>
         <p style="color:var(--muted);font-size:1rem;line-height:1.8;margin-bottom:16px"><strong>Problem.</strong> A model trained on new data typically overwrites what it knew before — "catastrophic forgetting." The usual fix is storing large numbers of raw past examples to replay, which costs memory that scales with how much you want it to remember.</p>
         <p style="color:var(--muted);font-size:1rem;line-height:1.8;margin-bottom:16px"><strong>Approach.</strong> Instead of replaying raw examples, distill what was learned into a small number of compact prototypes and replay those.</p>
-        <p style="color:var(--muted);font-size:1rem;line-height:1.8"><strong>Technical scope.</strong> This result is specific to the Split-MNIST continual-learning benchmark and comes with real run-to-run variance (forgetting measured 98.4–98.9% naive, 23.7–25.4% distilled across runs). Our own internal review of this project was explicit and we're repeating it here rather than softening it: <strong>do not read this as a claim about general intelligence, "our own NLP," or a chatbot capability</strong> — it is a narrow, specific continual-learning result, evaluated on one standard benchmark.</p>
+        <p style="color:var(--muted);font-size:1rem;line-height:1.8"><strong>Technical scope.</strong> Cognitive Crystal evaluates prototype replay for continual learning on Split-MNIST. Compare forgetting, retained accuracy, memory use, and variation across repeated runs within that workload.</p>
       </div>
       <div class="term sr d2">
         <div class="dots"><i></i><i></i><i></i></div>
-        <pre><span class="cm">// Split-MNIST continual learning</span>
-<span class="fn">naive_forgetting</span>      <span class="nu">~98.7%</span>
-<span class="fn">distilled_forgetting</span>  <span class="nu">~24.8%</span>
-<span class="fn">distilled_memory</span>     <span class="nu">10 prototypes, 31 KB</span>
-<span class="fn">raw_replay_memory</span>    <span class="nu">200 exemplars, 627 KB</span>
-<span class="cm">// fewer bytes of memory, less forgetting</span></pre>
+        <pre><span class="cm">// Continual-learning evaluation protocol</span>
+Measure forgetting and retained accuracy
+on Split-MNIST across multiple seeds.
+Record prototype and replay memory separately.</pre>
       </div>
     </div>
   </div>
@@ -174,7 +167,7 @@
       <div class="card sr d1">
 
         <h3 style="margin:14px 0 8px;font-size:1.05rem;font-weight:800">Nova-X CSLM</h3>
-        <p style="color:var(--muted);font-size:.9rem;line-height:1.7">A non-Transformer architecture using energy minimization and wave-interference scoring in place of attention — the research line behind our patent-pending NOVA architecture (see <a href="/ip/" style="color:var(--cyan)">Patents &amp; IP</a>). The architecture is implemented in a working engine; we are not yet publishing latency or model-size numbers for it while our internal benchmark methodology is being validated.</p>
+        <p style="color:var(--muted);font-size:.9rem;line-height:1.7">A non-Transformer architecture using energy minimization and wave-interference scoring in place of attention. The patent-pending NOVA state-space design is described separately under <a href="/ip/" style="color:var(--cyan)">Patents &amp; IP</a>. The architecture is implemented in a working engine; we are not yet publishing latency or model-size numbers for it while our internal benchmark methodology is being validated.</p>
       </div>
       <div class="card sr d2">
 
@@ -186,6 +179,7 @@
   </div>
 </section>
 
+</main>
 <footer>
   <div class="container">
     <div class="footer-simple">
@@ -197,6 +191,6 @@
   </div>
 </footer>
 
-<script src="/assets/site.js?v=20261005-catalogue"></script>
+<script src="/assets/site.js?v=20261005-review"></script>
 </body>
 </html>
