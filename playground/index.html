@@ -309,6 +309,13 @@ body{
 .mobile-warn h2{font-size:1.3rem;font-weight:650;letter-spacing:-.02em}
 .mobile-warn p{color:var(--text-muted);font-size:.9rem;line-height:1.6}
 .mobile-warn a{color:var(--accent)}
+button.dropdown-item,button.deploy-option,button.help-card{font:inherit;color:inherit;text-align:left;width:100%}
+button.dropdown-item{border:0;background:transparent}
+button.dropdown-item:hover{background:var(--surface-2)}
+.dropdown-item>span:last-child,.dropdown-item>span:last-child>span,.deploy-option>span{display:block}
+button.output-tab{font:inherit;background:transparent;border:0;border-bottom:2px solid transparent}
+button.output-tab.active{border-bottom-color:var(--accent)}
+button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,[role="tabpanel"]:focus-visible{outline:2px solid var(--accent);outline-offset:-3px}
 </style>
 </head>
 <body>
@@ -334,7 +341,7 @@ body{
 
   <!-- Examples dropdown -->
   <div class="dropdown-wrap" id="examplesWrap">
-    <button class="examples-btn" id="examplesBtn" onclick="toggleDropdown()">
+    <button class="examples-btn" id="examplesBtn" aria-expanded="false" aria-controls="dropdown" onclick="toggleDropdown()">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h8"/></svg>
       Examples
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
@@ -342,59 +349,59 @@ body{
     <div class="dropdown" id="dropdown">
       <div class="dropdown-section">
         <div class="dropdown-label">Getting Started</div>
-        <div class="dropdown-item" onclick="loadExample('hello')">
+        <button type="button" class="dropdown-item" onclick="loadExample('hello')">
           <span class="icon">👋</span>
-          <div><div>Hello World</div><div class="desc">Your first NC program</div></div>
-        </div>
-        <div class="dropdown-item" onclick="loadExample('variables')">
+          <span><span>Hello World</span><span class="desc">Your first NC program</span></span>
+        </button>
+        <button type="button" class="dropdown-item" onclick="loadExample('variables')">
           <span class="icon">📦</span>
-          <div><div>Variables & Logic</div><div class="desc">Store, compare, decide</div></div>
-        </div>
+          <span><span>Variables & Logic</span><span class="desc">Store, compare, decide</span></span>
+        </button>
       </div>
       <div class="dropdown-section">
         <div class="dropdown-label">Build Apps</div>
-        <div class="dropdown-item" onclick="loadExample('api')">
+        <button type="button" class="dropdown-item" onclick="loadExample('api')">
           <span class="icon">🌐</span>
-          <div><div>REST API</div><div class="desc">Build a full HTTP API</div></div>
-        </div>
-        <div class="dropdown-item" onclick="loadExample('chatbot')">
+          <span><span>REST API</span><span class="desc">Build a full HTTP API</span></span>
+        </button>
+        <button type="button" class="dropdown-item" onclick="loadExample('chatbot')">
           <span class="icon">🤖</span>
-          <div><div>AI Chatbot</div><div class="desc">Chat app with memory</div></div>
-        </div>
-        <div class="dropdown-item" onclick="loadExample('crud')">
+          <span><span>AI Chatbot</span><span class="desc">Chat app with memory</span></span>
+        </button>
+        <button type="button" class="dropdown-item" onclick="loadExample('crud')">
           <span class="icon">🗃️</span>
-          <div><div>CRUD App</div><div class="desc">Create, read, update, delete</div></div>
-        </div>
-        <div class="dropdown-item" onclick="loadExample('dashboard')">
+          <span><span>CRUD App</span><span class="desc">Create, read, update, delete</span></span>
+        </button>
+        <button type="button" class="dropdown-item" onclick="loadExample('dashboard')">
           <span class="icon">📊</span>
-          <div><div>Dashboard API</div><div class="desc">Real-time data endpoint</div></div>
-        </div>
+          <span><span>Dashboard API</span><span class="desc">Real-time data endpoint</span></span>
+        </button>
       </div>
       <div class="dropdown-section">
         <div class="dropdown-label">Automation</div>
-        <div class="dropdown-item" onclick="loadExample('pipeline')">
+        <button type="button" class="dropdown-item" onclick="loadExample('pipeline')">
           <span class="icon">⚙️</span>
-          <div><div>Data Pipeline</div><div class="desc">Fetch, transform, store</div></div>
-        </div>
-        <div class="dropdown-item" onclick="loadExample('webhook')">
+          <span><span>Data Pipeline</span><span class="desc">Fetch, transform, store</span></span>
+        </button>
+        <button type="button" class="dropdown-item" onclick="loadExample('webhook')">
           <span class="icon">🔗</span>
-          <div><div>Webhook Handler</div><div class="desc">Process incoming events</div></div>
-        </div>
-        <div class="dropdown-item" onclick="loadExample('scheduler')">
+          <span><span>Webhook Handler</span><span class="desc">Process incoming events</span></span>
+        </button>
+        <button type="button" class="dropdown-item" onclick="loadExample('scheduler')">
           <span class="icon">⏰</span>
-          <div><div>Scheduled Tasks</div><div class="desc">Run jobs on a timer</div></div>
-        </div>
+          <span><span>Scheduled Tasks</span><span class="desc">Run jobs on a timer</span></span>
+        </button>
       </div>
       <div class="dropdown-section">
         <div class="dropdown-label">AI Features</div>
-        <div class="dropdown-item" onclick="loadExample('classifier')">
+        <button type="button" class="dropdown-item" onclick="loadExample('classifier')">
           <span class="icon">🏷️</span>
-          <div><div>Text Classifier</div><div class="desc">Categorize any input</div></div>
-        </div>
-        <div class="dropdown-item" onclick="loadExample('summarizer')">
+          <span><span>Text Classifier</span><span class="desc">Categorize any input</span></span>
+        </button>
+        <button type="button" class="dropdown-item" onclick="loadExample('summarizer')">
           <span class="icon">📝</span>
-          <div><div>Summarizer</div><div class="desc">Summarize long text</div></div>
-        </div>
+          <span><span>Summarizer</span><span class="desc">Summarize long text</span></span>
+        </button>
       </div>
     </div>
   </div>
@@ -412,7 +419,7 @@ body{
       <svg class="icon-light" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
       <svg class="icon-dark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.8z"/></svg>
     </button>
-    <button class="icon-btn" title="Format code" onclick="formatCode()">
+    <button class="icon-btn" title="Normalize line endings" onclick="formatCode()">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="21" y1="10" x2="3" y2="10"/><line x1="21" y1="6" x2="3" y2="6"/><line x1="21" y1="14" x2="3" y2="14"/><line x1="21" y1="18" x2="11" y2="18"/></svg>
     </button>
     <button class="icon-btn" title="Clear output" onclick="clearOutput()">
@@ -441,8 +448,9 @@ body{
       <span class="filename" style="margin-left:12px">app.nc</span>
       <span class="lang-badge">Plain English</span>
     </div>
+    <p id="editorHelp" class="sr-only">Tab moves to the next control. Use spaces to indent. Control or Command plus Enter runs code.</p>
     <div id="editor-container">
-      <textarea id="nc-editor" spellcheck="false" autocomplete="off" autocorrect="off" autocapitalize="off"></textarea>
+      <textarea aria-label="NC source code" aria-describedby="editorHelp" id="nc-editor" spellcheck="false" autocomplete="off" autocorrect="off" autocapitalize="off"></textarea>
     </div>
   </div>
 
@@ -451,10 +459,10 @@ body{
 
   <!-- Output Panel -->
   <div class="output-panel" id="outputPanel">
-    <div class="output-tabs">
-      <div class="output-tab active" id="tab-output" onclick="showTab('output')">▶ Output</div>
-      <div class="output-tab" id="tab-help" onclick="showTab('help')">📖 Reference</div>
-      <div class="output-tab" id="tab-share" onclick="showTab('share')">🚀 Deploy</div>
+    <div class="output-tabs" role="tablist" aria-label="Playground panels">
+      <button type="button" role="tab" aria-controls="pane-output" aria-selected="true" tabindex="0" class="output-tab active" id="tab-output" onclick="showTab('output')">▶ Output</button>
+      <button type="button" role="tab" aria-controls="pane-help" aria-selected="false" tabindex="-1" class="output-tab" id="tab-help" onclick="showTab('help')">📖 Reference</button>
+      <button type="button" role="tab" aria-controls="pane-share" aria-selected="false" tabindex="-1" class="output-tab" id="tab-share" onclick="showTab('share')">🚀 Deploy</button>
       <div style="margin-left:auto;padding:0 12px;display:flex;align-items:center;gap:6px">
         <span id="exec-time" style="font-size:.7rem;color:var(--muted)"></span>
       </div>
@@ -462,7 +470,7 @@ body{
 
     <div class="output-body">
       <!-- Output tab -->
-      <div class="tab-pane active" id="pane-output">
+      <div class="tab-pane active" id="pane-output" role="tabpanel" aria-labelledby="tab-output" tabindex="0">
         <div class="terminal" id="terminal">
           <div class="empty-state" id="empty-state">
             <div class="empty-icon">▶</div>
@@ -473,12 +481,12 @@ body{
       </div>
 
       <!-- Help/Reference tab -->
-      <div class="tab-pane" id="pane-help">
+      <div class="tab-pane" id="pane-help" role="tabpanel" aria-labelledby="tab-help" tabindex="0">
         <div class="help-grid" id="helpGrid"></div>
       </div>
 
       <!-- Share/Deploy tab -->
-      <div class="tab-pane" id="pane-share">
+      <div class="tab-pane" id="pane-share" role="tabpanel" aria-labelledby="tab-share" tabindex="0">
         <div class="share-pane">
           <h3>🚀 Share &amp; Deploy</h3>
           <p>Share your playground link or deploy your NC app to a live server in seconds.</p>
@@ -486,7 +494,7 @@ body{
           <div>
             <div style="font-size:.78rem;color:var(--muted);margin-bottom:8px;font-weight:500">Share link (encodes your code)</div>
             <div class="share-url">
-              <input type="text" id="shareUrl" readonly placeholder="Click to generate link...">
+              <input aria-label="Share link" type="text" id="shareUrl" readonly placeholder="Click to generate link...">
               <button class="copy-btn" onclick="copyShareUrl()">Copy</button>
             </div>
             <button onclick="generateShareUrl()" style="margin-top:8px;padding:7px 16px;background:var(--dim);border:1px solid var(--border);border-radius:8px;color:var(--text);font-size:.78rem;cursor:pointer;font-family:var(--font)">Generate link</button>
@@ -495,22 +503,22 @@ body{
           <div>
             <div style="font-size:.78rem;color:var(--muted);margin-bottom:10px;font-weight:500">Deploy your app (1-click)</div>
             <div class="deploy-options">
-              <div class="deploy-option" onclick="deployTo('railway')">
-                <div class="d-name">🚂 Railway</div>
-                <div class="d-desc">Free tier · auto-deploy from GitHub</div>
-              </div>
-              <div class="deploy-option" onclick="deployTo('render')">
-                <div class="d-name">🎨 Render</div>
-                <div class="d-desc">Free tier · zero config</div>
-              </div>
-              <div class="deploy-option" onclick="deployTo('fly')">
-                <div class="d-name">🪰 Fly.io</div>
-                <div class="d-desc">Global edge · low latency</div>
-              </div>
-              <div class="deploy-option" onclick="deployTo('docker')">
-                <div class="d-name">📦 Container</div>
-                <div class="d-desc">Self-host anywhere</div>
-              </div>
+              <button type="button" class="deploy-option" onclick="deployTo('railway')">
+                <span class="d-name">🚂 Railway</span>
+                <span class="d-desc">Free tier · auto-deploy from GitHub</span>
+              </button>
+              <button type="button" class="deploy-option" onclick="deployTo('render')">
+                <span class="d-name">🎨 Render</span>
+                <span class="d-desc">Free tier · zero config</span>
+              </button>
+              <button type="button" class="deploy-option" onclick="deployTo('fly')">
+                <span class="d-name">🪰 Fly.io</span>
+                <span class="d-desc">Global edge · low latency</span>
+              </button>
+              <button type="button" class="deploy-option" onclick="deployTo('docker')">
+                <span class="d-name">📦 Container</span>
+                <span class="d-desc">Self-host anywhere</span>
+              </button>
             </div>
           </div>
 
@@ -533,7 +541,7 @@ body{
 <div class="statusbar">
   <div class="status-item">
     <div class="status-dot" id="statusDot"></div>
-    <span id="statusText">Ready</span>
+    <span id="statusText" role="status" aria-live="polite">Ready</span>
   </div>
   <div class="status-sep"></div>
   <div class="status-item" id="lineCol">Ln 1, Col 1</div>
@@ -1052,7 +1060,7 @@ const editor = document.getElementById('nc-editor');
 // Style the textarea as a code editor
 Object.assign(editor.style, {
   width: '100%', height: '100%', padding: '16px 20px',
-  background: 'var(--code-bg)', color: 'var(--term-fg)', border: 'none', outline: 'none',
+  background: 'var(--code-bg)', color: 'var(--term-fg)', border: 'none',
   fontFamily: "'JetBrains Mono','SF Mono',SFMono-Regular,Consolas,'Liberation Mono',Menlo,monospace",
   fontSize: '13.5px', lineHeight: '1.7', resize: 'none',
   tabSize: '4', whiteSpace: 'pre',
@@ -1067,13 +1075,7 @@ editor.addEventListener('keydown', e => {
   if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') {
     e.preventDefault(); runCode();
   }
-  // Tab → insert spaces
-  if (e.key === 'Tab') {
-    e.preventDefault();
-    const s = editor.selectionStart, end = editor.selectionEnd;
-    editor.value = editor.value.substring(0, s) + '    ' + editor.value.substring(end);
-    editor.selectionStart = editor.selectionEnd = s + 4;
-  }
+
   // Auto-close brackets/quotes
   const pairs = {'(':')', '[':']', '{':'}', '"':'"', "'":"'"};
   if (pairs[e.key] && editor.selectionStart === editor.selectionEnd) {
@@ -1101,33 +1103,66 @@ function updateStatus() {
 // ── Tab switching ────────────────────────────────────────
 function showTab(name) {
   ['output','help','share'].forEach(t => {
-    document.getElementById('tab-'+t).classList.toggle('active', t === name);
+    const tab = document.getElementById('tab-'+t);
+    tab.classList.toggle('active', t === name);
+    tab.setAttribute('aria-selected', String(t === name));
+    tab.tabIndex = t === name ? 0 : -1;
     document.getElementById('pane-'+t).classList.toggle('active', t === name);
   });
   if (name === 'share') generateShareUrl();
 }
 
+document.querySelectorAll('[role="tab"]').forEach(tab => {
+  tab.addEventListener('keydown', event => {
+    const names = ['output', 'help', 'share'];
+    const index = names.indexOf(tab.id.slice(4));
+    let next;
+    if (event.key === 'ArrowRight') next = (index + 1) % names.length;
+    else if (event.key === 'ArrowLeft') next = (index + names.length - 1) % names.length;
+    else if (event.key === 'Home') next = 0;
+    else if (event.key === 'End') next = names.length - 1;
+    else return;
+    event.preventDefault();
+    showTab(names[next]);
+    document.getElementById('tab-' + names[next]).focus();
+  });
+});
+
 // ── Examples dropdown ────────────────────────────────────
+function setExamplesOpen(open) {
+  document.getElementById('dropdown').classList.toggle('open', open);
+  document.getElementById('examplesBtn').setAttribute('aria-expanded', String(open));
+}
+document.getElementById('examplesWrap').addEventListener('keydown', event => {
+  if (event.key === 'Escape') {
+    setExamplesOpen(false);
+    document.getElementById('examplesBtn').focus();
+  }
+});
+document.getElementById('examplesWrap').addEventListener('focusout', event => {
+  if (!event.currentTarget.contains(event.relatedTarget)) setExamplesOpen(false);
+});
 function toggleDropdown() {
-  document.getElementById('dropdown').classList.toggle('open');
+  const open = !document.getElementById('dropdown').classList.contains('open');
+  setExamplesOpen(open);
 }
 document.addEventListener('click', e => {
   if (!document.getElementById('examplesWrap').contains(e.target))
-    document.getElementById('dropdown').classList.remove('open');
+    setExamplesOpen(false);
 });
 
 function loadExample(key) {
   if (EXAMPLES[key]) {
     editor.value = EXAMPLES[key].code;
     updateStatus();
-    document.getElementById('dropdown').classList.remove('open');
+    setExamplesOpen(false);
     clearOutput();
+    if (document.activeElement && document.activeElement.closest('.dropdown')) editor.focus();
   }
 }
 
 // ── Run code ─────────────────────────────────────────────
 const PLAYGROUND_API = 'https://play-api.nc-lang.dev/run';
-// Fallback: simulate for demo when API unavailable
 
 async function runCode() {
   const btn = document.getElementById('runBtn');
@@ -1151,7 +1186,14 @@ async function runCode() {
       body: JSON.stringify({ code }),
       signal: AbortSignal.timeout(10000)
     });
+    if (!resp.ok) throw new Error(`Runner request failed (HTTP ${resp.status}). Please try again.`);
     const data = await resp.json();
+    if (!data || typeof data !== 'object' || Array.isArray(data) ||
+        (typeof data.output !== 'string' && typeof data.error !== 'string') ||
+        (data.output !== undefined && typeof data.output !== 'string') ||
+        (data.error !== undefined && typeof data.error !== 'string')) {
+      throw new Error('The runner returned an invalid response. Please try again.');
+    }
     const elapsed = ((Date.now() - start) / 1000).toFixed(2);
     document.getElementById('exec-time').textContent = `${elapsed}s`;
 
@@ -1161,18 +1203,15 @@ async function runCode() {
 
     setStatus(data.error ? 'error' : 'ok', data.error ? 'Error' : `Done in ${elapsed}s`);
   } catch (err) {
-    // Demo mode: simulate output for showcase
-    const elapsed = ((Date.now() - start) / 1000).toFixed(2);
-    document.getElementById('exec-time').textContent = `${elapsed}s`;
-    const simulated = simulateRun(code);
-    renderOutput(simulated.out, false);
-    if (simulated.err) renderOutput(simulated.err, true);
-    renderOutput('\n⚠️  Live runner offline — showing demo output.\n   Deploy your own runner: nc-apps/playground-server/', false, true);
-    setStatus('ok', `Simulated in ${elapsed}s`);
+    const message = err.name === 'TimeoutError' || err.name === 'AbortError'
+      ? 'The runner timed out. Please try again.'
+      : err.message || 'Unable to reach the runner. Please try again.';
+    renderOutput(message, true);
+    setStatus('error', 'Run failed');
+  } finally {
+    btn.classList.remove('running');
+    btn.innerHTML = `<svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><polygon points="5 3 19 12 5 21 5 3"/></svg> Run <span class="kbd">⌘↵</span>`;
   }
-
-  btn.classList.remove('running');
-  btn.innerHTML = `<svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><polygon points="5 3 19 12 5 21 5 3"/></svg> Run <span class="kbd">⌘↵</span>`;
 }
 
 // ── Output renderer ───────────────────────────────────────
@@ -1214,80 +1253,20 @@ function setStatus(state, text) {
   document.getElementById('statusText').textContent = text;
 }
 
-// ── Demo simulation (when API offline) ───────────────────
-function simulateRun(code) {
-  const lines = code.split('\n');
-  const outputs = [];
-
-  // Simulate common NC patterns
-  for (const line of lines) {
-    const l = line.trim();
-    if (!l || l.startsWith('//') || l.startsWith('#')) continue;
-
-    if (l.startsWith('show ')) {
-      const val = l.slice(5).replace(/^"|"$/g, '').replace(/^'|'$/g, '');
-      // Evaluate simple string + number concatenation for demo
-      if (val.includes('"') || val.includes("'")) {
-        outputs.push(evalExprSimple(val));
-      } else {
-        outputs.push(val);
-      }
-    } else if (l.includes('serve on port')) {
-      const port = l.match(/\d+/)?.[0] || '8080';
-      outputs.push(`🚀 NC server started on http://localhost:${port}`);
-      outputs.push(`   Press Ctrl+C to stop`);
-      outputs.push(`   Endpoints defined in your code are now live`);
-      break;
-    } else if (l.startsWith('every ')) {
-      outputs.push('⏰ Scheduler started — tasks will run at configured intervals');
-      break;
-    } else if (l.includes('gather') && l.includes('from "http')) {
-      outputs.push('⬇  Fetching data...');
-      outputs.push('✅ Received 100 items');
-    } else if (l.includes('log_info(')) {
-      const msg = l.match(/log_info\("([^"]+)"\)/)?.[1];
-      if (msg) outputs.push(`[${new Date().toISOString()}] INFO ${msg}`);
-    } else if (l.includes('log_warn(')) {
-      const msg = l.match(/log_warn\("([^"]+)"\)/)?.[1];
-      if (msg) outputs.push(`[${new Date().toISOString()}] WARN ${msg}`);
-    }
-  }
-
-  if (!outputs.length) outputs.push('(program executed — no output statements)');
-  return { out: outputs.join('\n'), err: '' };
-}
-
-function evalExprSimple(expr) {
-  // Very basic string evaluation for demo purposes
-  try {
-    // Replace NC-style concatenation + with JS-safe version for simple literals
-    return expr.replace(/^["']|["']$/g, '').replace(/["']\s*\+\s*["']/g, '');
-  } catch { return expr; }
-}
-
 // ── Format code ───────────────────────────────────────────
 function formatCode() {
-  const lines = editor.value.split('\n');
-  let indent = 0;
-  const result = lines.map(line => {
-    const t = line.trim();
-    if (!t) return '';
-    const isClose = t.startsWith('end ') || t === 'end';
-    if (isClose) indent = Math.max(0, indent - 1);
-    const out = '    '.repeat(indent) + t;
-    if (t.endsWith(':') && !t.startsWith('//')) indent++;
-    return out;
-  });
-  editor.value = result.join('\n');
-  notify('Code formatted ✨');
+  editor.value = editor.value.replace(/\r\n?/g, '\n');
+  updateStatus();
+  notify('Line endings normalized; indentation preserved.');
 }
 
 // ── Reference cards ───────────────────────────────────────
 const grid = document.getElementById('helpGrid');
 REFERENCE.forEach(card => {
-  const el = document.createElement('div');
+  const el = document.createElement('button');
+  el.type = 'button';
   el.className = 'help-card';
-  el.innerHTML = `<div class="h-title">${card.title}</div><pre>${escapeHtml(card.code)}</pre>`;
+  el.innerHTML = `<span class="h-title">${card.title}</span><code style="display:block;white-space:pre-wrap">${escapeHtml(card.code)}</code>`;
   el.onclick = () => { editor.value = card.code; updateStatus(); showTab('output'); };
   grid.appendChild(el);
 });
@@ -1300,7 +1279,7 @@ function escapeHtml(s) {
 function generateShareUrl() {
   const code = editor.value;
   const encoded = btoa(unescape(encodeURIComponent(code)));
-  const url = `${location.origin}${location.pathname}?code=${encoded}`;
+  const url = `${location.origin}${location.pathname}?code=${encodeURIComponent(encoded)}`;
   document.getElementById('shareUrl').value = url;
 }
 
@@ -1316,7 +1295,7 @@ function copyShareUrl() {
   const code = params.get('code');
   if (code) {
     try {
-      editor.value = decodeURIComponent(escape(atob(code)));
+      editor.value = decodeURIComponent(escape(atob(code.replace(/ /g, '+'))));
       updateStatus();
     } catch {}
   }
