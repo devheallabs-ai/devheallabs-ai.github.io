@@ -17,7 +17,7 @@
 <link rel="canonical" href="https://devheallabs.com/technology/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
-<link rel="stylesheet" href="/assets/style.css?v=20261005-company">
+<link rel="stylesheet" href="/assets/style.css?v=20261005-business">
 </head>
 <body>
 
@@ -84,7 +84,7 @@
     <a href="#hiveant">HiveANT</a>
     <a href="#swarmops">SwarmOps</a>
     <a href="#agp">AGP</a>
-    <a href="#in-development">In Development</a>
+    <a href="#in-development">Engineering projects</a>
     <a href="#studio">Studio</a>
     <a href="#simulator">Simulator</a>
     <a href="#evaluation">Evaluation</a>
@@ -98,7 +98,7 @@
 <!-- SHIPPING TODAY -->
 <section id="nc">
   <div class="container">
-    <div class="sec-label sr">Shipping Today</div>
+    <div class="sec-label sr">Core architecture</div>
     <h2 class="sec-title sr d1">NC — Language &amp; Runtime </h2>
     <div class="grid-2 sr d2" style="margin-top:32px">
       <div class="term">
@@ -198,12 +198,12 @@
       <div class="card sr d1" id="nc-code">
 
         <h3 style="margin:14px 0 8px;font-size:1.1rem;font-weight:800">NC-Code</h3>
-        <p style="color:var(--muted);font-size:.9rem;line-height:1.7"><strong>What it is:</strong> a bring-your-own-key AI coding and ML agent for terminal and desktop. <strong>What's real:</strong> permission-gated tools, crash-safe encrypted undo for agent writes, and a working <strong>Proof Gate</strong> — a signed, digest-bound receipt naming exactly which checks ran against which bytes before a change is accepted. <strong>Technical scope:</strong> version 0.1.0, unreleased. The Proof Gate package is the first piece prepared for release; the CLI, daemon and desktop app are not yet published, and one packaging attempt was explicitly rejected internally as not ready to ship.</p>
+        <p style="color:var(--muted);font-size:.9rem;line-height:1.7"><strong>What it is:</strong> a bring-your-own-key AI coding and ML agent for terminal and desktop. <strong>Implementation:</strong> permission-gated tools, crash-safe encrypted undo for agent writes, and a working <strong>Proof Gate</strong> — a signed, digest-bound receipt naming exactly which checks ran against which bytes before a change is accepted. <strong>Technical scope:</strong> version 0.1.0, unreleased. The Proof Gate package is the first piece prepared for release; the CLI, daemon and desktop app are not yet published, packaging remains part of the engineering work.</p>
       </div>
       <div class="card sr d2" id="nc-os">
 
         <h3 style="margin:14px 0 8px;font-size:1.1rem;font-weight:800">NC-OS</h3>
-        <p style="color:var(--muted);font-size:.9rem;line-height:1.7"><strong>What it is:</strong> an LLM-ops control plane — tracing, evaluation, prompt management, orchestration, datasets and monitoring, positioned as an alternative to assembling several separate LLM-ops tools. <strong>What's real:</strong> a substantial, actively-developed core service with tenant-scoped isolation and a signed, hash-chained audit log. <strong>What we're correcting:</strong> that audit log is a signed hash chain, not a Merkle tree, and we don't have a build-enforced gate against any particular set of dependencies — so we're not claiming either. <strong>Technical scope:</strong> the core service is substantial; a "DevHeal AI OS" sub-project inside it is explicitly foundation-only (health/readiness endpoints), with workflow execution, agents, tools and RAG still to be built.</p>
+        <p style="color:var(--muted);font-size:.9rem;line-height:1.7"><strong>What it is:</strong> an LLM-ops control plane — tracing, evaluation, prompt management, orchestration, datasets and monitoring, positioned as an alternative to assembling several separate LLM-ops tools. <strong>Implementation:</strong> a substantial, actively-developed core service with tenant-scoped isolation and a signed, hash-chained audit log. <strong>Audit design:</strong> tenant-scoped records use signed hash chaining. <strong>Technical scope:</strong> the core service is substantial; a "DevHeal AI OS" sub-project inside it is explicitly foundation-only (health/readiness endpoints), with workflow execution, agents, tools and RAG still to be built.</p>
       </div>
     </div>
   </div>
@@ -402,6 +402,6 @@
   </div>
 </footer>
 
-<script src="/assets/site.js?v=20261005-company"></script>
+<script src="/assets/site.js?v=20261005-business"></script>
 </body>
 </html>
