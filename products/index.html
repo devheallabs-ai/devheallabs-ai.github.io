@@ -4,11 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Products &mdash; DevHeal Labs AI</title>
-<meta name="description" content="Explore Dummu, our autonomous platform, alongside NC, NC UI, NC AI, HiveANT, SwarmOps, AGP, AgentOS, NeuralEdge and NOVA.">
+<meta name="description" content="Explore the complete DevHeal portfolio: Dummu, development tools, autonomous operations, governance, evaluation, and AI systems infrastructure.">
 <link rel="icon" type="image/png" href="/favicon.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <meta property="og:title" content="Products &mdash; DevHeal Labs AI">
-<meta property="og:description" content="Explore Dummu, our autonomous platform, alongside NC, NC UI, NC AI, HiveANT, SwarmOps, AGP, AgentOS, NeuralEdge and NOVA.">
+<meta property="og:description" content="Explore the complete DevHeal portfolio: Dummu, development tools, autonomous operations, governance, evaluation, and AI systems infrastructure.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://devheallabs.com/products/">
 <meta property="og:image" content="https://devheallabs.com/logo.png">
@@ -17,9 +17,10 @@
 <link rel="canonical" href="https://devheallabs.com/products/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap">
-<link rel="stylesheet" href="/assets/style.css?v=20261005-business">
+<link rel="stylesheet" href="/assets/style.css?v=20261005-catalogue">
 </head>
 <body>
+<a class="skip-link" href="#main-content">Skip to content</a>
 <nav class="nav" id="nav" aria-label="Main navigation">
   <div class="nav-inner">
     <a href="/" class="nav-logo"><img src="/logo.png?v=20261005" alt="" class="logo-icon">DevHeal<span>Labs AI</span></a>
@@ -30,6 +31,9 @@
         <li><a href="/products/#operate">HiveANT &middot; SwarmOps</a></li>
         <li><a href="/products/#govern">AGP &middot; AgentOS</a></li>
         <li><a href="/products/#apply">NeuralEdge &middot; NOVA</a></li>
+        <li><a href="/products/#workspace">Engineering tools</a></li>
+        <li><a href="/products/#validation">Evaluation &amp; simulation</a></li>
+        <li><a href="/products/#runtime">Systems infrastructure</a></li>
         <li><a href="/products/">All products &rarr;</a></li>
       </ul></li>
       <li><a href="/solutions/">Solutions</a></li>
@@ -43,7 +47,7 @@
       <li class="nav-has-drop"><a href="/technology/">Resources</a><ul class="nav-drop">
         <li><a href="/ip/">Patents &amp; IP</a></li>
         <li><a href="/whitepaper/">Whitepaper</a></li>
-        <li><a href="/technology/">Technology</a></li>
+        <li><a href="/technology/">Architecture</a></li>
         <li><a href="/developers/">Developers</a></li>
         <li><a href="/research/">Research publications</a></li>
         <li><a href="/benchmarks/">Benchmarks</a></li>
@@ -66,183 +70,44 @@
     </button>
     <button class="hamburger" aria-label="Open menu" aria-expanded="false">&#9776;</button>
   </div>
-</nav>
-<section class="page-hero">
-  <div class="container">
-    <div class="kicker sr">Products</div>
-    <h1 class="sr d1">Our products. <span class="gt">Start with Dummu.</span></h1>
-    <p class="lead sr d2">Explore products for autonomous workflows, AI development, operations, and governance. Start with Dummu, our autonomous platform, and discover the tools that fit your business.</p>
-    <div class="hero-buttons sr d3">
-      <a href="/design-partner/" class="btn btn-primary">Discuss your requirements</a>
-      <a href="#dummu" class="btn btn-ghost">See the portfolio</a>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="container">
-    <div class="callout sr">
-      Find the right product for your workflows. Our team can help with capability selection, integration requirements, and deployment planning.
-    </div>
-  </div>
-</section>
-
-<section id="dummu" class="sec-alt">
-  <div class="container">
-    <div class="sec-label">Featured product</div>
-    <div class="flagship"><div class="flagship-inner">
-
-      <h2 class="dummu-title">Dummu</h2>
-      <p class="flagship-lede">An autonomous platform for operations, agents, and continuous learning.</p>
-      <p class="body">For SRE, platform engineering, and IT operations teams. Dummu connects incident signals to recommendations and approved remediation, and lets teams build operational agents from natural-language instructions, with tools and action boundaries they control.</p>
-      <p class="body">Policy checks, approvals, dry-run, kill switches, and tamper-evident audit records sit in the execution path. Continuous reinforcement learning uses resolution outcomes, time taken, tool efficiency, and operator feedback to improve diagnostic choices.</p>
-      <div class="hero-buttons"><a href="/products/dummu/" class="btn btn-primary">Explore Dummu &rarr;</a><a href="/contact/" class="btn btn-ghost">Request a demonstration</a></div>
-    </div></div>
-  </div>
-</section>
-
-<!-- BUILD -->
-<section id="build">
-  <div class="container">
-    <div class="sec-label sr">Build</div>
-    <h2 class="sec-title sr d1">Ship AI systems without assembling the stack</h2>
-    <p class="sec-desc wide sr d2">The job: get an AI-backed service into production without seven dependencies, a build pipeline and a provider contract standing between you and the first line of your own logic.</p>
-
-    <div class="grid-3 sr d2">
-      <div class="card">
-
-        <h3 style="margin:14px 0 8px;font-size:1.05rem;font-weight:800">NC</h3>
-        <p style="color:var(--dim);font-size:.8rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;margin-bottom:10px">The language and runtime</p>
-        <p style="color:var(--muted);font-size:.88rem;line-height:1.7;margin-bottom:12px"><strong>Problem it solves:</strong> a small AI endpoint needs a web framework, an AI client, a rate limiter, an env loader, an app server and a token library before any of your code runs. Each is a version to track and a CVE surface to patch.</p>
-        <p style="color:var(--muted);font-size:.88rem;line-height:1.7;margin-bottom:12px"><strong>Why use it:</strong> those concerns live inside the language. You deploy one file with no runtime dependencies, and switching model provider stops being a code change.</p>
-        <p style="color:var(--dim);font-size:.84rem;line-height:1.6"><strong>For:</strong> technical founders, platform leads, teams shipping AI features on a deadline.</p>
-        <a href="https://nc.devheallabs.in" target="_blank" rel="noopener" style="display:inline-block;margin-top:12px;color:var(--accent);font-weight:600;font-size:.88rem">Try NC &rarr;</a>
-      </div>
-
-      <div class="card">
-
-        <h3 style="margin:14px 0 8px;font-size:1.05rem;font-weight:800">NC UI</h3>
-        <p style="color:var(--dim);font-size:.8rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;margin-bottom:10px">The interface layer</p>
-        <p style="color:var(--muted);font-size:.88rem;line-height:1.7;margin-bottom:12px"><strong>Problem it solves:</strong> a simple internal interface arrives with a build pipeline, a dependency tree and a runtime to operate &mdash; infrastructure far heavier than the thing it renders.</p>
-        <p style="color:var(--muted);font-size:.88rem;line-height:1.7;margin-bottom:12px"><strong>Why use it:</strong> describe the interface in plain English, compile to static HTML, CSS and JavaScript. Nothing proprietary runs on your server, so it deploys anywhere that serves files.</p>
-        <p style="color:var(--dim);font-size:.84rem;line-height:1.6"><strong>For:</strong> full-stack teams, internal tooling owners, anyone tired of a bundler.</p>
-        <a href="https://ncui.devheallabs.in" target="_blank" rel="noopener" style="display:inline-block;margin-top:12px;color:var(--accent);font-weight:600;font-size:.88rem">Try NC UI &rarr;</a>
-      </div>
-
-      <div class="card">
-
-        <h3 style="margin:14px 0 8px;font-size:1.05rem;font-weight:800">NC AI</h3>
-        <p style="color:var(--dim);font-size:.8rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;margin-bottom:10px">Local inference engine</p>
-        <p style="color:var(--muted);font-size:.88rem;line-height:1.7;margin-bottom:12px"><strong>Problem it solves:</strong> some data is not permitted to reach a hosted provider. That single constraint decides whether an AI project happens at all &mdash; and self-hosting an open model means buying GPUs and running a serving stack.</p>
-        <p style="color:var(--muted);font-size:.88rem;line-height:1.7;margin-bottom:12px"><strong>Why use it:</strong> inference runs inside the same binary, on an ordinary CPU, with no account and no per-token billing. Your data never leaves the machine, and your cost does not scale with usage.</p>
-        <p style="color:var(--dim);font-size:.84rem;line-height:1.6"><strong>For:</strong> regulated industries, security architects, edge and disconnected systems.</p>
-        <a href="https://ncai.devheallabs.in" target="_blank" rel="noopener" style="display:inline-block;margin-top:12px;color:var(--accent);font-weight:600;font-size:.88rem">Try NC AI &rarr;</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- OPERATE -->
-<section class="sec-alt" id="operate">
-  <div class="container">
-    <div class="sec-label sr">Operate</div>
-    <h2 class="sec-title sr d1">Keep systems healthy without burning the team</h2>
-    <p class="sec-desc wide sr d2">The job: cut the time between something breaking and somebody understanding why &mdash; when that work scales with the number of systems, not the size of the team.</p>
-
-    <div class="grid-2 sr d2">
-      <div class="card">
-
-        <h3 style="margin:14px 0 8px;font-size:1.05rem;font-weight:800">HiveANT</h3>
-        <p style="color:var(--dim);font-size:.8rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;margin-bottom:10px">Swarm autonomous operations</p>
-        <p style="color:var(--muted);font-size:.88rem;line-height:1.7;margin-bottom:12px"><strong>Problem it solves:</strong> most of the time between an alert and a recovery is not spent fixing. It is spent gathering signals, correlating them and forming a hypothesis &mdash; work that one engineer does serially at three in the morning.</p>
-        <p style="color:var(--muted);font-size:.88rem;line-height:1.7;margin-bottom:12px"><strong>Why use it:</strong> twelve specialised agent types &mdash; detection, investigation, root-cause analysis, fix generation, validation, prediction &mdash; investigate in parallel, coordinated by Ant Colony and Bee Colony optimisation. A five-layer cognitive memory means what was learned last time is still there next time.</p>
-        <p style="color:var(--muted);font-size:.88rem;line-height:1.7;margin-bottom:12px"><strong>The part operations teams care about:</strong> digital-twin analysis simulates a proposed fix against a model of your infrastructure to predict blast radius <em>before</em> anything is applied. Role-based access control and audit logging cover every agent action.</p>
-        <p style="color:var(--dim);font-size:.84rem;line-height:1.6"><strong>For:</strong> SRE leads, platform engineering, teams whose on-call load is the constraint.</p>
-      </div>
-
-      <div class="card">
-
-        <h3 style="margin:14px 0 8px;font-size:1.05rem;font-weight:800">SwarmOps</h3>
-        <p style="color:var(--dim);font-size:.8rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;margin-bottom:10px">Autonomous incident response</p>
-        <p style="color:var(--muted);font-size:.88rem;line-height:1.7;margin-bottom:12px"><strong>Problem it solves:</strong> the same class of incident recurs across services and is investigated from scratch every time, because what the last engineer learned never became something the system knows.</p>
-        <p style="color:var(--muted);font-size:.88rem;line-height:1.7;margin-bottom:12px"><strong>Why use it:</strong> it watches your metrics and log stores for anomalies, correlates signals across metrics, logs and traces to locate the cause, and can execute remediation against your orchestrator &mdash; restarts, scaling, rollbacks, config patches &mdash; within the authority you grant it.</p>
-        <p style="color:var(--muted);font-size:.88rem;line-height:1.7;margin-bottom:12px"><strong>Why it compounds:</strong> retrieval over your own runbooks and past incidents gives each investigation context, and reinforcement learning ranks which remediation actually worked. It can open a pull request with the fix and link it to the incident.</p>
-        <p style="color:var(--dim);font-size:.84rem;line-height:1.6"><strong>For:</strong> DevOps and SRE teams carrying repetitive incident volume.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- GOVERN -->
-<section id="govern">
-  <div class="container">
-    <div class="sec-label sr">Govern &amp; Run</div>
-    <h2 class="sec-title sr d1">Let agents act without losing control of what they do</h2>
-    <p class="sec-desc wide sr d2">The job: move agents from producing text to taking actions, without that becoming the largest unbounded risk in your architecture.</p>
-
-    <div class="grid-2 sr d2">
-      <div class="card">
-
-        <h3 style="margin:14px 0 8px;font-size:1.05rem;font-weight:800">AGP &mdash; Agent Governance Protocol</h3>
-        <p style="color:var(--dim);font-size:.8rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;margin-bottom:10px">Influence governance</p>
-        <p style="color:var(--muted);font-size:.88rem;line-height:1.7;margin-bottom:12px"><strong>Problem it solves:</strong> the industry secured <em>who</em> an agent is. It did not bound <em>how much</em> one input &mdash; a retrieved document, a tool result, a prior message &mdash; may shape a privileged action. An agent reads a document, the document contains instructions, the agent acts. Every identity check passed.</p>
-        <p style="color:var(--muted);font-size:.88rem;line-height:1.7;margin-bottom:12px"><strong>Why use it:</strong> every input-to-output influence is tracked as a signed compute edge with a per-input cap and an aggregate budget. A privileged action is refused <em>before it commits</em> when the budget is exceeded, and every decision leaves a causal receipt an auditor can check.</p>
-        <p style="color:var(--dim);font-size:.84rem;line-height:1.6"><strong>For:</strong> security architects, risk functions, anyone giving agents write access to systems that matter.</p>
-      </div>
-
-      <div class="card">
-
-        <h3 style="margin:14px 0 8px;font-size:1.05rem;font-weight:800">AgentOS</h3>
-        <p style="color:var(--dim);font-size:.8rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;margin-bottom:10px">Agent execution foundation</p>
-        <p style="color:var(--muted);font-size:.88rem;line-height:1.7;margin-bottom:12px"><strong>Problem it solves:</strong> every agentic product re-implements the same machinery &mdash; execution loop, state, memory, tool calls, identity, scheduling, model routing, recovery. Each implementation drifts, and each fails differently.</p>
-        <p style="color:var(--muted);font-size:.88rem;line-height:1.7;margin-bottom:12px"><strong>Why use it:</strong> one shared runtime underneath your agents instead of several bespoke ones. Fewer execution models to reason about, fewer failure modes to operate, and consistent behaviour across the agents you run.</p>
-        <p style="color:var(--dim);font-size:.84rem;line-height:1.6"><strong>For:</strong> platform teams standardising how agents run across an organisation.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- APPLY -->
-<section class="sec-alt" id="apply">
-  <div class="container">
-    <div class="sec-label sr">Apply</div>
-    <h2 class="sec-title sr d1">The stack, pointed at a specific domain</h2>
-    <p class="sec-desc wide sr d2">The job: show what the platform produces when it is aimed at one industry problem rather than sold as general capability.</p>
-
-    <div class="grid-2 sr d2">
-      <div class="card">
-
-        <h3 style="margin:14px 0 8px;font-size:1.05rem;font-weight:800">NeuralEdge</h3>
-        <p style="color:var(--dim);font-size:.8rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;margin-bottom:10px">Financial intelligence engine</p>
-        <p style="color:var(--muted);font-size:.88rem;line-height:1.7;margin-bottom:12px"><strong>Problem it solves:</strong> market analysis usually means stitching together a data feed, an indicator library, a model-serving layer and a scheduler &mdash; four systems to operate for one answer.</p>
-        <p style="color:var(--muted);font-size:.88rem;line-height:1.7;margin-bottom:12px"><strong>Why use it:</strong> 30+ technical indicators across multiple timeframes, live market data with a caching layer, portfolio optimisation and risk metrics (Value at Risk, Sharpe, maximum drawdown, beta), plus sentiment analysis &mdash; behind 81+ API endpoints you can call from an existing trading system.</p>
-        <p style="color:var(--muted);font-size:.88rem;line-height:1.7;margin-bottom:12px"><strong>Why it improves:</strong> the engine tracks its own prediction accuracy over time and adjusts model weights accordingly, so it sharpens against your markets rather than staying static.</p>
-        <p style="color:var(--dim);font-size:.84rem;line-height:1.6"><strong>For:</strong> fintech teams, quantitative analysts, anyone building market intelligence.</p>
-      </div>
-
-      <div class="card">
-
-        <h3 style="margin:14px 0 8px;font-size:1.05rem;font-weight:800">NOVA</h3>
-        <p style="color:var(--dim);font-size:.8rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;margin-bottom:10px">The model architecture</p>
-        <p style="color:var(--muted);font-size:.88rem;line-height:1.7;margin-bottom:12px"><strong>Problem it solves:</strong> attention-based models scale cost quadratically with sequence length and expect datacentre hardware &mdash; which is why local inference is usually impractical.</p>
-        <p style="color:var(--muted);font-size:.88rem;line-height:1.7;margin-bottom:12px"><strong>Why it matters to you:</strong> a hybrid state-space design with an integrated knowledge graph and Hebbian instant learning, built for linear-time inference on ordinary processors. It is the reason NC AI can run in a binary on your laptop rather than on a GPU cluster.</p>
-        <p style="color:var(--dim);font-size:.84rem;line-height:1.6"><strong>For:</strong> evaluators who want to understand why the local-inference claim is architecturally possible. <a href="/ip/" style="color:var(--accent)">Patent position &rarr;</a></p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section><div class="container"><div class="sec-label">Choose your starting point</div><h2 class="sec-title">Operations platform or development foundation?</h2><p class="sec-desc">Choose Dummu as your autonomous platform for operations and governed agents in your Kubernetes environment. Choose NC, NC UI, and NC AI for the language, interface generation, and local inference foundation. Evaluate each product&rsquo;s deployment requirements separately.</p></div></section>
-<section class="cta-band">
-  <div class="container">
-    <h2 class="sr">Which job is costing you most?</h2>
-    <p class="sr d1">Tell us that, and we will tell you which of these helps &mdash; or that none of them does.</p>
-    <div class="hero-buttons sr d2" style="margin-bottom:0">
-      <a href="/design-partner/" class="btn btn-primary">Discuss your requirements</a>
-      <a href="/solutions/" class="btn btn-ghost">Browse by problem</a>
-    </div>
-  </div>
-</section>
+</nav><main id="main-content">
+<section class="page-hero"><div class="container"><div class="kicker">Products</div><h1>One portfolio.<br><span class="gt">Built around your work.</span></h1><p class="lead">Explore Dummu and the DevHeal portfolio across development, operations, governance, and AI systems engineering.</p><div class="hero-buttons"><a href="/contact/" class="btn btn-primary">Discuss your requirements &rarr;</a><a href="#dummu" class="btn btn-ghost">Explore Dummu</a></div></div></section>
+<nav class="subnav" id="subnav" aria-label="Product categories"><div class="subnav-inner"><a href="#dummu">Dummu</a><a href="#build">Development</a><a href="#operate">Operations</a><a href="#govern">Governance</a><a href="#workspace">Engineering tools</a><a href="#validation">Evaluation and simulation</a><a href="#runtime">Systems infrastructure</a><a href="#apply">Intelligence</a></div></nav>
+<section id="dummu"><div class="container"><div class="flagship"><div class="flagship-inner"><div class="sec-label">Autonomous platform</div><h2 class="dummu-title">Dummu</h2><p class="flagship-lede">Bring operations, agents, and continuous learning together.</p><p class="body">Build agents using natural-language instructions, connect operational context, and execute through defined tools, policies, and approvals. Continuous reinforcement learning uses outcomes and operator feedback to improve diagnostic choices.</p><div class="hero-buttons"><a href="/products/dummu/" class="btn btn-primary">Explore Dummu &rarr;</a><a href="/technology/#dummu" class="btn btn-ghost">Platform architecture</a></div></div></div></div></section>
+<section id="build" class="sec-alt"><div class="container"><div class="sec-label">Development</div><h2 class="sec-title">Build applications and AI workflows.</h2><div class="grid-3 catalogue-grid">
+<article class="p-card" id="product-nc"><div class="catalogue-kind">Language and runtime</div><h3>NC</h3><p>Build services and agent workflows with plain-English syntax and a compact execution foundation.</p><a class="p-link" href="/technology/#nc">NC architecture &rarr;</a></article>
+<article class="p-card" id="product-nc-ui"><div class="catalogue-kind">Interface development</div><h3>NC UI</h3><p>Describe interfaces in plain English and compile them to static HTML, CSS, and JavaScript.</p><a class="p-link" href="/technology/#nc-ui">NC UI architecture &rarr;</a></article>
+<article class="p-card" id="product-nc-ai"><div class="catalogue-kind">Local inference</div><h3>NC AI</h3><p>Bring model execution into your environment with CPU-based inference and local data processing.</p><a class="p-link" href="/technology/#nc-ai">NC AI architecture &rarr;</a></article>
+</div></div></section>
+<section id="operate" class=""><div class="container"><div class="sec-label">Operations</div><h2 class="sec-title">Connect operational context to action.</h2><div class="grid-3 catalogue-grid">
+<article class="p-card" id="product-hiveant"><div class="catalogue-kind">Swarm operations</div><h3>HiveANT</h3><p>Coordinate specialised agents for investigation, diagnosis, and operational workflows.</p><a class="p-link" href="/technology/#hiveant">HiveANT architecture &rarr;</a></article>
+<article class="p-card" id="product-swarmops"><div class="catalogue-kind">Incident response</div><h3>SwarmOps</h3><p>Connect operational signals, runbook context, and remediation within defined action boundaries.</p><a class="p-link" href="/technology/#swarmops">SwarmOps architecture &rarr;</a></article>
+</div></div></section>
+<section id="govern" class="sec-alt"><div class="container"><div class="sec-label">Governance</div><h2 class="sec-title">Define how agents act and interact.</h2><div class="grid-3 catalogue-grid">
+<article class="p-card" id="product-agp"><div class="catalogue-kind">Agent Governance Protocol</div><h3>AGP</h3><p>Bound the influence of inputs on privileged actions with policy checks and verifiable decision records.</p><a class="p-link" href="/technology/#agp">AGP architecture &rarr;</a></article>
+<article class="p-card" id="product-agentos"><div class="catalogue-kind">Execution foundation</div><h3>AgentOS</h3><p>A shared runtime design for agent execution, state, memory, tool access, and recovery.</p><a class="p-link" href="/technology/#agentos">AgentOS architecture &rarr;</a></article>
+</div></div></section>
+<section id="workspace" class=""><div class="container"><div class="sec-label">Engineering tools</div><h2 class="sec-title">Bring development and operations into focus.</h2><div class="grid-3 catalogue-grid">
+<article class="p-card" id="product-nc-code"><div class="catalogue-kind">Coding and ML agent</div><h3>NC-Code</h3><p>Bring permission-gated tools, encrypted undo, and verification receipts into coding workflows.</p><a class="p-link" href="/technology/#nc-code">NC-Code architecture &rarr;</a></article>
+<article class="p-card" id="product-nc-os"><div class="catalogue-kind">LLM operations</div><h3>NC-OS</h3><p>A control-plane approach to tracing, evaluation, prompt management, and tenant-scoped audit records.</p><a class="p-link" href="/technology/#nc-os">NC-OS architecture &rarr;</a></article>
+<article class="p-card" id="product-studio"><div class="catalogue-kind">AI systems workspace</div><h3>DevHeal Studio</h3><p>An engineering workspace design connecting agents, tools, memory, policy, and execution traces.</p><a class="p-link" href="/technology/#studio">DevHeal Studio architecture &rarr;</a></article>
+</div></div></section>
+<section id="validation" class="sec-alt"><div class="container"><div class="sec-label">Evaluation and simulation</div><h2 class="sec-title">Assess systems against meaningful scenarios.</h2><div class="grid-3 catalogue-grid">
+<article class="p-card" id="product-simulator"><div class="catalogue-kind">Scenario testing</div><h3>DevHeal Simulator</h3><p>A scenario-testing design for exploring agent behaviour across tool failures, unusual inputs, and policy boundaries.</p><a class="p-link" href="/technology/#simulator">DevHeal Simulator architecture &rarr;</a></article>
+<article class="p-card" id="product-evaluation"><div class="catalogue-kind">Workflow evaluation</div><h3>AI System Evaluation</h3><p>An evaluation framework covering task success, tool use, policy adherence, latency, cost, and recovery.</p><a class="p-link" href="/technology/#evaluation">AI System Evaluation architecture &rarr;</a></article>
+<article class="p-card" id="product-certification"><div class="catalogue-kind">Readiness assessment</div><h3>AI System Certification</h3><p>A proposed assessment model that brings system evaluation results into a structured readiness review.</p><a class="p-link" href="/technology/#certification">AI System Certification architecture &rarr;</a></article>
+</div></div></section>
+<section id="runtime" class=""><div class="container"><div class="sec-label">Systems infrastructure</div><h2 class="sec-title">Explore the foundations for controlled execution.</h2><div class="grid-3 catalogue-grid">
+<article class="p-card" id="product-agentos-kernel"><div class="catalogue-kind">Hardware isolation</div><h3>AgentOS Kernel</h3><p>A hardware-isolation architecture for separating agent execution domains and memory access.</p><a class="p-link" href="/technology/#agentos-kernel">AgentOS Kernel architecture &rarr;</a></article>
+<article class="p-card" id="product-compiler"><div class="catalogue-kind">System compilation</div><h3>AI System Compiler</h3><p>A compiler design for validating contracts across agents, tools, policies, and memory.</p><a class="p-link" href="/technology/#compiler">AI System Compiler architecture &rarr;</a></article>
+<article class="p-card" id="product-recovery-engine"><div class="catalogue-kind">Workflow recovery</div><h3>Recovery Engine</h3><p>A reusable recovery design built around checkpoint, reconcile, and compensate patterns.</p><a class="p-link" href="/technology/#recovery-engine">Recovery Engine architecture &rarr;</a></article>
+<article class="p-card" id="product-edge"><div class="catalogue-kind">Constrained environments</div><h3>Edge Runtime</h3><p>A runtime design targeting local AI on constrained and embedded hardware.</p><a class="p-link" href="/technology/#edge">Edge Runtime architecture &rarr;</a></article>
+</div></div></section>
+<section id="apply" class="sec-alt"><div class="container"><div class="sec-label">Intelligence</div><h2 class="sec-title">Connect models and analysis to specialised work.</h2><div class="grid-3 catalogue-grid">
+<article class="p-card" id="product-neuraledge"><div class="catalogue-kind">Financial intelligence</div><h3>NeuralEdge</h3><p>Bring market indicators, portfolio analysis, and risk metrics into analytical workflows.</p><a class="p-link" href="/technology/#neuraledge">NeuralEdge architecture &rarr;</a></article>
+<article class="p-card" id="product-nova"><div class="catalogue-kind">Model architecture</div><h3>NOVA</h3><p>Explore the model architecture behind our approach to local inference and adaptive learning.</p><a class="p-link" href="/technology/#nova">NOVA architecture &rarr;</a></article>
+</div></div></section>
+<section class="cta-band"><div class="container"><h2>Find the right fit for your business.</h2><p>Discuss your workflows, integration needs, and deployment requirements with our team.</p><div class="hero-buttons"><a href="/contact/" class="btn btn-primary">Talk to our team &rarr;</a><a href="/solutions/" class="btn btn-ghost">Browse business solutions</a></div></div></section></main>
 <footer>
   <div class="container">
     <div class="footer-simple">
@@ -254,6 +119,6 @@
   </div>
 </footer>
 
-<script src="/assets/site.js?v=20261005-business"></script>
+<script src="/assets/site.js?v=20261005-catalogue"></script>
 </body>
 </html>
