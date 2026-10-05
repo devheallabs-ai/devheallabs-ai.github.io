@@ -251,7 +251,6 @@ h1,h2,h3,h4{font-family:var(--font-display);font-weight:650;letter-spacing:-.024
 .nav-links a{color:var(--text-muted);font-size:.82rem;font-weight:500;white-space:nowrap;transition:color .15s}
 .nav-links a:hover,.nav-links a.active{color:var(--text)}
 .nav-links a.active{font-weight:650}
-.nav-links a.nav-dummu{color:var(--accent);font-weight:750;padding:7px 12px;border-radius:999px;background:var(--accent-wash)}
 .dummu-title{font-size:clamp(2.5rem,5vw,4rem);margin:12px 0 18px;color:var(--accent);letter-spacing:-.045em}
 .platform-capability{display:flex;align-items:flex-start;gap:18px;padding:26px 24px;border-bottom:1px solid var(--line)}
 .platform-capability:last-of-type{border-bottom:0}
