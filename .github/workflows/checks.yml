@@ -1,4 +1,4 @@
-name: Playground checks
+name: Website checks
 on:
   pull_request:
   push:
@@ -14,4 +14,4 @@ jobs:
         with:
           node-version: '22'
       - run: node --check assets/site.js
-      - run: node --test .github/tests/playground.test.cjs
+      - run: node --test .github/tests/*.test.cjs

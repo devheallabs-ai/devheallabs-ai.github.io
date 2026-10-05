@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Technology — DevHeal Labs</title>
-<meta name="description" content="NC Language, NC Runtime, NC AI, AgentOS, AI Compiler, Simulation Engine, Evaluation Engine, Recovery Engine and Edge Runtime — DevHeal's engineering layers for autonomous AI systems.">
+<title>Architecture | DevHeal Labs AI</title>
+<meta name="description" content="Explore DevHeal compilation, inference, agent execution, governance, engineering tools and evaluation architectures.">
 <link rel="icon" type="image/png" href="/favicon.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<meta property="og:title" content="Technology — DevHeal Labs">
-<meta property="og:description" content="NC Language, NC Runtime, NC AI, AgentOS, AI Compiler, Simulation Engine, Evaluation Engine, Recovery Engine and Edge Runtime — DevHeal's engineering layers for autonomous AI systems.">
+<meta property="og:title" content="Architecture | DevHeal Labs AI">
+<meta property="og:description" content="Explore DevHeal compilation, inference, agent execution, governance, engineering tools and evaluation architectures.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://devheallabs.com/technology/">
 <meta property="og:image" content="https://devheallabs.com/logo.png">
@@ -17,9 +17,10 @@
 <link rel="canonical" href="https://devheallabs.com/technology/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
-<link rel="stylesheet" href="/assets/style.css?v=20261005-business">
+<link rel="stylesheet" href="/assets/style.css?v=20261005-catalogue">
 </head>
 <body>
+<a class="skip-link" href="#main-content">Skip to content</a>
 
 <nav class="nav" id="nav" aria-label="Main navigation">
   <div class="nav-inner">
@@ -31,6 +32,9 @@
         <li><a href="/products/#operate">HiveANT &middot; SwarmOps</a></li>
         <li><a href="/products/#govern">AGP &middot; AgentOS</a></li>
         <li><a href="/products/#apply">NeuralEdge &middot; NOVA</a></li>
+        <li><a href="/products/#workspace">Engineering tools</a></li>
+        <li><a href="/products/#validation">Evaluation &amp; simulation</a></li>
+        <li><a href="/products/#runtime">Systems infrastructure</a></li>
         <li><a href="/products/">All products &rarr;</a></li>
       </ul></li>
       <li><a href="/solutions/">Solutions</a></li>
@@ -44,7 +48,7 @@
       <li class="nav-has-drop"><a href="/technology/">Resources</a><ul class="nav-drop">
         <li><a href="/ip/">Patents &amp; IP</a></li>
         <li><a href="/whitepaper/">Whitepaper</a></li>
-        <li><a href="/technology/">Technology</a></li>
+        <li><a href="/technology/">Architecture</a></li>
         <li><a href="/developers/">Developers</a></li>
         <li><a href="/research/">Research publications</a></li>
         <li><a href="/benchmarks/">Benchmarks</a></li>
@@ -67,39 +71,12 @@
     </button>
     <button class="hamburger" aria-label="Open menu" aria-expanded="false">&#9776;</button>
   </div>
-</nav>
-
-<section class="page-hero">
-  <div class="container">
-    <div class="kicker sr">Technology</div>
-    <h1 class="sr d1">The engineering layers of an autonomous AI system</h1>
-    <p class="lead sr d2">Explore the architectures, execution models, and engineering behind our products. Each section describes its approach and technical scope.</p>
-  </div>
-</section>
-
-<nav class="subnav" id="subnav" aria-label="On this page">
-  <div class="subnav-inner">
-    <a href="#nc">NC</a>
-    <a href="#nc-ai">NC AI</a>
-    <a href="#hiveant">HiveANT</a>
-    <a href="#swarmops">SwarmOps</a>
-    <a href="#agp">AGP</a>
-    <a href="#in-development">Engineering projects</a>
-    <a href="#studio">Studio</a>
-    <a href="#simulator">Simulator</a>
-    <a href="#evaluation">Evaluation</a>
-    <a href="#certification">Certification</a>
-    <a href="#agentos">AgentOS</a>
-    <a href="#agentos-kernel">Kernel</a>
-    <a href="#compiler">Compiler &amp; Edge</a>
-  </div>
-</nav>
-
-<!-- SHIPPING TODAY -->
-<section id="nc">
+</nav><main id="main-content"><section class="page-hero"><div class="container"><div class="kicker">Architecture</div><h1>Inside the <span class="gt">engineering.</span></h1><p class="lead">Trace how source code, models, agents, and policies connect across DevHeal systems. Explore execution models, implementation details, and validation methods.</p><div class="hero-buttons"><a class="btn btn-primary" href="/products/">Explore the product portfolio &rarr;</a><a class="btn btn-ghost" href="/whitepaper/">Read the whitepaper</a></div></div></section>
+<nav class="subnav" id="subnav" aria-label="Architecture sections"><div class="subnav-inner"><a href="#language-architecture">Language and inference</a><a href="#autonomy-architecture">Agent execution</a><a href="#governance-architecture">Governance and isolation</a><a href="#tooling-architecture">Engineering environments</a><a href="#validation-architecture">Evaluation and recovery</a></div></nav>
+<section id="language-architecture" class="sec-alt"><div class="container"><div class="sec-label">Language and inference</div><h2 class="sec-title">From source to execution.</h2><p class="sec-desc">Follow the compilation pipeline, interface generation, local inference, and analytical model design.</p><details class="architecture-detail" id="nc"><summary>NC compilation pipeline</summary><div class="architecture-content">
   <div class="container">
     <div class="sec-label sr">Core architecture</div>
-    <h2 class="sec-title sr d1">NC — Language &amp; Runtime </h2>
+
     <div class="grid-2 sr d2" style="margin-top:32px">
       <div class="term">
         <div class="dots"><i></i><i></i><i></i></div>
@@ -123,48 +100,68 @@
         <p style="color:var(--muted);margin-bottom:16px"><strong>Problem:</strong> agent frameworks bolt tool-calling onto general-purpose languages with heavy dependency trees. Setting up a working agent means gluing together an HTTP client, a prompt template system, and an orchestration library.</p>
         <p style="color:var(--muted);margin-bottom:16px"><strong>Approach:</strong> plain-English syntax with <code>agent</code> and <code>@tool</code> as first-class language keywords, compiled to a single dependency-free binary.</p>
         <p style="color:var(--muted);margin-bottom:16px"><strong>Architecture:</strong> tokenizer → AST → bytecode compiler → stack-based VM, with a dedicated AI opcode for model invocation. See the <a href="/ip/" style="color:var(--cyan)">IP page</a> for the patent documentation covering this design.</p>
-        <p style="color:var(--muted);margin-bottom:16px"><strong>Limitations:</strong> young language — smaller ecosystem than Python/JS, standard library still growing (80+ functions today).</p>
+        <p style="color:var(--muted);margin-bottom:16px"><strong>Limitations:</strong> the standard library contains 80+ functions; assess required libraries and integrations against the language reference.</p>
         <p style="color:var(--muted)"><strong>Docs:</strong> <a href="https://github.com/devheallabs-ai/nc" target="_blank" rel="noopener" style="color:var(--cyan)">github.com/devheallabs-ai/nc</a></p>
       </div>
     </div>
   </div>
-</section>
-
-<section id="nc-ui" class="sec-alt">
+</div></details>
+<details class="architecture-detail" id="nc-ui"><summary>NC UI static interface generation</summary><div class="architecture-content">
   <div class="container">
-    <h2 class="sec-title sr">NC UI — Interface Layer </h2>
+
     <p class="sec-desc wide sr d1">A plain-English frontend language that compiles to static HTML, CSS and JavaScript. <strong>Problem:</strong> AI-native applications need a UI layer that doesn't require a Node build pipeline to ship. <strong>Approach:</strong> describe layout, theme and behavior in plain English; NC UI compiles it to static assets deployable anywhere, including GitHub Pages. <strong>Limitations:</strong> component ecosystem is small; best suited to marketing sites, dashboards and internal tools today, not complex SPA state management.</p>
   </div>
-</section>
-
-<section id="nc-ai">
+</div></details>
+<details class="architecture-detail" id="nc-ai"><summary>NC AI local inference</summary><div class="architecture-content">
   <div class="container">
-    <h2 class="sec-title sr">NC AI — Runtime </h2>
+
     <p class="sec-desc wide sr d1"><strong>Problem:</strong> most AI runtimes assume a cloud API and a credit card. <strong>Approach:</strong> local model execution on CPU — code generation, agentic tool-calling and the CORTEX runtime — with no API keys and no network dependency. <strong>Architecture:</strong> a compact model family (500K–20B parameters across 7 sizes) designed to run on commodity hardware. <strong>Limitations:</strong> local CPU inference trades raw capability for cost, latency and privacy — it is not positioned as a frontier-model replacement for every task. Full comparison on the <a href="/benchmarks/" style="color:var(--cyan)">Benchmarks page</a>.</p>
   </div>
-</section>
-
-<section id="hiveant" class="sec-alt">
+</div></details>
+<details class="architecture-detail" id="neuraledge"><summary>NeuralEdge analytical pipeline</summary><div class="architecture-content"><div class="container"><p class="sec-desc">NeuralEdge combines market data ingestion and caching with technical indicators, portfolio optimisation, risk calculations, and sentiment analysis. API endpoints expose analysis to connected applications.</p><p class="sec-desc">The analysis pipeline tracks prediction outcomes to adjust model weights. Validate data coverage and model behaviour against the requirements of the target analytical workflow.</p></div></div></details>
+<details class="architecture-detail" id="nova"><summary>NOVA model design</summary><div class="architecture-content"><div class="container"><p class="sec-desc">Explore our model architecture through its mathematical approach, implementation scope, and patent documentation.</p><div class="hero-buttons"><a class="btn btn-ghost" href="/whitepaper/">Model design and methods</a><a class="btn btn-ghost" href="/ip/">Patent documentation</a></div></div></div></details>
+</div></section>
+<section id="autonomy-architecture" class=""><div class="container"><div class="sec-label">Agent execution</div><h2 class="sec-title">From intent to governed action.</h2><p class="sec-desc">Explore the execution loops, coordination mechanisms, memory, and feedback behind autonomous workflows.</p><details class="architecture-detail" id="dummu"><summary>Dummu agent and learning architecture</summary><div class="architecture-content"><div class="container"><p class="sec-desc">Dummu connects operational signals, natural-language agent definitions, and governed execution. Generated agent definitions specify goals, tools, and action boundaries.</p><div class="grid-3"><article class="card"><h3>Agent creation</h3><p>Natural-language input is translated into structured agent definitions for operational workflows.</p></article><article class="card"><h3>Execution controls</h3><p>Policy checks, approvals, dry runs, and audit records sit in the action path.</p></article><article class="card"><h3>Outcome learning</h3><p>Reinforcement learning uses resolution success, elapsed time, tool efficiency, and operator feedback to improve diagnostic choices.</p></article></div></div></div></details>
+<details class="architecture-detail" id="hiveant"><summary>HiveANT swarm coordination</summary><div class="architecture-content">
   <div class="container">
-    <h2 class="sec-title sr">HiveANT — Swarm Operations </h2>
-    <p class="sec-desc wide sr d1"><strong>Problem:</strong> production incidents require investigating, diagnosing and fixing failures faster than any one engineer can coordinate. <strong>Approach:</strong> Ant Colony Optimization and Artificial Bee Colony swarm algorithms coordinate many autonomous agents to investigate, diagnose, fix and learn from software failures. <strong>Technical scope:</strong> built on the NC engine; a public demo is not currently hosted. <strong>Limitations:</strong> best suited to environments with good observability data already in place; swarm coordination parameters need tuning per environment.</p>
+
+    <p class="sec-desc wide sr d1"><strong>Problem:</strong> production incidents require investigating, diagnosing and fixing failures faster than any one engineer can coordinate. <strong>Approach:</strong> Ant Colony Optimization and Artificial Bee Colony swarm algorithms coordinate many autonomous agents to investigate, diagnose, fix and learn from software failures. <strong>Technical scope:</strong> built on the NC engine, with coordination parameters configured for each environment. <strong>Limitations:</strong> best suited to environments with good observability data already in place; swarm coordination parameters need tuning per environment.</p>
   </div>
-</section>
-
-<section id="swarmops">
+</div></details>
+<details class="architecture-detail" id="swarmops"><summary>SwarmOps incident workflow</summary><div class="architecture-content">
   <div class="container">
-    <h2 class="sec-title sr">SwarmOps — Autonomous Incident Response </h2>
+
     <p class="sec-desc wide sr d1"><strong>Problem:</strong> when a service breaks, root-causing it usually means paging someone and waiting. <strong>Approach:</strong> AI-powered incident investigation combining reinforcement learning, cognitive memory and RAG — pulls data, finds the root cause, proposes or applies a fix, and learns from the outcome. <strong>Architecture:</strong> single NC binary (~478KB), zero external dependencies. <strong>Limitations:</strong> automatic remediation should run in supervised mode until an organization has validated its recommendations in their own environment.</p>
   </div>
-</section>
+</div></details>
+<details class="architecture-detail" id="agentos"><summary>AgentOS execution model</summary><div class="architecture-content">
+  <div class="container">
 
-<!-- AGP -->
-<section id="agp">
+
+    <p class="sec-desc wide sr d2">AgentOS defines a shared execution foundation by extracting common runtime patterns from HiveANT and SwarmOps. The shared runtime design is derived from the existing product source.</p>
+    <div class="spec-grid sr d3">
+      <div class="spec-item"><span class="n">•</span> Agent execution</div>
+      <div class="spec-item"><span class="n">•</span> State</div>
+      <div class="spec-item"><span class="n">•</span> Memory</div>
+      <div class="spec-item"><span class="n">•</span> Tool execution</div>
+      <div class="spec-item"><span class="n">•</span> Identity</div>
+      <div class="spec-item"><span class="n">•</span> Policies</div>
+      <div class="spec-item"><span class="n">•</span> Scheduling</div>
+      <div class="spec-item"><span class="n">•</span> Model routing</div>
+      <div class="spec-item"><span class="n">•</span> Distributed execution</div>
+      <div class="spec-item"><span class="n">•</span> Resource management</div>
+      <div class="spec-item"><span class="n">•</span> Recovery</div>
+    </div>
+    <p class="callout sr d4">Where AgentOS is heading is documented in Patent Family B's autonomous multi-agent orchestration claims — see <a href="/ip/" style="color:var(--cyan)">Patents &amp; IP</a> — which describe the pheromone-graph reinforcement and digital-twin analysis already running inside HiveANT today.</p>
+  </div>
+</div></details>
+</div></section>
+<section id="governance-architecture" class="sec-alt"><div class="container"><div class="sec-label">Governance and isolation</div><h2 class="sec-title">Bound authority across software and hardware.</h2><p class="sec-desc">Review influence budgets, decision evidence, and isolation boundaries.</p><details class="architecture-detail" id="agp"><summary>AGP influence governance</summary><div class="architecture-content">
   <div class="container">
     <div class="grid-2" style="align-items:flex-start">
       <div class="sr d1">
 
-        <h2 class="sec-title" style="margin-top:16px">AGP — Agent Governance Protocol</h2>
+
         <p style="color:var(--muted);font-size:1rem;line-height:1.8;margin-bottom:16px"><strong>Problem:</strong> the industry has largely solved <em>authentication</em> for AI agents — proving which agent is acting. It has not solved <em>influence governance</em> — bounding how much any one input (a document, a tool result, a prior message) is allowed to shape a privileged action before that action commits.</p>
         <p style="color:var(--muted);font-size:1rem;line-height:1.8;margin-bottom:16px"><strong>Approach:</strong> every input-to-output influence is tracked as a signed "compute edge" with a per-input cap and an aggregate influence budget. A privileged action is refused before it commits if the budget is exceeded. Every decision produces a causal receipt committed to a hash-chained ledger that an auditor can verify completely offline.</p>
         <p style="color:var(--muted);font-size:1rem;line-height:1.8"><strong>Architecture:</strong> a C core (capsules, edges, ledger, authorization) plus a hardened HTTP gateway (TLS, rate limiting, audit) exposing a decision API, with a drop-in MCP middleware that gates <code>tools/call</code> in front of an existing MCP server — no agent rewrite required.</p>
@@ -181,17 +178,24 @@
   attack_success   <span class="nu">0.0%</span>  <span class="cm">// 4/4 blocked</span>
   benign_blocked   <span class="nu">0.0%</span>  <span class="cm">// no false positives</span></pre>
         </div>
-        <p style="color:var(--muted);font-size:.92rem;line-height:1.75"><strong>Technical scope:</strong> a working prototype, internally benchmarked — 86 tests passing, with the core C authorization logic (20 of the 86) verified under AddressSanitizer and UndefinedBehaviorSanitizer; the remaining integration tests are functional but not yet run under sanitizers. Hardware attestation (TEE) backends are currently simulated, not hardware-verified. Not yet deployed as a product. A patent application covering the governance protocol has been filed (Patent Family C) — see <a href="/ip/" style="color:var(--cyan)">Patents &amp; IP</a>.</p>
+        <p style="color:var(--muted);font-size:.92rem;line-height:1.75"><strong>Technical scope:</strong> a working prototype, internally benchmarked — 86 tests passing, with the core C authorization logic (20 of the 86) verified under AddressSanitizer and UndefinedBehaviorSanitizer; the remaining integration tests are functional but not yet run under sanitizers. Hardware attestation (TEE) backends are currently simulated, not hardware-verified. A patent application covering the governance protocol has been filed (Patent Family C) — see <a href="/ip/" style="color:var(--cyan)">Patents &amp; IP</a>.</p>
       </div>
     </div>
   </div>
-</section>
-
-<!-- IN ACTIVE DEVELOPMENT -->
-<section class="sec-alt" id="in-development">
+</div></details>
+<details class="architecture-detail" id="agentos-kernel"><summary>AgentOS Kernel isolation</summary><div class="architecture-content">
   <div class="container">
-    <div class="sec-label sr">In Active Development</div>
-    <h2 class="sec-title sr d1">Additional engineering projects</h2>
+
+
+    <p class="sec-desc wide sr d2">A lower-level, separate research thread from the AgentOS runtime above: a bare-metal type-1 hypervisor that partitions CPUs and memory into hardware-isolated domains, so one agent's runtime can't read another's memory even if the software layer is compromised.</p>
+    <p class="sec-desc wide sr d3" style="margin-bottom:0"><strong>What's verified:</strong> it boots and auto-detects hardware inventory under emulated firmware (OVMF/QEMU), and two guest domains have been demonstrated running under distinct nested page tables, proven not to read each other's memory — across a 14-lane automated test matrix (9 hardware-configuration lanes plus 5 negative/failure-case lanes) for the 64-bit hypervisor build. <strong>What we're not claiming:</strong> this has not booted on physical hardware, and only AMD's virtualization extensions are exercised so far (no Intel VT-x path yet). The project's own internal readiness gate — a 104-check automated audit — currently reports a <strong>failed</strong> verdict, and its own documentation is explicit: this is "a real but minimal kernel, not a supported production platform."</p>
+  </div>
+</div></details>
+</div></section>
+<section id="tooling-architecture" class=""><div class="container"><div class="sec-label">Engineering environments</div><h2 class="sec-title">Connect the development lifecycle.</h2><p class="sec-desc">Review coding tools, operational control planes, and workspace design.</p><span id="emerging" class="anchor-alias"></span><details class="architecture-detail" id="in-development"><summary>NC-Code and NC-OS tooling</summary><div class="architecture-content">
+  <div class="container">
+    <div class="sec-label sr">Engineering tool architecture</div>
+
     <p class="sec-desc wide sr d2">Explore the engineering projects behind our platform, including their implementation scope and technical limitations.</p>
 
     <div class="grid-2">
@@ -207,26 +211,15 @@
       </div>
     </div>
   </div>
-</section>
-
-<!-- EMERGING LAYERS INTRO -->
-<section class="sec-alt" id="emerging">
-  <div class="container">
-    <div class="sec-label sr">Building Toward</div>
-    <h2 class="sec-title sr d1">The layers that don't exist yet — and why</h2>
-    <p class="sec-desc wide sr d2">These are the layers a complete AI Systems Engineering platform needs. None of them are available as standalone products today. We'd rather tell you that plainly, in detail, than dress up a roadmap as a shipping feature.</p>
-  </div>
-</section>
-
-<!-- DEVHEAL STUDIO -->
-<section id="studio">
+</div></details>
+<details class="architecture-detail" id="studio"><summary>DevHeal Studio workspace design</summary><div class="architecture-content">
   <div class="container">
     <div class="grid-2" style="align-items:flex-start">
       <div class="sr d1">
 
-        <h2 class="sec-title" style="margin-top:16px">DevHeal Studio</h2>
-        <p style="color:var(--muted);font-size:1rem;line-height:1.8;margin-bottom:20px">The engineering environment for AI systems. <strong>Not an AI coding assistant.</strong> Code-completion tools help you write code faster. Studio is meant for engineering the AI system itself — the agent, the tools it calls, the memory it reads and writes, the policies it must obey, and the trace of everything it did.</p>
-        <p style="color:var(--muted);font-size:1rem;line-height:1.8">Today Studio is a design document and an internal prototype, not a downloadable product. The capabilities below describe its intended design.</p>
+
+        <p style="color:var(--muted);font-size:1rem;line-height:1.8;margin-bottom:20px">Studio’s workspace design connects the components of an AI system — the agent, the tools it calls, the memory it reads and writes, the policies it must obey, and the trace of everything it did.</p>
+        <p style="color:var(--muted);font-size:1rem;line-height:1.8"><strong>Design scope:</strong> the internal prototype and specification cover the intended capabilities below.</p>
       </div>
       <div class="term sr d2">
         <div class="dots"><i></i><i></i><i></i></div>
@@ -259,15 +252,14 @@
       <div class="spec-item"><span class="n">11</span> Deploy — ship the compiled system, not a notebook</div>
       <div class="spec-item"><span class="n">12</span> Operate &amp; Heal — watch it run, recover when it doesn't</div>
     </div>
-    <p style="color:var(--dim);font-size:.82rem;text-align:center;margin-top:8px">Building toward — none of the twelve capabilities above are shipped as part of a Studio product today.</p>
+    <p style="color:var(--dim);font-size:.82rem;text-align:center;margin-top:8px">The list above describes the Studio workspace design.</p>
   </div>
-</section>
-
-<!-- SIMULATOR -->
-<section class="sec-alt" id="simulator">
+</div></details>
+</div></section>
+<section id="validation-architecture" class="sec-alt"><div class="container"><div class="sec-label">Evaluation and recovery</div><h2 class="sec-title">Define behaviour across success and failure.</h2><p class="sec-desc">Explore scenario design, evaluation criteria, recovery patterns, and compilation contracts.</p><details class="architecture-detail" id="simulator"><summary>DevHeal Simulator scenario design</summary><div class="architecture-content">
   <div class="container">
 
-    <h2 class="sec-title sr d1" style="margin-top:16px">DevHeal Simulator</h2>
+
     <p class="sec-desc wide sr d2">Test autonomous AI systems before they interact with the real world. <strong>Problem:</strong> most agents reach production having been tested against a handful of prompts someone typed by hand. <strong>Approach:</strong> run the system against structured scenario suites — the same idea as a chaos-engineering test suite, aimed at agents instead of servers — before it ever sees a real customer.</p>
     <div class="tagcloud sr d3">
       <span class="tag">Customer interactions</span>
@@ -281,15 +273,13 @@
       <span class="tag">Dependency failures</span>
       <span class="tag">Long-running workflows</span>
     </div>
-    <p class="callout sr d4">We are not going to tell you the Simulator has run "millions of simulations" — it hasn't, because it doesn't exist as a product yet. When it does, this page will show the real scenario count and pass/fail data, not a placeholder number.</p>
+    <p class="callout sr d4"><strong>Design scope:</strong> scenario suites define inputs, expected behaviour, and pass/fail criteria. The simulator architecture is documented as a system design.</p>
   </div>
-</section>
-
-<!-- EVALUATION + CERTIFICATION -->
-<section id="evaluation">
+</div></details>
+<details class="architecture-detail" id="evaluation"><summary>AI System Evaluation dimensions</summary><div class="architecture-content">
   <div class="container">
 
-    <h2 class="sec-title sr d1" style="margin-top:16px">AI System Evaluation</h2>
+
     <p class="sec-desc wide sr d2">Evaluating an AI system takes more than a model-accuracy benchmark. A model can score well on a leaderboard and still fail in production because it picked the wrong tool, ignored a policy, or quietly blew through budget. Evaluation has to look at the whole run.</p>
     <div class="spec-grid sr d3">
       <div class="spec-item"><span class="n">•</span> Task success</div>
@@ -307,70 +297,12 @@
     </div>
     <p class="sec-desc wide sr d3" style="margin-top:12px;margin-bottom:0">All twelve dimensions roll up into one idea we call <strong>Production Readiness</strong>: a system should be evaluated against all of this before it is deployed, not after it has already failed in front of a customer.</p>
   </div>
-</section>
-
-<section class="sec-alt" id="certification">
-  <div class="container">
-    <div class="grid-2" style="align-items:center">
-      <div class="sr d1">
-
-        <h2 class="sec-title" style="margin-top:16px">AI System Certification</h2>
-        <p style="color:var(--muted);font-size:1rem;line-height:1.8">A future extension of Evaluation: a single "Production Readiness" certification for a deployed agent, the way a build either passes or fails CI. <strong>This does not exist as a product today</strong> — the mock below is illustrative of the shape it would take, not a real system or real data.</p>
-      </div>
-      <div class="mockup sr d2">
-        <div class="mockup-bar"><span class="mb-title">production_readiness — conceptual example</span></div>
-        <div class="mockup-body">
-          <div class="mockup-row"><span class="mr-label">System</span><span class="mr-val">Claims Processing Agent</span></div>
-          <div class="mockup-row"><span class="mr-label">Task Success</span><span class="mr-val pos">97.2%</span></div>
-          <div class="mockup-row"><span class="mr-label">Policy Compliance</span><span class="mr-val pos">99.8%</span></div>
-          <div class="mockup-row"><span class="mr-label">Tool Accuracy</span><span class="mr-val pos">98.4%</span></div>
-          <div class="mockup-row"><span class="mr-label">Security</span><span class="mr-val pos">PASS</span></div>
-          <div class="mockup-row"><span class="mr-label">Recovery</span><span class="mr-val pos">PASS</span></div>
-          <div class="mockup-row"><span class="mr-label">Cost</span><span class="mr-val">$0.018 / transaction</span></div>
-          <div class="mockup-cert"><span class="mc-label">Certification</span><span class="mc-val">PRODUCTION READY</span></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- AGENTOS -->
-<section id="agentos">
-  <div class="container">
-
-    <h2 class="sec-title sr d1" style="margin-top:16px">AgentOS — The Execution Foundation</h2>
-    <p class="sec-desc wide sr d2">Every generic "AgentOS" pitch says roughly the same thing. Here is specifically what's different about DevHeal's approach: AgentOS is not a clean-slate design — it is the runtime we would get by extracting what HiveANT and SwarmOps already do in code into one shared foundation, instead of each product reimplementing its own agent loop. Neither product is deployed anywhere, so this is a design derived from existing source, not from production experience.</p>
-    <div class="spec-grid sr d3">
-      <div class="spec-item"><span class="n">•</span> Agent execution</div>
-      <div class="spec-item"><span class="n">•</span> State</div>
-      <div class="spec-item"><span class="n">•</span> Memory</div>
-      <div class="spec-item"><span class="n">•</span> Tool execution</div>
-      <div class="spec-item"><span class="n">•</span> Identity</div>
-      <div class="spec-item"><span class="n">•</span> Policies</div>
-      <div class="spec-item"><span class="n">•</span> Scheduling</div>
-      <div class="spec-item"><span class="n">•</span> Model routing</div>
-      <div class="spec-item"><span class="n">•</span> Distributed execution</div>
-      <div class="spec-item"><span class="n">•</span> Resource management</div>
-      <div class="spec-item"><span class="n">•</span> Recovery</div>
-    </div>
-    <p class="callout sr d4">Where AgentOS is heading is documented in Patent Family B's autonomous multi-agent orchestration claims — see <a href="/ip/" style="color:var(--cyan)">Patents &amp; IP</a> — which describe the pheromone-graph reinforcement and digital-twin analysis already running inside HiveANT today.</p>
-  </div>
-</section>
-
-<section class="sec-alt" id="agentos-kernel">
-  <div class="container">
-
-    <h2 class="sec-title sr d1" style="margin-top:16px">AgentOS Kernel — Hardware Isolation Research</h2>
-    <p class="sec-desc wide sr d2">A lower-level, separate research thread from the AgentOS runtime above: a bare-metal type-1 hypervisor that partitions CPUs and memory into hardware-isolated domains, so one agent's runtime can't read another's memory even if the software layer is compromised.</p>
-    <p class="sec-desc wide sr d3" style="margin-bottom:0"><strong>What's verified:</strong> it boots and auto-detects hardware inventory under emulated firmware (OVMF/QEMU), and two guest domains have been demonstrated running under distinct nested page tables, proven not to read each other's memory — across a 14-lane automated test matrix (9 hardware-configuration lanes plus 5 negative/failure-case lanes) for the 64-bit hypervisor build. <strong>What we're not claiming:</strong> this has not booted on physical hardware, and only AMD's virtualization extensions are exercised so far (no Intel VT-x path yet). The project's own internal readiness gate — a 104-check automated audit — currently reports a <strong>failed</strong> verdict, and its own documentation is explicit: this is "a real but minimal kernel, not a supported production platform."</p>
-  </div>
-</section>
-
-<!-- COMPILER / RECOVERY / EDGE -->
-<section class="sec-alt" id="compiler">
+</div></details>
+<details class="architecture-detail" id="certification"><summary>AI System Certification assessment model</summary><div class="architecture-content"><div class="container"><p class="sec-desc">A proposed extension of Evaluation that combines task success, policy adherence, tool accuracy, security, recovery, and cost into a structured readiness assessment.</p><p class="callout">The design defines an internal engineering assessment, distinct from external regulatory or industry certification. Assessment criteria are tied to the workflow and deployment context.</p></div></div></details>
+<details class="architecture-detail" id="compiler"><summary>Compiler, Recovery Engine, and Edge Runtime</summary><div class="architecture-content">
   <div class="container">
     <div class="sec-label sr">Also on the Roadmap</div>
-    <h2 class="sec-title sr d1">Compiler, Recovery, and Edge</h2>
+
     <div class="grid-3">
       <div class="card sr d1">
 
@@ -385,12 +317,13 @@
       <div class="card sr d3" id="edge">
 
         <h3 style="margin:14px 0 10px;font-size:1.1rem;font-weight:800">Edge Runtime</h3>
-        <p style="color:var(--muted);font-size:.9rem;line-height:1.7"><strong>Problem:</strong> NC AI already runs on a laptop CPU; running it on constrained edge/embedded hardware is a different set of tradeoffs. <strong>Approach:</strong> a stripped-down build of the NC AI runtime targeting edge devices. Not yet started.</p>
+        <p style="color:var(--muted);font-size:.9rem;line-height:1.7"><strong>Problem:</strong> NC AI already runs on a laptop CPU; running it on constrained edge/embedded hardware is a different set of tradeoffs. <strong>Approach:</strong> a stripped-down build of the NC AI runtime targeting edge devices. This section describes the target architecture.</p>
       </div>
     </div>
   </div>
-</section>
-
+</div></details>
+</div></section>
+</main>
 <footer>
   <div class="container">
     <div class="footer-simple">
@@ -402,6 +335,6 @@
   </div>
 </footer>
 
-<script src="/assets/site.js?v=20261005-business"></script>
+<script src="/assets/site.js?v=20261005-catalogue"></script>
 </body>
 </html>

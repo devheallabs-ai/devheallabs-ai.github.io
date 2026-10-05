@@ -64,6 +64,25 @@
     });
   }
 
+  function revealFragment() {
+    var id;
+    try { id = decodeURIComponent(location.hash.slice(1)); } catch (e) { return; }
+    var target = id && document.getElementById(id);
+    if (!target) return;
+    var parent = target;
+    var expanded = false;
+    while (parent) {
+      if (parent.tagName === 'DETAILS' && !parent.open) {
+        parent.open = true;
+        expanded = true;
+      }
+      parent = parent.parentElement;
+    }
+    if (expanded) requestAnimationFrame(function () { target.scrollIntoView({ block: 'start' }); });
+  }
+  window.addEventListener('hashchange', revealFragment);
+  revealFragment();
+
   // ── Sub-nav scroll-spy (long pages only) ──
   var subnav = document.getElementById('subnav');
   if (subnav && 'IntersectionObserver' in window) {
