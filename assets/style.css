@@ -251,6 +251,13 @@ h1,h2,h3,h4{font-family:var(--font-display);font-weight:650;letter-spacing:-.024
 .nav-links a{color:var(--text-muted);font-size:.82rem;font-weight:500;white-space:nowrap;transition:color .15s}
 .nav-links a:hover,.nav-links a.active{color:var(--text)}
 .nav-links a.active{font-weight:650}
+.nav-links a.nav-dummu{color:var(--accent);font-weight:750;padding:7px 12px;border-radius:999px;background:var(--accent-wash)}
+.dummu-title{font-size:clamp(2.5rem,5vw,4rem);margin:12px 0 18px;color:var(--accent);letter-spacing:-.045em}
+.platform-capability{display:flex;align-items:flex-start;gap:18px;padding:26px 24px;border-bottom:1px solid var(--line)}
+.platform-capability:last-of-type{border-bottom:0}
+.platform-number{font-family:var(--mono);font-size:.76rem;font-weight:600;color:var(--accent);padding-top:3px}
+.platform-capability h2{font-size:1.05rem;margin-bottom:8px;line-height:1.35}
+.platform-capability p{font-size:.88rem;color:var(--text-muted);line-height:1.65}
 .nav-cta{
   display:inline-flex;align-items:center;gap:7px;padding:8px 17px;border-radius:999px;
   font-size:.8rem;font-weight:650;background:var(--grad-cta);color:var(--accent-fg)!important;white-space:nowrap;flex-shrink:0;
@@ -447,7 +454,7 @@ section{padding:84px 0;position:relative}
 .nav-drop{
   display:none;position:absolute;top:calc(100% + 12px);left:-14px;min-width:216px;
   list-style:none;padding:8px;margin:0;
-  background:var(--glass-strong);border:1px solid var(--glass-brd);border-radius:var(--radius);
+  background:var(--bg-solid);border:1px solid var(--glass-brd);border-radius:var(--radius);
   box-shadow:var(--glass-shadow);
   -webkit-backdrop-filter:var(--glass-blur);backdrop-filter:var(--glass-blur);
   z-index:1000;
@@ -459,7 +466,7 @@ section{padding:84px 0;position:relative}
 .nav-drop a:hover{background:var(--glass-2);color:var(--text)}
 .nd-sub{display:block;font-size:.71rem;color:var(--text-dim);font-weight:400;margin-top:3px}
 
-@media (max-width:1280px){
+@media (max-width:1100px){
   .nav-has-drop{width:100%}
   .nav-has-drop>a::after{display:none}
   .nav-drop{
@@ -651,7 +658,7 @@ footer a:focus-visible{outline:2px solid var(--accent);outline-offset:4px;border
   .spec-grid{grid-template-columns:1fr 1fr}
   .footer-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:28px}
 }
-@media (max-width:1280px){
+@media (max-width:1100px){
   .hero-split{grid-template-columns:1fr;gap:40px}
   .nav-links{
     display:none;position:absolute;top:calc(100% + 8px);left:0;right:0;
