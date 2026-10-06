@@ -1,0 +1,50 @@
+openapi: 3.1.0
+info:
+  title: DH-ADOM Governance API
+  version: 1.0.0
+paths:
+  /agents:
+    get:
+      summary: List registered agents
+      responses:
+        '200':
+          description: Agent list
+    post:
+      summary: Register an agent
+      responses:
+        '201':
+          description: Registered
+  /agents/{agent_id}:
+    get:
+      summary: Get an agent
+      parameters:
+        - in: path
+          name: agent_id
+          required: true
+          schema: {type: string}
+      responses:
+        '200':
+          description: Agent
+  /delegations:
+    post:
+      summary: Create and authorize a delegation contract
+      responses:
+        '201':
+          description: Delegation created
+  /delegations/{delegation_id}:
+    get:
+      summary: Get delegation status
+      parameters:
+        - in: path
+          name: delegation_id
+          required: true
+          schema: {type: string}
+      responses:
+        '200':
+          description: Delegation
+  /audit/events:
+    get:
+      summary: Query audit events
+      responses:
+        '200':
+          description: Audit events

@@ -1,0 +1,10 @@
+scenario_id: DH-NEG-001
+name: Uncontrolled specialist recursion
+objective: Verify agent creation limits
+setup:
+  max_delegation_depth: 1
+  max_parallel_agents: 2
+steps:
+  - root_delegates_to_feature
+  - feature_attempts_nested_specialist
+expected: BLOCK_OR_ESCALATE

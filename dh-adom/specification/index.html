@@ -1,0 +1,68 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Contracts that make ownership explicit. — DH-ADOM — DevHeal Labs</title><meta name="description" content="The normative specification defines roles, delegation boundaries, lifecycle integration, evidence and conformance requirements."><link rel="canonical" href="https://devheallabs.com/dh-adom/specification/"><link rel="icon" href="/favicon.png"><meta property="og:title" content="Contracts that make ownership explicit. — DH-ADOM"><meta property="og:description" content="The normative specification defines roles, delegation boundaries, lifecycle integration, evidence and conformance requirements."><meta property="og:url" content="https://devheallabs.com/dh-adom/specification/"><meta property="og:type" content="article"><meta property="og:image" content="https://devheallabs.com/logo.png"><link rel="stylesheet" href="/assets/style.css?v=20261005-premium"><link rel="stylesheet" href="/dh-adom/assets/publication.css"></head><body>
+<a class="skip-link" href="#main-content">Skip to content</a>
+
+<nav class="nav" id="nav" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo"><img src="/logo.png?v=20261005" alt="" class="logo-icon">DevHeal<span>Labs AI</span></a>
+    <ul class="nav-links">
+      <li class="nav-has-drop"><a href="/products/">Products</a><ul class="nav-drop">
+        <li><a href="/products/dummu/">Dummu<span class="nd-sub">Autonomous platform</span></a></li>
+        <li><a href="/products/#build">NC &middot; NC UI &middot; NC AI</a></li>
+        <li><a href="/products/#operate">HiveANT &middot; SwarmOps</a></li>
+        <li><a href="/products/#govern">AGP &middot; AgentOS</a></li>
+        <li><a href="/products/#apply">NeuralEdge &middot; NOVA</a></li>
+        <li><a href="/products/#workspace">Engineering tools</a></li>
+        <li><a href="/products/#validation">Evaluation &amp; simulation</a></li>
+        <li><a href="/products/#runtime">Systems infrastructure</a></li>
+        <li><a href="/products/">All products &rarr;</a></li>
+      </ul></li>
+      <li><a href="/solutions/">Solutions</a></li>
+      <li class="nav-has-drop"><a href="/industries/">Industries</a><ul class="nav-drop">
+        <li><a href="/industries/financial-services/">Financial Services</a></li>
+        <li><a href="/industries/technology/">Technology &amp; SaaS</a></li>
+        <li><a href="/industries/healthcare/">Healthcare &amp; Life Sciences</a></li>
+        <li><a href="/industries/industrial/">Manufacturing &amp; Industrial</a></li>
+        <li><a href="/industries/">All industries &rarr;</a></li>
+      </ul></li>
+      <li class="nav-has-drop"><a href="/technology/">Resources</a><ul class="nav-drop">
+        <li><a href="/ip/">Patents &amp; IP</a></li>
+        <li><a href="/whitepaper/">Whitepaper</a></li>
+        <li><a href="/technology/">Architecture</a></li>
+        <li><a href="/developers/">Developers</a></li>
+        <li><a href="/research/">Research publications</a></li><li><a href="/dh-adom/">DH-ADOM engineering method</a></li><li><a href="/dh-adom/">DH-ADOM engineering method</a></li>
+        <li><a href="/benchmarks/">Benchmarks</a></li>
+        <li><a href="/proof/">Evidence</a></li>
+        <li><a href="/roadmap/">Roadmap</a></li>
+      </ul></li>
+      <li class="nav-has-drop"><a href="/company/">Company</a><ul class="nav-drop">
+        <li><a href="/company/">About DevHeal</a></li>
+        <li><a href="/why-devheal/">Why DevHeal</a></li>
+        <li><a href="/services/">Services</a></li>
+        <li><a href="/enterprise/">Enterprise</a></li><li><a href="/security/">Deployment &amp; security</a></li>
+        <li><a href="/design-partner/">Engagement programme</a></li>
+      </ul></li>
+      <li><a href="/contact/">Contact Us</a></li>
+      <li><a href="/contact/" class="nav-cta">Discuss your use case</a></li>
+    </ul>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle colour theme" title="Toggle colour theme">
+      <svg class="icon-light" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1 1M18 18l1 1M5 19l1-1M18 6l1-1"/></svg>
+      <svg class="icon-dark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.8z"/></svg>
+    </button>
+    <button class="hamburger" aria-label="Open menu" aria-expanded="false">&#9776;</button>
+  </div>
+</nav>
+
+<main id="main-content" class="dh-main"><div class="container"><header class="dh-heading"><a class="dh-kicker" href="/research/">DevHeal Research / DH-ADOM</a><h1>Contracts that make ownership explicit.</h1><p>The normative specification defines roles, delegation boundaries, lifecycle integration, evidence and conformance requirements.</p><div class="dh-meta">White paper 1.0 · Package 1.0.0 · 6 October 2026</div></header><nav class="dh-nav" aria-label="DH-ADOM publication"><a href="/dh-adom/">Overview</a><a href="/dh-adom/whitepaper/">White paper</a><a href="/dh-adom/specification/" aria-current="page">Specification</a><a href="/dh-adom/architecture/">Architecture</a><a href="/dh-adom/implementation/">Implementation</a><a href="/dh-adom/evaluation/">Evaluation</a><a href="/dh-adom/security/">Security</a><a href="/dh-adom/research/">Research</a><a href="/dh-adom/downloads/">Downloads</a></nav><article class="dh-paper"><h2>DH-ADOM Technical Specification v1.0</h2><p>Status: Normative</p><p>Version: 1.0.0</p><p>Date: 2026-10-06</p><h3>1. Scope</h3><p>DH-ADOM specifies a repository-level operating model for AI-native software engineering. It defines governance hierarchy, agent roles, domain ownership, bounded delegation, lifecycle integration, evidence, state, handoff, and conformance requirements.</p><h3>2. Normative language</h3><p>The terms MUST, MUST NOT, SHOULD, SHOULD NOT, MAY, and RECOMMENDED are normative.</p><h3>3. Governance hierarchy</h3><p>1. Engineering Constitution</p><p>2. AI-SDLC</p><p>3. ADLC</p><p>4. Root Agent</p><p>5. Feature Agent</p><p>6. Specialist Agent</p><p>7. Implementation</p><h3>4. Agent roles</h3><h4>4.1 Root Agent</h4><p>The Root Agent MUST own global orchestration and MUST NOT require itself to implement every feature.</p><h4>4.2 Feature Agent</h4><p>Every meaningful bounded domain SHOULD have one persistent Feature Agent. A Feature Agent MUST declare intent, ownership, capabilities, tools, permissions, autonomy, risks, state, and handoff.</p><h4>4.3 Specialist Agent</h4><p>A Specialist Agent MUST be created under a parent Feature Agent or explicitly authorized Root Agent. It MUST have a bounded purpose and task-scoped permissions.</p><h3>5. Delegation Contract</h3><p>Every delegation MUST identify parent, child, purpose, task, scope, permissions, budget, lifetime, evidence requirements, and acceptance criteria.</p><h3>6. Delegation invariants</h3><ul><li>Child scope MUST be a subset of authorized parent scope unless explicitly widened through governance.</li></ul><ul><li>Delegation depth MUST be bounded.</li></ul><ul><li>Parallel child execution MUST be bounded.</li></ul><ul><li>Child permissions MUST NOT exceed delegated authority.</li></ul><ul><li>Completion MUST return evidence and handoff.</li></ul><ul><li>Uncontrolled recursive spawning MUST be blocked.</li></ul><h3>7. Feature ownership</h3><p>Feature Agent ownership is an engineering boundary. Cross-feature changes require coordination through the Root Agent and MUST be traceable.</p><h3>8. Identity and contract</h3><p>Agent identity is distinct from model identity. Each agent MUST have an identity record and SHOULD have a machine-readable passport and contract.</p><h3>9. AI-SDLC integration</h3><p>All material work MUST map to intent, requirements, architecture, implementation, validation, evidence, release, and feedback.</p><h3>10. ADLC integration</h3><p>All agents MUST follow an agent lifecycle that includes intent, contract, identity, capabilities, permissions, autonomy, validation, promotion, monitoring, revalidation, and retirement.</p><h3>11. Evidence</h3><p>Meaningful tasks MUST emit auditable evidence of implementation and validation.</p><h3>12. Handoff</h3><p>A completed task MUST update state and create a machine-readable handoff sufficient for an independent AI session to continue work.</p><h3>13. Security</h3><p>Agents MUST follow least privilege. Production actions MUST be policy-controlled. Permission or autonomy escalation MUST NOT be self-authorized.</p><h3>14. Conformance</h3><p>An implementation conforms to DH-ADOM v1.0 only when all mandatory requirements in <code>CONFORMANCE-REQUIREMENTS.md</code> pass or have a formally accepted exception.</p><h2>DH-ADOM v1.0 Conformance Requirements</h2><p>An implementation MUST satisfy all CRITICAL requirements and provide evidence for each requirement.</p><p>| ID | Requirement | Class |</p><p>|---|---|---|</p><p>| CR-001 | Engineering Constitution exists and is authoritative | Critical |</p><p>| CR-002 | Root Agent exists and is identifiable | Critical |</p><p>| CR-003 | Feature Agent ownership exists for meaningful domains | Critical |</p><p>| CR-004 | Specialist delegation is bounded | Critical |</p><p>| CR-005 | Delegation contracts are auditable | Critical |</p><p>| CR-006 | Root does not silently bypass Feature Agent ownership | Critical |</p><p>| CR-007 | AI-SDLC state is represented | High |</p><p>| CR-008 | ADLC state is represented for agents | High |</p><p>| CR-009 | Agent identity is separate from model identity | High |</p><p>| CR-010 | Agent permissions are explicit | Critical |</p><p>| CR-011 | Autonomy/delegation budgets are enforced | Critical |</p><p>| CR-012 | Agent creation is bounded | Critical |</p><p>| CR-013 | State and handoff are persisted | High |</p><p>| CR-014 | Requirement-to-evidence traceability exists | High |</p><p>| CR-015 | Audit trail records delegation and material actions | High |</p><p>| CR-016 | Cross-feature changes are controlled | Critical |</p><p>| CR-017 | Failure / timeout handling exists | High |</p><p>| CR-018 | Fresh-session resumability is demonstrated | High |</p><p>| CR-019 | No claimed completion without validation evidence | Critical |</p><p>| CR-020 | Conformance results are reproducible | High |</p></article><section class="dh-section"><h2>Machine-readable definitions</h2><p>The publication ZIP includes four JSON schemas, three lifecycle state machines and an OpenAPI interface outline. The outline describes intended interfaces; the package does not provide an HTTP service.</p><a href="/dh-adom/downloads/">Get the specification and schemas →</a></section><aside class="dh-source">Source: DH-ADOM publication package 1.0.0. <a href="/dh-adom/downloads/">Original documents, citation and source inventory →</a></aside></div></main><footer>
+  <div class="container">
+    <div class="footer-simple">
+      <a href="/" class="footer-logo" aria-label="DevHeal Labs AI home"><img src="/logo.png?v=20261005" alt="" width="68" height="62"><span class="f-logo">DevHeal<span> Labs AI</span></span></a>
+      <nav class="footer-essential" aria-label="Footer navigation"><a href="/products/">Products</a><a href="/ip/">Patents &amp; IP</a><a href="/whitepaper/">Whitepaper</a><a href="/contact/">Contact Us</a></nav>
+      <address class="footer-address">IDA Mallapur, Hyderabad,<br>Telangana, India</address>
+    </div>
+    <div class="footer-bottom"><span>&copy; 2026 DevHeal Labs AI Private Limited. All rights reserved.</span></div>
+  </div>
+</footer>
+
+<script src="/assets/site.js?v=20261005-premium"></script>
+</body>
+</html>

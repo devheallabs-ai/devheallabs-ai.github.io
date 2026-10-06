@@ -1,0 +1,39 @@
+apiVersion: dh-adom.devheal.ai/v1alpha1
+kind: DelegationContract
+metadata:
+  delegation_id: DEL-YYYYMMDD-0001
+spec:
+  parent_agent: ROOT-001
+  child_agent: FEATURE-evaluation
+  purpose: "Implement bounded evaluation capability"
+  task_id: TASK-0001
+  scope:
+    include:
+      - features/evaluation/**
+    exclude:
+      - features/security/**
+  inputs: []
+  expected_outputs: []
+  permissions:
+    tools: []
+    data: []
+    environments: [sandbox]
+  autonomy:
+    level: A2
+    max_steps: 50
+    max_tool_calls: 25
+    max_runtime_seconds: 900
+    max_cost_usd: 2.0
+    max_parallel_agents: 2
+    max_delegation_depth: 1
+  lifecycle:
+    timeout_seconds: 1200
+    termination: "handoff_submitted"
+  evidence:
+    required:
+      - changed_files
+      - tests
+      - evaluation
+      - handoff
+  acceptance:
+    criteria: []

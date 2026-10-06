@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+title: "DH-ADOM: DevHeal Hierarchical Agent Development & Orchestration Model"
+version: "1.0.0"
+date-released: 2026-10-06
+authors:
+  - family-names: "Nuckala"
+    given-names: "Sai Narender"
+    affiliation: "DevHeal Labs AI Pvt. Ltd."
+publisher: "DevHeal Labs AI Pvt. Ltd."
+url: "https://devheallabs.in/dh-adom/"
+type: software
+abstract: "A repository-level operating model for governed AI-native software engineering using an Engineering Constitution, AI-SDLC, ADLC, Root/Feature/Specialist agent hierarchy, bounded delegation, evidence, traceability, and AI-resumable development."
+keywords:
+  - AI-SDLC
+  - ADLC
+  - multi-agent systems
+  - software engineering agents
+  - agent orchestration
+  - delegation governance
+  - AI-native software engineering

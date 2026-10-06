@@ -1,0 +1,1 @@
+@misc{nuckala2026dhatdom, author={Sai Narender Nuckala}, title={DH-ADOM: DevHeal Hierarchical Agent Development & Orchestration Model}, year={2026}, publisher={DevHeal Labs AI Pvt. Ltd.}, url={https://devheallabs.in/dh-adom/}, version={1.0.0}}

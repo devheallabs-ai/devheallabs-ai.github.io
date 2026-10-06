@@ -1,0 +1,68 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Bound authority at every handoff. — DH-ADOM — DevHeal Labs</title><meta name="description" content="The method requires least privilege, explicit delegation and reviewable evidence. Runtime integrations are responsible for enforcing those requirements."><link rel="canonical" href="https://devheallabs.com/dh-adom/security/"><link rel="icon" href="/favicon.png"><meta property="og:title" content="Bound authority at every handoff. — DH-ADOM"><meta property="og:description" content="The method requires least privilege, explicit delegation and reviewable evidence. Runtime integrations are responsible for enforcing those requirements."><meta property="og:url" content="https://devheallabs.com/dh-adom/security/"><meta property="og:type" content="article"><meta property="og:image" content="https://devheallabs.com/logo.png"><link rel="stylesheet" href="/assets/style.css?v=20261005-premium"><link rel="stylesheet" href="/dh-adom/assets/publication.css"></head><body>
+<a class="skip-link" href="#main-content">Skip to content</a>
+
+<nav class="nav" id="nav" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo"><img src="/logo.png?v=20261005" alt="" class="logo-icon">DevHeal<span>Labs AI</span></a>
+    <ul class="nav-links">
+      <li class="nav-has-drop"><a href="/products/">Products</a><ul class="nav-drop">
+        <li><a href="/products/dummu/">Dummu<span class="nd-sub">Autonomous platform</span></a></li>
+        <li><a href="/products/#build">NC &middot; NC UI &middot; NC AI</a></li>
+        <li><a href="/products/#operate">HiveANT &middot; SwarmOps</a></li>
+        <li><a href="/products/#govern">AGP &middot; AgentOS</a></li>
+        <li><a href="/products/#apply">NeuralEdge &middot; NOVA</a></li>
+        <li><a href="/products/#workspace">Engineering tools</a></li>
+        <li><a href="/products/#validation">Evaluation &amp; simulation</a></li>
+        <li><a href="/products/#runtime">Systems infrastructure</a></li>
+        <li><a href="/products/">All products &rarr;</a></li>
+      </ul></li>
+      <li><a href="/solutions/">Solutions</a></li>
+      <li class="nav-has-drop"><a href="/industries/">Industries</a><ul class="nav-drop">
+        <li><a href="/industries/financial-services/">Financial Services</a></li>
+        <li><a href="/industries/technology/">Technology &amp; SaaS</a></li>
+        <li><a href="/industries/healthcare/">Healthcare &amp; Life Sciences</a></li>
+        <li><a href="/industries/industrial/">Manufacturing &amp; Industrial</a></li>
+        <li><a href="/industries/">All industries &rarr;</a></li>
+      </ul></li>
+      <li class="nav-has-drop"><a href="/technology/">Resources</a><ul class="nav-drop">
+        <li><a href="/ip/">Patents &amp; IP</a></li>
+        <li><a href="/whitepaper/">Whitepaper</a></li>
+        <li><a href="/technology/">Architecture</a></li>
+        <li><a href="/developers/">Developers</a></li>
+        <li><a href="/research/">Research publications</a></li><li><a href="/dh-adom/">DH-ADOM engineering method</a></li><li><a href="/dh-adom/">DH-ADOM engineering method</a></li>
+        <li><a href="/benchmarks/">Benchmarks</a></li>
+        <li><a href="/proof/">Evidence</a></li>
+        <li><a href="/roadmap/">Roadmap</a></li>
+      </ul></li>
+      <li class="nav-has-drop"><a href="/company/">Company</a><ul class="nav-drop">
+        <li><a href="/company/">About DevHeal</a></li>
+        <li><a href="/why-devheal/">Why DevHeal</a></li>
+        <li><a href="/services/">Services</a></li>
+        <li><a href="/enterprise/">Enterprise</a></li><li><a href="/security/">Deployment &amp; security</a></li>
+        <li><a href="/design-partner/">Engagement programme</a></li>
+      </ul></li>
+      <li><a href="/contact/">Contact Us</a></li>
+      <li><a href="/contact/" class="nav-cta">Discuss your use case</a></li>
+    </ul>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle colour theme" title="Toggle colour theme">
+      <svg class="icon-light" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1 1M18 18l1 1M5 19l1-1M18 6l1-1"/></svg>
+      <svg class="icon-dark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.8z"/></svg>
+    </button>
+    <button class="hamburger" aria-label="Open menu" aria-expanded="false">&#9776;</button>
+  </div>
+</nav>
+
+<main id="main-content" class="dh-main"><div class="container"><header class="dh-heading"><a class="dh-kicker" href="/research/">DevHeal Research / DH-ADOM</a><h1>Bound authority at every handoff.</h1><p>The method requires least privilege, explicit delegation and reviewable evidence. Runtime integrations are responsible for enforcing those requirements.</p><div class="dh-meta">White paper 1.0 · Package 1.0.0 · 6 October 2026</div></header><nav class="dh-nav" aria-label="DH-ADOM publication"><a href="/dh-adom/">Overview</a><a href="/dh-adom/whitepaper/">White paper</a><a href="/dh-adom/specification/">Specification</a><a href="/dh-adom/architecture/">Architecture</a><a href="/dh-adom/implementation/">Implementation</a><a href="/dh-adom/evaluation/">Evaluation</a><a href="/dh-adom/security/" aria-current="page">Security</a><a href="/dh-adom/research/">Research</a><a href="/dh-adom/downloads/">Downloads</a></nav><div class="dh-hero"><div><section class="dh-section"><h2>Design controls.</h2><ul><li>Keep identity distinct from the underlying model.</li><li>Limit child authority to the approved delegation.</li><li>Bound depth, parallelism, time, cost and tool access.</li><li>Require policy approval for production actions and authority changes.</li><li>Validate outputs and preserve evidence before integration.</li></ul></section><section class="dh-section"><h2>Implementation boundary.</h2><p>The reference policy demonstrates a subset of these checks. Production adoption needs sandboxing, filesystem scope enforcement, runtime metering, durable audit storage, timeout handling and review of denied actions.</p><p>Evaluate these controls in your deployment environment; the source package is not a security certification.</p></section></div><figure class="dh-figure"><img src="/dh-adom/assets/boundaries.svg" alt="Authority passes through a bounded delegation contract to the child agent." loading="lazy"><figcaption>Controls describe the intended design, not a claim of complete runtime enforcement. <a href="/dh-adom/assets/boundaries.svg">Open full diagram ↗</a></figcaption></figure></div><aside class="dh-source">Source: DH-ADOM publication package 1.0.0. <a href="/dh-adom/downloads/">Original documents, citation and source inventory →</a></aside></div></main><footer>
+  <div class="container">
+    <div class="footer-simple">
+      <a href="/" class="footer-logo" aria-label="DevHeal Labs AI home"><img src="/logo.png?v=20261005" alt="" width="68" height="62"><span class="f-logo">DevHeal<span> Labs AI</span></span></a>
+      <nav class="footer-essential" aria-label="Footer navigation"><a href="/products/">Products</a><a href="/ip/">Patents &amp; IP</a><a href="/whitepaper/">Whitepaper</a><a href="/contact/">Contact Us</a></nav>
+      <address class="footer-address">IDA Mallapur, Hyderabad,<br>Telangana, India</address>
+    </div>
+    <div class="footer-bottom"><span>&copy; 2026 DevHeal Labs AI Private Limited. All rights reserved.</span></div>
+  </div>
+</footer>
+
+<script src="/assets/site.js?v=20261005-premium"></script>
+</body>
+</html>

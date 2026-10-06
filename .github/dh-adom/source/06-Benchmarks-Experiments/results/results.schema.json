@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": [
+      "system",
+      "task_id",
+      "completion_quality",
+      "cost",
+      "governance_bypass"
+    ],
+    "properties": {
+      "system": {
+        "type": "string"
+      },
+      "task_id": {
+        "type": "string"
+      },
+      "completion_quality": {
+        "type": "number"
+      },
+      "cost": {
+        "type": "number"
+      },
+      "governance_bypass": {
+        "type": "number"
+      }
+    }
+  }
+}
