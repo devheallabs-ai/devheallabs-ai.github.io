@@ -1,0 +1,3 @@
+# Preserve exact publication bytes and reproducible release checksums on all hosts.
+.github/dh-adom/source/** -text
+dh-adom/releases/** -text
