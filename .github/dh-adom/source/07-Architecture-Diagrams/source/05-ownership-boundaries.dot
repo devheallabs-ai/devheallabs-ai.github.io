@@ -1,0 +1,4 @@
+digraph G { graph [rankdir=TB, bgcolor="white"]; node [shape=box, style="rounded,filled", fontname="Arial", fontsize=10, color="#17365D"]; edge [color="#53759D", penwidth=1.4]; root [label="Root Agent", fillcolor="#17365D", fontcolor="white"]; a [label="Feature A
+Owns: features/a/**", fillcolor="#E0F2FE"]; b [label="Feature B
+Owns: features/b/**", fillcolor="#DCFCE7"]; cross [label="Cross-feature change
+requires Root coordination", shape=note, fillcolor="#FEF3C7"]; root->a; root->b; a->cross [style=dashed]; b->cross [style=dashed]; }

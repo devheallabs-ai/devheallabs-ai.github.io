@@ -1,0 +1,68 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>An engineering model, open to examination. — DH-ADOM — DevHeal Labs</title><meta name="description" content="Explore the contribution, related work and research questions behind DH-ADOM. Future directions describe research intent rather than delivered capabilities."><link rel="canonical" href="https://devheallabs.com/dh-adom/research/"><link rel="icon" href="/favicon.png"><meta property="og:title" content="An engineering model, open to examination. — DH-ADOM"><meta property="og:description" content="Explore the contribution, related work and research questions behind DH-ADOM. Future directions describe research intent rather than delivered capabilities."><meta property="og:url" content="https://devheallabs.com/dh-adom/research/"><meta property="og:type" content="article"><meta property="og:image" content="https://devheallabs.com/logo.png"><link rel="stylesheet" href="/assets/style.css?v=20261005-premium"><link rel="stylesheet" href="/dh-adom/assets/publication.css"></head><body>
+<a class="skip-link" href="#main-content">Skip to content</a>
+
+<nav class="nav" id="nav" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo"><img src="/logo.png?v=20261005" alt="" class="logo-icon">DevHeal<span>Labs AI</span></a>
+    <ul class="nav-links">
+      <li class="nav-has-drop"><a href="/products/">Products</a><ul class="nav-drop">
+        <li><a href="/products/dummu/">Dummu<span class="nd-sub">Autonomous platform</span></a></li>
+        <li><a href="/products/#build">NC &middot; NC UI &middot; NC AI</a></li>
+        <li><a href="/products/#operate">HiveANT &middot; SwarmOps</a></li>
+        <li><a href="/products/#govern">AGP &middot; AgentOS</a></li>
+        <li><a href="/products/#apply">NeuralEdge &middot; NOVA</a></li>
+        <li><a href="/products/#workspace">Engineering tools</a></li>
+        <li><a href="/products/#validation">Evaluation &amp; simulation</a></li>
+        <li><a href="/products/#runtime">Systems infrastructure</a></li>
+        <li><a href="/products/">All products &rarr;</a></li>
+      </ul></li>
+      <li><a href="/solutions/">Solutions</a></li>
+      <li class="nav-has-drop"><a href="/industries/">Industries</a><ul class="nav-drop">
+        <li><a href="/industries/financial-services/">Financial Services</a></li>
+        <li><a href="/industries/technology/">Technology &amp; SaaS</a></li>
+        <li><a href="/industries/healthcare/">Healthcare &amp; Life Sciences</a></li>
+        <li><a href="/industries/industrial/">Manufacturing &amp; Industrial</a></li>
+        <li><a href="/industries/">All industries &rarr;</a></li>
+      </ul></li>
+      <li class="nav-has-drop"><a href="/technology/">Resources</a><ul class="nav-drop">
+        <li><a href="/ip/">Patents &amp; IP</a></li>
+        <li><a href="/whitepaper/">Whitepaper</a></li>
+        <li><a href="/technology/">Architecture</a></li>
+        <li><a href="/developers/">Developers</a></li>
+        <li><a href="/research/">Research publications</a></li><li><a href="/dh-adom/">DH-ADOM engineering method</a></li><li><a href="/dh-adom/">DH-ADOM engineering method</a></li>
+        <li><a href="/benchmarks/">Benchmarks</a></li>
+        <li><a href="/proof/">Evidence</a></li>
+        <li><a href="/roadmap/">Roadmap</a></li>
+      </ul></li>
+      <li class="nav-has-drop"><a href="/company/">Company</a><ul class="nav-drop">
+        <li><a href="/company/">About DevHeal</a></li>
+        <li><a href="/why-devheal/">Why DevHeal</a></li>
+        <li><a href="/services/">Services</a></li>
+        <li><a href="/enterprise/">Enterprise</a></li><li><a href="/security/">Deployment &amp; security</a></li>
+        <li><a href="/design-partner/">Engagement programme</a></li>
+      </ul></li>
+      <li><a href="/contact/">Contact Us</a></li>
+      <li><a href="/contact/" class="nav-cta">Discuss your use case</a></li>
+    </ul>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle colour theme" title="Toggle colour theme">
+      <svg class="icon-light" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1 1M18 18l1 1M5 19l1-1M18 6l1-1"/></svg>
+      <svg class="icon-dark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.8z"/></svg>
+    </button>
+    <button class="hamburger" aria-label="Open menu" aria-expanded="false">&#9776;</button>
+  </div>
+</nav>
+
+<main id="main-content" class="dh-main"><div class="container"><header class="dh-heading"><a class="dh-kicker" href="/research/">DevHeal Research / DH-ADOM</a><h1>An engineering model, open to examination.</h1><p>Explore the contribution, related work and research questions behind DH-ADOM. Future directions describe research intent rather than delivered capabilities.</p><div class="dh-meta">White paper 1.0 · Package 1.0.0 · 6 October 2026</div></header><nav class="dh-nav" aria-label="DH-ADOM publication"><a href="/dh-adom/">Overview</a><a href="/dh-adom/whitepaper/">White paper</a><a href="/dh-adom/specification/">Specification</a><a href="/dh-adom/architecture/">Architecture</a><a href="/dh-adom/implementation/">Implementation</a><a href="/dh-adom/evaluation/">Evaluation</a><a href="/dh-adom/security/">Security</a><a href="/dh-adom/research/" aria-current="page">Research</a><a href="/dh-adom/downloads/">Downloads</a></nav><article class="dh-paper"><section class="dh-section"><h2>The contribution.</h2><p>DH-ADOM brings established agent patterns into a repository-level operating model: persistent feature ownership, Root orchestration, bounded Specialist delegation, lifecycle governance and resumable handoffs. Its contribution is the composition of these practices into an explicit engineering method.</p><p>Hierarchy adds coordination overhead. Benefits depend on task structure, clear ownership boundaries and effective runtime enforcement. Comparative performance remains an empirical question.</p></section><section class="dh-section"><h2>Related work.</h2><h2>Related Work</h2><h3>Orchestrator-worker agent patterns</h3><p>Anthropic documents orchestrator-worker workflows in which a central model dynamically breaks down tasks, delegates to workers, and synthesizes results. This is a direct precedent for the Root orchestration primitive, but does not itself define persistent repository feature ownership. </p><h3>Multi-agent frameworks</h3><p>Microsoft Research&#x27;s AutoGen provides a framework for composing multi-agent applications. DH-ADOM is not a replacement for such a runtime; it is a repository governance and ownership model that can sit above or alongside a runtime.</p><h3>AI-SDLC</h3><p>The public AI-SDLC Framework defines an autonomous software development lifecycle with an orchestrator, quality gates, progressive autonomy, codebase intelligence, and tamper-evident audit logging. DH-ADOM overlaps with this governance direction but focuses specifically on persistent Feature Agent ownership and a Root → Feature → Specialist engineering hierarchy.</p><h3>ADLC</h3><p>Salesforce publishes an Agent Development Lifecycle adapted to agents&#x27; non-deterministic behavior, spanning ideation/design, development, testing/validation, deployment, and continuous monitoring/tuning.</p><h3>Hierarchical SWE agents</h3><p>BOAD studies hierarchical software engineering agents and uses specialized sub-agents coordinated by an orchestrator. DH-ADOM aligns with the value of hierarchy but extends the model toward repository-level ownership, explicit delegation contracts, durable state, and lifecycle governance.</p><h3>Agent identity / security</h3><p>NIST is actively working on identity and authorization for software and AI agents, including authentication, authorization, auditing, non-repudiation, and prompt-injection-related controls. DH-ADOM treats identity and authorization as prerequisites for bounded delegation.</p><h3>Agentic security</h3><p>OWASP&#x27;s 2026 Agentic Applications Top 10 frames agentic systems as a distinct security domain. DH-ADOM maps those concerns into agent hierarchy, permission boundaries, delegation, and audit controls.</p></section><section class="dh-section"><h2>References.</h2><ul><li><a href="https://www.anthropic.com/engineering/building-effective-agents">Building Effective AI Agents</a></li><li><a href="https://www.microsoft.com/en-us/research/publication/autogen-enabling-next-gen-llm-applications-via-multi-agent-conversation-framework/">AutoGen: Enabling Next-Gen LLM Applications via Multi-Agent Conversation</a></li><li><a href="https://ai-sdlc.io/">AI-SDLC Framework</a></li><li><a href="https://architect.salesforce.com/docs/architect/fundamentals/guide/agent-development-lifecycle">The Agent Development Lifecycle: From Conception to Production</a></li><li><a href="https://csrc.nist.gov/pubs/other/2026/02/05/accelerating-the-adoption-of-software-and-ai-agent">Software and AI Agent Identity and Authorization</a></li><li><a href="https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/">OWASP Top 10 for Agentic Applications 2026</a></li><li><a href="https://arxiv.org/abs/2512.23631">BOAD: Discovering Hierarchical Software Engineering Agents via Bandit Optimization</a></li></ul></section><section class="dh-section"><h2>Questions for evaluation.</h2><ul><li>When does persistent feature ownership improve handoff quality?</li><li>How does delegation depth affect cost, latency and validation coverage?</li><li>Which controls prevent scope drift across sessions?</li><li>How reliably can a new session resume from recorded evidence?</li></ul><p><a href="/dh-adom/evaluation/">Review the comparison protocol →</a></p></section><section class="dh-section"><h2>Release 1.0.0 · 6 October 2026.</h2><p>The initial package includes the paper, normative specification, four JSON schemas, role templates, Python demonstration library, file-presence checks, experiment tooling and architecture diagrams.</p></section><section class="dh-section"><h2>Future research.</h2><p>The supplied roadmap explores interoperability with MCP and A2A, runtime policy validation, cross-session evaluation, standards profiles and evidence-driven autonomy. These are research directions; release dates and delivery commitments are not assigned.</p></section></article><aside class="dh-source">Source: DH-ADOM publication package 1.0.0. <a href="/dh-adom/downloads/">Original documents, citation and source inventory →</a></aside></div></main><footer>
+  <div class="container">
+    <div class="footer-simple">
+      <a href="/" class="footer-logo" aria-label="DevHeal Labs AI home"><img src="/logo.png?v=20261005" alt="" width="68" height="62"><span class="f-logo">DevHeal<span> Labs AI</span></span></a>
+      <nav class="footer-essential" aria-label="Footer navigation"><a href="/products/">Products</a><a href="/ip/">Patents &amp; IP</a><a href="/whitepaper/">Whitepaper</a><a href="/contact/">Contact Us</a></nav>
+      <address class="footer-address">IDA Mallapur, Hyderabad,<br>Telangana, India</address>
+    </div>
+    <div class="footer-bottom"><span>&copy; 2026 DevHeal Labs AI Private Limited. All rights reserved.</span></div>
+  </div>
+</footer>
+
+<script src="/assets/site.js?v=20261005-premium"></script>
+</body>
+</html>

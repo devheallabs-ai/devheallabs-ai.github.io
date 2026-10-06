@@ -1,0 +1,21 @@
+scenario_id: DH-E2E-001
+name: Root-to-Feature-to-Specialist development flow
+objective: Prove bounded delegation and handoff behavior
+steps:
+  - user_submits_feature_request
+  - root_identifies_domain
+  - root_selects_feature_agent
+  - feature_agent_reviews_scope
+  - feature_agent_requests_specialist_if_needed
+  - delegation_contract_is_authorized
+  - specialist_executes_bounded_task
+  - specialist_returns_handoff
+  - feature_agent_updates_feature_state
+  - root_reviews_feature_result
+  - root_updates_global_traceability
+expected_invariants:
+  - no_unauthorized_cross_feature_change
+  - no_unbounded_agent_creation
+  - no_permission_escalation
+  - evidence_exists
+  - handoff_exists

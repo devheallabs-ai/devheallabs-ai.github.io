@@ -1,0 +1,11 @@
+flowchart LR
+  U[User Requirement] --> R[Root Agent]
+  R --> F[Feature Agent]
+  F --> S[Specialist if needed]
+  S --> I[Implementation]
+  I --> V[Validation]
+  V --> E[Evidence]
+  E --> H[Feature Handoff]
+  H --> RR[Root Review]
+  RR --> T[Traceability + State]
+  T --> P[Release / Next Task]

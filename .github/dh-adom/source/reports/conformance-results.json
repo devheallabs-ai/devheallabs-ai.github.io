@@ -1,0 +1,44 @@
+{
+  "version": "1.0.0",
+  "checks": [
+    {
+      "name": "exists:ENGINEERING_CONSTITUTION.md",
+      "status": "PASS",
+      "detail": "/mnt/data/DH-ADOM/03-Reference-Templates/ENGINEERING_CONSTITUTION.md"
+    },
+    {
+      "name": "exists:AGENTS.md",
+      "status": "PASS",
+      "detail": "/mnt/data/DH-ADOM/03-Reference-Templates/AGENTS.md"
+    },
+    {
+      "name": "exists:ROOT_AGENT.md",
+      "status": "PASS",
+      "detail": "/mnt/data/DH-ADOM/03-Reference-Templates/ROOT_AGENT.md"
+    },
+    {
+      "name": "exists:FEATURE_AGENT.md",
+      "status": "PASS",
+      "detail": "/mnt/data/DH-ADOM/03-Reference-Templates/FEATURE_AGENT.md"
+    },
+    {
+      "name": "exists:SPECIALIST_AGENT.md",
+      "status": "PASS",
+      "detail": "/mnt/data/DH-ADOM/03-Reference-Templates/SPECIALIST_AGENT.md"
+    },
+    {
+      "name": "exists:DELEGATION_CONTRACT.yaml",
+      "status": "PASS",
+      "detail": "/mnt/data/DH-ADOM/03-Reference-Templates/DELEGATION_CONTRACT.yaml"
+    },
+    {
+      "name": "exists:CONFORMANCE-REQUIREMENTS.md",
+      "status": "PASS",
+      "detail": "/mnt/data/DH-ADOM/02-Specification/CONFORMANCE-REQUIREMENTS.md"
+    }
+  ],
+  "summary": {
+    "passed": 7,
+    "failed": 0
+  }
+}

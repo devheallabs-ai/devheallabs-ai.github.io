@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dh-adom-reference"
+version = "1.0.0"
+description = "Reference implementation of DH-ADOM core governance semantics"
+requires-python = ">=3.11"
+authors = [{name="DevHeal Labs AI Pvt. Ltd."}]
+license = {file = "LICENSE"}
+
+[tool.setuptools]
+package-dir = {"" = "."}
+
+[tool.setuptools.packages.find]
+where = ["."]
