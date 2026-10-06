@@ -14,4 +14,5 @@ jobs:
         with:
           node-version: '22'
       - run: node --check assets/site.js
+      - run: node --check dh-adom/assets/publication.js
       - run: node --test .github/tests/*.test.cjs
