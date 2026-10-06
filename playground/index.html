@@ -4,10 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>NC Playground — Build apps in plain English | DevHeal Labs AI</title>
-<meta name="description" content="Write plain English and watch it become a working app. NC runs your words — no syntax, no setup, no code required. Try it free in the browser.">
+<meta name="description" content="Explore NC examples, edit and share source in your browser, and download a file to run with NC locally.">
 <meta name="keywords" content="no-code playground, plain english programming, NC language, build apps without coding, AI programming, DevHeal Labs">
-<meta property="og:title" content="NC Playground — Write English, Get a Working App">
-<meta property="og:description" content="Type what you want in plain English. NC turns it into a real running application instantly.">
+<meta property="og:title" content="NC Playground — Edit, Share and Download">
+<meta property="og:description" content="Edit NC examples, share your source, and download code for local execution.">
 <meta property="og:type" content="website">
 <link rel="icon" type="image/png" href="/favicon.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -67,6 +67,7 @@
   --ok:#4ade80;--warn:#fbbf24;--study:#d8b4fe;--danger:#fca5a5;
 }
 
+.skip-link{position:fixed;left:12px;top:-60px;z-index:9999;background:var(--bg);color:var(--text);padding:12px}.skip-link:focus{top:8px}
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
 html,body{height:100%;overflow:hidden}
 body{
@@ -300,15 +301,18 @@ body{
 }
 .resize-handle:hover,.resize-handle.dragging{background:var(--accent)}
 
-/* Mobile warning */
-.mobile-warn{
-  display:none;position:fixed;inset:0;background:var(--bg);z-index:9999;
-  flex-direction:column;align-items:center;justify-content:center;gap:16px;padding:32px;text-align:center;
+@media(max-width:700px){
+html,body{height:auto;overflow:auto}
+.topbar{height:auto;flex-wrap:wrap;padding:10px;gap:8px}
+.topbar-right{width:100%;justify-content:flex-end}
+.topbar-sep,.resize-handle{display:none}
+.workspace{flex-direction:column;flex:none}
+.editor-panel,.output-panel{width:100%!important;min-width:0;flex:none;height:420px}
+.statusbar{height:auto;flex-wrap:wrap;padding:10px;gap:8px}
+.statusbar .status-item:last-child{display:none}
+.dropdown{position:fixed;left:10px;right:10px;top:64px;min-width:0;max-height:65vh;overflow:auto}
+.output-tabs{overflow-x:auto}.output-tab{white-space:nowrap}
 }
-@media(max-width:600px){.mobile-warn{display:flex}}
-.mobile-warn h2{font-size:1.3rem;font-weight:650;letter-spacing:-.02em}
-.mobile-warn p{color:var(--text-muted);font-size:.9rem;line-height:1.6}
-.mobile-warn a{color:var(--accent)}
 button.dropdown-item,button.deploy-option,button.help-card{font:inherit;color:inherit;text-align:left;width:100%}
 button.dropdown-item{border:0;background:transparent}
 button.dropdown-item:hover{background:var(--surface-2)}
@@ -319,15 +323,8 @@ button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,
 </style>
 </head>
 <body>
-<h1 class="sr-only">NC Playground — write plain English, run it in the browser</h1>
-
-<!-- Mobile warning -->
-<div class="mobile-warn">
-  <div style="font-size:3rem">📱</div>
-  <h2>Best on desktop</h2>
-  <p>The NC Playground works best on a larger screen.<br>
-  <a href="/">Return to homepage</a> or rotate your device.</p>
-</div>
+<a class="skip-link" href="#workspace">Skip to editor</a>
+<h1 class="sr-only">NC Playground — edit, share, and download NC code</h1>
 
 <!-- ── TOPBAR ── -->
 <div class="topbar">
@@ -410,7 +407,7 @@ button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,
 
   <button class="run-btn" id="runBtn" onclick="runCode()">
     <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-    Run
+    Download .nc
     <span class="kbd">⌘↵</span>
   </button>
 
@@ -437,7 +434,7 @@ button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,
 </div>
 
 <!-- ── WORKSPACE ── -->
-<div class="workspace" id="workspace">
+<main class="workspace" id="workspace" tabindex="-1">
 
   <!-- Editor Panel -->
   <div class="editor-panel" id="editorPanel">
@@ -448,7 +445,7 @@ button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,
       <span class="filename" style="margin-left:12px">app.nc</span>
       <span class="lang-badge">Plain English</span>
     </div>
-    <p id="editorHelp" class="sr-only">Tab moves to the next control. Use spaces to indent. Control or Command plus Enter runs code.</p>
+    <p id="editorHelp" class="sr-only">Tab moves to the next control. Use spaces to indent. Control or Command plus Enter downloads your code.</p>
     <div id="editor-container">
       <textarea aria-label="NC source code" aria-describedby="editorHelp" id="nc-editor" spellcheck="false" autocomplete="off" autocorrect="off" autocapitalize="off"></textarea>
     </div>
@@ -474,7 +471,7 @@ button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,
         <div class="terminal" id="terminal">
           <div class="empty-state" id="empty-state">
             <div class="empty-icon">▶</div>
-            <p>Write plain English above, then click <strong>Run</strong> or press <strong>Ctrl+Enter</strong></p>
+            <p>Edit an example, then <strong>Download .nc</strong> and run it with your local NC installation</p>
             <div class="hint">ask AI to "say hello"</div>
           </div>
         </div>
@@ -489,7 +486,7 @@ button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,
       <div class="tab-pane" id="pane-share" role="tabpanel" aria-labelledby="tab-share" tabindex="0">
         <div class="share-pane">
           <h3>🚀 Share &amp; Deploy</h3>
-          <p>Share your playground link or deploy your NC app to a live server in seconds.</p>
+          <p>Share your source, download app.nc, or configure a deployment using your own hosting account. Run the downloaded file locally with nc app.nc.</p>
 
           <div>
             <div style="font-size:.78rem;color:var(--muted);margin-bottom:8px;font-weight:500">Share link (encodes your code)</div>
@@ -501,15 +498,15 @@ button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,
           </div>
 
           <div>
-            <div style="font-size:.78rem;color:var(--muted);margin-bottom:10px;font-weight:500">Deploy your app (1-click)</div>
+            <div style="font-size:.78rem;color:var(--muted);margin-bottom:10px;font-weight:500">Deployment resources</div>
             <div class="deploy-options">
               <button type="button" class="deploy-option" onclick="deployTo('railway')">
                 <span class="d-name">🚂 Railway</span>
-                <span class="d-desc">Free tier · auto-deploy from GitHub</span>
+                <span class="d-desc">Configure a GitHub deployment</span>
               </button>
               <button type="button" class="deploy-option" onclick="deployTo('render')">
                 <span class="d-name">🎨 Render</span>
-                <span class="d-desc">Free tier · zero config</span>
+                <span class="d-desc">Configure a web service</span>
               </button>
               <button type="button" class="deploy-option" onclick="deployTo('fly')">
                 <span class="d-name">🪰 Fly.io</span>
@@ -526,16 +523,16 @@ button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,
             <div style="font-size:.78rem;font-weight:600;margin-bottom:8px">Install NC locally</div>
             <div style="font-family:var(--mono);font-size:.75rem;color:var(--muted);line-height:2">
               <div><span style="color:var(--muted)"># macOS / Linux</span></div>
-              <div style="color:var(--cyan)">curl -fsSL https://nc-lang.dev/install.sh | bash</div>
+              <div style="color:var(--cyan)">curl -fsSL https://raw.githubusercontent.com/devheallabs-ai/nc/main/install.sh | bash</div>
               <div style="margin-top:8px"><span style="color:var(--muted)"># Windows</span></div>
-              <div style="color:var(--cyan)">irm https://nc-lang.dev/install.ps1 | iex</div>
+              <div style="color:var(--cyan)">irm https://raw.githubusercontent.com/devheallabs-ai/nc/main/install.ps1 | iex</div>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
+</main>
 
 <!-- ── STATUS BAR ── -->
 <div class="statusbar">
@@ -556,11 +553,11 @@ button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,
     &nbsp;&middot;&nbsp; <a href="https://ncui.devheallabs.in" target="_blank" rel="noopener" style="color:var(--muted);text-decoration:none">NC UI</a>
     &nbsp;&middot;&nbsp; <a href="https://ncai.devheallabs.in" target="_blank" rel="noopener" style="color:var(--muted);text-decoration:none">NC AI</a>
     &nbsp;&middot;&nbsp; <a href="https://github.com/devheallabs-ai/nc" target="_blank" rel="noopener" style="color:var(--muted);text-decoration:none">GitHub</a>
-    &nbsp;&middot;&nbsp; <a href="/" style="color:var(--muted);text-decoration:none">devheallabs.in</a>
+    &nbsp;&middot;&nbsp; <a href="/" style="color:var(--muted);text-decoration:none">devheallabs.com</a>
   </div>
 </div>
 
-<script src="/assets/site.js?v=20261005-catalogue"></script>
+<script src="/assets/site.js?v=20261005-premium"></script>
 <script>
 // ════════════════════════════════════════════════════════
 //  NC Playground — Editor + Runner
@@ -571,7 +568,7 @@ const EXAMPLES = {
   hello: {
     name: 'Hello World',
     code: `// Your first NC program — plain English, zero syntax
-// Press Run (Ctrl+Enter) to execute
+// Download this file and run it with NC locally
 
 show "Hello from NC!"
 show "Today is: " + datetime_format(datetime_now(), "%Y-%m-%d")
@@ -1161,10 +1158,18 @@ function loadExample(key) {
   }
 }
 
+function downloadCode() {
+  const url = URL.createObjectURL(new Blob([editor.value], {type: 'text/plain;charset=utf-8'}));
+  const link = document.createElement('a'); link.href = url; link.download = 'app.nc';
+  document.body.appendChild(link); link.click(); link.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+}
+
 // ── Run code ─────────────────────────────────────────────
-const PLAYGROUND_API = 'https://play-api.nc-lang.dev/run';
+const PLAYGROUND_API = '';
 
 async function runCode() {
+  if (!PLAYGROUND_API) { downloadCode(); showTab('share'); return; }
   const btn = document.getElementById('runBtn');
   if (btn.classList.contains('running')) return;
 
@@ -1241,7 +1246,7 @@ function renderOutput(text, isError, isInfo) {
 function clearOutput(showEmpty = true) {
   const term = document.getElementById('terminal');
   term.innerHTML = showEmpty
-    ? `<div class="empty-state" id="empty-state"><div class="empty-icon">▶</div><p>Write plain English above, then click <strong>Run</strong> or press <strong>Ctrl+Enter</strong></p><div class="hint">ask AI to "say hello"</div></div>`
+    ? `<div class="empty-state" id="empty-state"><div class="empty-icon">▶</div><p>Edit an example, then <strong>Download .nc</strong> and run it with your local NC installation</p><div class="hint">ask AI to "say hello"</div></div>`
     : `<div style="padding:8px 0;font-size:.72rem;color:var(--term-dim);font-family:var(--mono)">$ nc app.nc</div>`;
   document.getElementById('exec-time').textContent = '';
 }
@@ -1307,7 +1312,7 @@ function deployTo(platform) {
     railway: 'https://railway.app/new?template=https://github.com/devheallabs-ai/nc',
     render:  'https://render.com/deploy?repo=https://github.com/devheallabs-ai/nc',
     fly:     'https://fly.io/docs/getting-started/',
-    docker:  'https://nc-lang.dev#docker'
+    docker:  'https://github.com/devheallabs-ai/nc/blob/main/Dockerfile'
   };
   notify(`Opening ${platform} deploy page... 🚀`);
   setTimeout(() => window.open(urls[platform], '_blank'), 500);
