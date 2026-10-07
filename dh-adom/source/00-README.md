@@ -1,4 +1,4 @@
-# DH-ADOM publication package 1.1.0
+# DH-ADOM publication package 1.1.1
 
 DevHeal Hierarchical Agent Development & Orchestration Model.
 Canonical URL: https://devheallabs.com/dh-adom/
@@ -7,7 +7,7 @@ Canonical URL: https://devheallabs.com/dh-adom/
 
 - White paper: editorial edition 1.1, 7 October 2026.
 - Technical specification and Python reference implementation: 1.0.
-- Publication package: 1.1.0.
+- Publication package: 1.1.1.
 
 ## Contents
 
@@ -40,4 +40,4 @@ The latter checks seven files. It does not certify all normative requirements.
 https://devheallabs.com/dh-adom/adoption/
 https://devheallabs.com/dh-adom/conformance/
 
-Review component licenses before reuse. Publication materials retain research-and-evaluation terms; the reference code has a separate Apache-2.0 license.
+Commercial use is permitted: implementation materials, templates and schemas use Apache-2.0; publication prose and diagrams use CC BY 4.0. See LICENSE.md for the exact directory scope, attribution requirements and brand exclusions. Full license texts are included in 11-Licensing-and-Citation.

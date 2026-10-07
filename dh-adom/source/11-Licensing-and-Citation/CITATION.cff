@@ -1,7 +1,7 @@
 cff-version: 1.2.0
 message: "Please cite the DH-ADOM white paper when referring to this publication package."
 title: "DH-ADOM: DevHeal Hierarchical Agent Development & Orchestration Model"
-version: "1.1.0"
+version: "1.1.1"
 date-released: 2026-10-07
 authors:
   - family-names: "Nuckala"

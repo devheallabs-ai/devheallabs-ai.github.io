@@ -1,0 +1,34 @@
+{
+  "version": "1.0.0",
+  "scope": "Seven file-presence checks; not full normative conformance",
+  "checks": [
+    {
+      "path": "03-Reference-Templates/ENGINEERING_CONSTITUTION.md",
+      "exists": true
+    },
+    {
+      "path": "03-Reference-Templates/AGENTS.md",
+      "exists": true
+    },
+    {
+      "path": "03-Reference-Templates/ROOT_AGENT.md",
+      "exists": true
+    },
+    {
+      "path": "03-Reference-Templates/FEATURE_AGENT.md",
+      "exists": true
+    },
+    {
+      "path": "03-Reference-Templates/SPECIALIST_AGENT.md",
+      "exists": true
+    },
+    {
+      "path": "03-Reference-Templates/DELEGATION_CONTRACT.yaml",
+      "exists": true
+    },
+    {
+      "path": "02-Specification/CONFORMANCE-REQUIREMENTS.md",
+      "exists": true
+    }
+  ]
+}
