@@ -22,7 +22,7 @@ Applies to all files in these directories, except third-party materials carrying
 
 It also applies to code examples embedded in the publication. Retain the license and applicable notices when redistributing, identify modified files, and preserve applicable NOTICE attribution. Apache-2.0 does not require disclosure of your entire proprietary application. The license includes a contributor patent grant limited to the terms in Section 3.
 
-Full terms: Apache-2.0.txt (https://www.apache.org/licenses/LICENSE-2.0).
+Full terms: 11-Licensing-and-Citation/Apache-2.0.txt (https://www.apache.org/licenses/LICENSE-2.0).
 
 ### Creative Commons Attribution 4.0 International - publication materials
 
@@ -32,7 +32,7 @@ You may share and adapt these materials commercially. Give appropriate credit, r
 
 Suggested attribution: "DH-ADOM, Sai Narender Nuckala / DevHeal Labs AI Pvt. Ltd., 2026. https://devheallabs.com/dh-adom/ - CC BY 4.0. Changes: [describe changes, if any]."
 
-Full terms: CC-BY-4.0.txt (https://creativecommons.org/licenses/by/4.0/).
+Full terms: 11-Licensing-and-Citation/CC-BY-4.0.txt (https://creativecommons.org/licenses/by/4.0/).
 
 ## Branding, third-party rights and scope
 

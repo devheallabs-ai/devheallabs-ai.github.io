@@ -18,3 +18,8 @@ Paper author: Sai Narender Nuckala / DevHeal Labs AI; package release date 2026-
 
 ## Implementation plan
 Build overview, full HTML paper, specification, architecture, reference implementation, evaluation, security, research, downloads/citation/version pages. Add links from Research, Whitepaper, Developers, Architecture, and shared Resources navigation. Keep this an engineering method rather than another product. Generate accessible tables, reading TOC, textual formal notation, vector diagrams, download checksums and source traceability. Keep audit files under .github so deployment excludes internal review notes.
+
+
+## Licensing update - 7 October 2026
+
+Following the owner request to fix the commercial-adoption licensing issue, publication package 1.1.1 explicitly grants Apache-2.0 rights for implementation materials and CC BY 4.0 for publication prose and diagrams. Full license texts, scope exclusions and attribution guidance are included. Archived releases remain unchanged. This is a license grant, not evidence of trademark registration or third-party rights clearance.
