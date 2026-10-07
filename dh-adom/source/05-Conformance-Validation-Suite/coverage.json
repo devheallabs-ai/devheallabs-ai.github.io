@@ -1,0 +1,186 @@
+{
+  "edition": "1.1.0",
+  "scope": "Review mapping, not a certification or complete test result",
+  "requirements": [
+    {
+      "id": "CR-001",
+      "requirement": "Engineering Constitution exists and is authoritative",
+      "severity": "Critical",
+      "status": "Artifact only",
+      "source": "03-Reference-Templates/ENGINEERING_CONSTITUTION.md",
+      "observed": "Constitution template exists; precedence enforcement is not exercised.",
+      "validation": "Attempt a conflicting action and retain its rejection record."
+    },
+    {
+      "id": "CR-002",
+      "requirement": "Root Agent exists and is identifiable",
+      "severity": "Critical",
+      "status": "Partial demonstration",
+      "source": "04-Reference-Implementation/examples/demo.py",
+      "observed": "The demo registers an identifiable Root agent.",
+      "validation": "Bind the actual coordinator to a durable identity record."
+    },
+    {
+      "id": "CR-003",
+      "requirement": "Feature Agent ownership exists for meaningful domains",
+      "severity": "Critical",
+      "status": "Partial demonstration",
+      "source": "04-Reference-Implementation/tests/test_core.py",
+      "observed": "The routing test looks up one feature owner.",
+      "validation": "Test missing and duplicate owners across all registered domains."
+    },
+    {
+      "id": "CR-004",
+      "requirement": "Specialist delegation is bounded",
+      "severity": "Critical",
+      "status": "Partial demonstration",
+      "source": "04-Reference-Implementation/dh_adom/policy.py",
+      "observed": "Declared limits are compared; live runtime limits are not metered.",
+      "validation": "Exercise depth, cost, time, tool and scope boundaries."
+    },
+    {
+      "id": "CR-005",
+      "requirement": "Delegation contracts are auditable",
+      "severity": "Critical",
+      "status": "Partial demonstration",
+      "source": "04-Reference-Implementation/dh_adom/models.py",
+      "observed": "A contract model and in-memory event references exist.",
+      "validation": "Persist complete contracts and verify retrieval by delegation ID."
+    },
+    {
+      "id": "CR-006",
+      "requirement": "Root does not silently bypass Feature Agent ownership",
+      "severity": "Critical",
+      "status": "Manual validation required",
+      "source": "03-Reference-Templates/ROOT_AGENT.md",
+      "observed": "The role template defines coordination expectations.",
+      "validation": "Attempt a Root write across a feature boundary without approval."
+    },
+    {
+      "id": "CR-007",
+      "requirement": "AI-SDLC state is represented",
+      "severity": "High",
+      "status": "Manual validation required",
+      "source": "03-Reference-Templates/ENGINEERING_CONSTITUTION.md",
+      "observed": "No software-lifecycle transition test is supplied.",
+      "validation": "Trace a real task through each required lifecycle gate."
+    },
+    {
+      "id": "CR-008",
+      "requirement": "ADLC state is represented for agents",
+      "severity": "High",
+      "status": "Model only",
+      "source": "02-Specification/State-Machines/agent-lifecycle.mermaid",
+      "observed": "Lifecycle states are specified, not enforced by the demo.",
+      "validation": "Reject an invalid transition and record the governing policy."
+    },
+    {
+      "id": "CR-009",
+      "requirement": "Agent identity is separate from model identity",
+      "severity": "High",
+      "status": "Partial demonstration",
+      "source": "04-Reference-Implementation/dh_adom/models.py",
+      "observed": "Agent identity is modeled separately from provider/model choice.",
+      "validation": "Demonstrate an identity surviving a model change."
+    },
+    {
+      "id": "CR-010",
+      "requirement": "Agent permissions are explicit",
+      "severity": "Critical",
+      "status": "Partial demonstration",
+      "source": "04-Reference-Implementation/tests/test_core.py",
+      "observed": "Permission escalation is rejected in one supplied test.",
+      "validation": "Test all enabled tools and environments against delegated permissions."
+    },
+    {
+      "id": "CR-011",
+      "requirement": "Autonomy/delegation budgets are enforced",
+      "severity": "Critical",
+      "status": "Partial demonstration",
+      "source": "04-Reference-Implementation/dh_adom/policy.py",
+      "observed": "Step and cost declarations are checked against parent limits.",
+      "validation": "Measure consumption; stop execution at each actual budget limit."
+    },
+    {
+      "id": "CR-012",
+      "requirement": "Agent creation is bounded",
+      "severity": "Critical",
+      "status": "Manual validation required",
+      "source": "04-Reference-Implementation/dh_adom/policy.py",
+      "observed": "Declared depth is checked; recursion and parallelism are not enforced.",
+      "validation": "Apply repeated spawn pressure and verify hard termination limits."
+    },
+    {
+      "id": "CR-013",
+      "requirement": "State and handoff are persisted",
+      "severity": "High",
+      "status": "Manual validation required",
+      "source": "04-Reference-Implementation/dh_adom/models.py",
+      "observed": "Handoff records are modeled; persistence is host responsibility.",
+      "validation": "Restart the host and recover complete state and handoff records."
+    },
+    {
+      "id": "CR-014",
+      "requirement": "Requirement-to-evidence traceability exists",
+      "severity": "High",
+      "status": "Manual validation required",
+      "source": "07-Architecture-Diagrams/svg/07-traceability.svg",
+      "observed": "The figure describes traceability; no end-to-end assertion is supplied.",
+      "validation": "Resolve a requirement through task, change, test and release IDs."
+    },
+    {
+      "id": "CR-015",
+      "requirement": "Audit trail records delegation and material actions",
+      "severity": "High",
+      "status": "Partial demonstration",
+      "source": "04-Reference-Implementation/dh_adom/audit.py",
+      "observed": "In-memory demo events exist; durable and denied-action audit is absent.",
+      "validation": "Record allowed and denied actions in tamper-resistant durable storage."
+    },
+    {
+      "id": "CR-016",
+      "requirement": "Cross-feature changes are controlled",
+      "severity": "Critical",
+      "status": "Manual validation required",
+      "source": "03-Reference-Templates/DELEGATION_CONTRACT.yaml",
+      "observed": "The template expresses include/exclude boundaries.",
+      "validation": "Reject a cross-domain write without explicit coordination."
+    },
+    {
+      "id": "CR-017",
+      "requirement": "Failure / timeout handling exists",
+      "severity": "High",
+      "status": "Manual validation required",
+      "source": "02-Specification/State-Machines/delegation-lifecycle.mermaid",
+      "observed": "Failure and timeout states are modeled; no scheduler is bundled.",
+      "validation": "Inject timeout and tool failure; verify stop, cleanup and handoff."
+    },
+    {
+      "id": "CR-018",
+      "requirement": "Fresh-session resumability is demonstrated",
+      "severity": "High",
+      "status": "Manual validation required",
+      "source": "03-Reference-Templates/FEATURE_AGENT.md",
+      "observed": "No fresh-session recovery experiment is included.",
+      "validation": "Resume in an independent session using persisted artifacts only."
+    },
+    {
+      "id": "CR-019",
+      "requirement": "No claimed completion without validation evidence",
+      "severity": "Critical",
+      "status": "Manual validation required",
+      "source": "04-Reference-Implementation/dh_adom/agents.py",
+      "observed": "The deterministic specialist returns COMPLETE without an evidence gate.",
+      "validation": "Reject completion when required validation evidence is missing."
+    },
+    {
+      "id": "CR-020",
+      "requirement": "Conformance results are reproducible",
+      "severity": "High",
+      "status": "Partial demonstration",
+      "source": "04-Reference-Implementation/tests/test_core.py",
+      "observed": "The supplied tests are repeatable; full conformance evidence is absent.",
+      "validation": "Publish environment, commands and results for all requirements."
+    }
+  ]
+}

@@ -1,0 +1,270 @@
+{
+  "01-dh-adom-hierarchy": [
+    "Governance and ownership",
+    [
+      [
+        "Engineering constitution",
+        "Rules and precedence"
+      ],
+      [
+        "AI-SDLC and ADLC",
+        "Software and agent lifecycle governance"
+      ],
+      [
+        "Root agent",
+        "Planning, routing and cross-domain review"
+      ],
+      [
+        "Feature A   |   Feature B   |   Feature C",
+        "Persistent owners of separate domains"
+      ],
+      [
+        "Task-scoped specialists",
+        "Bounded work under each feature owner"
+      ],
+      [
+        "Validation and handoff",
+        "Evidence returns to Feature and Root review"
+      ]
+    ],
+    "Parallel feature owners share governance, not authority."
+  ],
+  "02-lifecycle-integration": [
+    "Lifecycle integration",
+    [
+      [
+        "Intent and requirements",
+        "Define the engineering outcome"
+      ],
+      [
+        "Architecture, design and tasks",
+        "Translate intent into owned work"
+      ],
+      [
+        "Implementation",
+        "Execute with scoped agents and tools"
+      ],
+      [
+        "Validation, evaluation and security",
+        "Collect evidence against acceptance criteria"
+      ],
+      [
+        "Certification and release",
+        "Internal approval gates before delivery"
+      ],
+      [
+        "Production feedback",
+        "Inform the next intent and requirements cycle"
+      ]
+    ],
+    "ADLC governs agents throughout the software lifecycle."
+  ],
+  "03-delegation-sequence": [
+    "Delegation and return flow",
+    [
+      [
+        "1  User to Root",
+        "Submit the engineering request"
+      ],
+      [
+        "2  Root to Feature",
+        "Route and authorize the owned task"
+      ],
+      [
+        "3  Feature to Specialist",
+        "Delegate scope, budget and permissions"
+      ],
+      [
+        "4  Specialist to Validation",
+        "Execute work and produce checkable outputs"
+      ],
+      [
+        "5  Validation to Evidence",
+        "Record checks, changes and remaining risks"
+      ],
+      [
+        "6  Specialist to Feature",
+        "Return task evidence and handoff"
+      ],
+      [
+        "7  Feature to Root",
+        "Review and submit the feature handoff"
+      ],
+      [
+        "8  Root to User",
+        "Integrate and report the outcome"
+      ]
+    ],
+    "Completion depends on validation and acceptance."
+  ],
+  "04-agent-state-machine": [
+    "Agent lifecycle states",
+    [
+      [
+        "PROPOSED to DESIGNED",
+        "Define intent, ownership and contract"
+      ],
+      [
+        "DESIGNED to REGISTERED",
+        "Record a distinct agent identity"
+      ],
+      [
+        "REGISTERED to VALIDATED",
+        "Evaluate capabilities and constraints"
+      ],
+      [
+        "VALIDATED to CERTIFIED to ACTIVE",
+        "Internal approval followed by activation"
+      ],
+      [
+        "ACTIVE to SUSPENDED",
+        "Pause execution for review"
+      ],
+      [
+        "SUSPENDED to REVALIDATION to ACTIVE",
+        "Recheck the agent before resuming"
+      ],
+      [
+        "ACTIVE to DEPRECATED to RETIRED",
+        "Withdraw and retire the agent"
+      ],
+      [
+        "SUSPENDED to RETIRED",
+        "Terminate without resuming execution"
+      ]
+    ],
+    "Transitions follow the supplied agent lifecycle model."
+  ],
+  "05-ownership-boundaries": [
+    "Feature ownership boundaries",
+    [
+      [
+        "Root coordinator",
+        "Routes and coordinates work across domains"
+      ],
+      [
+        "Feature A owns features/a/**",
+        "Changes remain within the declared boundary"
+      ],
+      [
+        "Feature B owns features/b/**",
+        "A separate owner governs this domain"
+      ],
+      [
+        "Cross-feature change",
+        "Coordinate through Root and affected owners"
+      ],
+      [
+        "Review and traceability",
+        "Record approvals, changes and handoffs"
+      ]
+    ],
+    "Feature A and B are peers, not a delegation chain."
+  ],
+  "06-security-delegation-controls": [
+    "Checks before side effects",
+    [
+      [
+        "Agent identity",
+        "Establish who is requesting the action"
+      ],
+      [
+        "Delegation contract",
+        "Identify the task and delegated authority"
+      ],
+      [
+        "Policy evaluation",
+        "Check applicable governance constraints"
+      ],
+      [
+        "Authorization",
+        "Decide whether the action is allowed"
+      ],
+      [
+        "Budget enforcement",
+        "Check remaining execution limits"
+      ],
+      [
+        "Side-effect control",
+        "Mediate writes and external actions"
+      ],
+      [
+        "Tool or target",
+        "Execute only the authorized operation"
+      ]
+    ],
+    "Host integrations must enforce these design controls."
+  ],
+  "07-traceability": [
+    "Intent to production evidence",
+    [
+      [
+        "Intent and requirement",
+        "State what must be achieved"
+      ],
+      [
+        "Feature and agent",
+        "Identify accountable ownership"
+      ],
+      [
+        "Task and delegated specialist",
+        "Record the approved work boundary"
+      ],
+      [
+        "Implementation and tests",
+        "Connect code changes to validation"
+      ],
+      [
+        "Evaluation and evidence",
+        "Preserve results and acceptance checks"
+      ],
+      [
+        "Feature handoff and Root review",
+        "Review before integration"
+      ],
+      [
+        "Certification and release",
+        "Record internal approvals and delivery"
+      ],
+      [
+        "Production outcome",
+        "Link observed outcomes back to intent"
+      ]
+    ],
+    "Certification here means an internal engineering gate."
+  ],
+  "08-reference-architecture": [
+    "A DH-ADOM adoption architecture",
+    [
+      [
+        "User or engineer",
+        "Defines intent and acceptance criteria"
+      ],
+      [
+        "Root orchestrator",
+        "Coordinates routing and integration"
+      ],
+      [
+        "Feature A   |   Feature B   |   Feature C",
+        "Parallel engineering ownership domains"
+      ],
+      [
+        "Scoped specialists",
+        "Execute delegated tasks for feature owners"
+      ],
+      [
+        "Validation and evidence",
+        "Shared checks and auditable outputs"
+      ],
+      [
+        "Root review and integration",
+        "Accept reviewed changes"
+      ],
+      [
+        "Release",
+        "Deliver with traceable approvals"
+      ]
+    ],
+    "Registry, policy and audit services support all roles."
+  ]
+}

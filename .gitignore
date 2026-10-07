@@ -5,3 +5,7 @@ Thumbs.db
 # IDE
 .vscode/
 .idea/
+
+# Publication build caches
+__pycache__/
+*.pyc

@@ -1,3 +1,5 @@
 # Preserve exact publication bytes and reproducible release checksums on all hosts.
 .github/dh-adom/source/** -text
-dh-adom/releases/** -text
+.github/dh-adom/originals/** -text -whitespace
+dh-adom/source/** -text whitespace=cr-at-eol
+dh-adom/releases/** -text whitespace=cr-at-eol
