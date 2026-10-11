@@ -9,7 +9,7 @@ from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
 from reportlab.lib.enums import TA_LEFT
 
-ROOT=Path(__file__).resolve().parents[2]; SRC=ROOT/'dh-adom/source'; ART=ROOT/'dh-adom/assets'; OUT=ROOT/'dh-adom/releases/1.1.0'
+ROOT=Path(__file__).resolve().parents[2]; SRC=ROOT/'dh-adom/source'; ART=ROOT/'dh-adom/assets'; OUT=ROOT/'dh-adom/releases/1.1.1'
 OUT.mkdir(parents=True,exist_ok=True)
 NAVY='#12305e'; BLUE='#1552b8'; INK='#111120'; MUTED='#53536a'
 figures={
@@ -98,7 +98,7 @@ def table(rows):
     t=Table([[para(s,'CellHead' if i==0 else 'Cell') for s in row] for i,row in enumerate(rows)],colWidths=widths,repeatRows=1,hAlign='LEFT')
     t.setStyle(TableStyle([('BACKGROUND',(0,0),(-1,0),HexColor(NAVY)),('ROWBACKGROUNDS',(0,1),(-1,-1),[white,HexColor('#f4f7fb')]),('VALIGN',(0,0),(-1,-1),'TOP'),('LEFTPADDING',(0,0),(-1,-1),9),('RIGHTPADDING',(0,0),(-1,-1),9),('TOPPADDING',(0,0),(-1,-1),8),('BOTTOMPADDING',(0,0),(-1,-1),8),('LINEBELOW',(0,0),(-1,0),.6,HexColor(BLUE))]));return t
 def build(path,title,subtitle,version,blocks):
-    story=[Spacer(1,72),para('DEVHEAL LABS AI','Small'),Spacer(1,30),para(title,'Cover'),para(subtitle,'Heading1'),Spacer(1,25),para(version),para('Sai Narender Nuckala / DevHeal Labs AI'),Spacer(1,30),para('An engineering operating model for repository ownership, bounded delegation and evidence-backed handoffs.'),para('Canonical publication: https://devheallabs.com/dh-adom/','Small'),PageBreak()]
+    story=[Spacer(1,72),para('DEVHEAL LABS AI','Small'),Spacer(1,30),para(title,'Cover'),para(subtitle,'Heading1'),Spacer(1,25),para(version),para('Sai Narender Nuckala / DevHeal Labs AI'),Spacer(1,30),para('An engineering operating model for repository ownership, bounded delegation and evidence-backed handoffs.'),para('Canonical publication: https://devheallabs.com/dh-adom/','Small'),Spacer(1,18),para('Copyright (c) 2026 DevHeal Labs AI Pvt. Ltd. Publication prose and diagrams: Creative Commons Attribution 4.0 International (CC BY 4.0). https://creativecommons.org/licenses/by/4.0/','Small'),para('Embedded code examples: Apache-2.0. Names and logos excluded. Full scope: https://devheallabs.com/dh-adom/licensing/ - licensing release 1.1.1.','Small'),PageBreak()]
     appendix=False;references=False
     for b in blocks:
         kind=b['type']
