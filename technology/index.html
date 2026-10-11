@@ -256,49 +256,40 @@
   </div>
 </div></details>
 </div></section>
-<section id="validation-architecture" class="sec-alt"><div class="container"><div class="sec-label">Evaluation and recovery</div><h2 class="sec-title">Define behaviour across success and failure.</h2><p class="sec-desc">Explore scenario design, evaluation criteria, recovery patterns, and compilation contracts.</p><details class="architecture-detail" id="simulator"><summary>DevHeal Simulator scenario design</summary><div class="architecture-content">
+<section id="validation-architecture" class="sec-alt"><div class="container"><div class="sec-label">Evaluation and recovery</div><h2 class="sec-title">Define behaviour across success and failure.</h2><p class="sec-desc">Explore scenario design, evaluation criteria, recovery patterns, and compilation contracts.</p><details class="architecture-detail" id="twinvoke"><summary>Twinvoke assurance architecture</summary><div class="architecture-content">
   <div class="container">
 
 
-    <p class="sec-desc wide sr d2">Test autonomous AI systems before they interact with the real world. <strong>Problem:</strong> most agents reach production having been tested against a handful of prompts someone typed by hand. <strong>Approach:</strong> run the system against structured scenario suites — the same idea as a chaos-engineering test suite, aimed at agents instead of servers — before it ever sees a real customer.</p>
+    <p class="sec-desc wide sr d2">Twinning enterprise context creates a safer place to assess autonomous actions before they reach live systems. Twinvoke is designed to combine a living system model, counterfactual simulation, invariant checks, and governed invocation in one assurance workflow.</p>
     <div class="tagcloud sr d3">
-      <span class="tag">Customer interactions</span>
-      <span class="tag">Transactions</span>
-      <span class="tag">API failures</span>
-      <span class="tag">Tool failures</span>
-      <span class="tag">Policy violations</span>
-      <span class="tag">Security attacks</span>
-      <span class="tag">Unexpected inputs</span>
-      <span class="tag">Model failures</span>
-      <span class="tag">Dependency failures</span>
-      <span class="tag">Long-running workflows</span>
+      <span class="tag">Enterprise topology</span>
+      <span class="tag">What-if simulation</span>
+      <span class="tag">Blast-radius analysis</span>
+      <span class="tag">Invariant checks</span>
+      <span class="tag">Agent permissions</span>
+      <span class="tag">Sensitive-data controls</span>
+      <span class="tag">Governed invocation</span>
+      <span class="tag">Decision evidence</span>
     </div>
-    <p class="callout sr d4"><strong>Design scope:</strong> scenario suites define inputs, expected behaviour, and pass/fail criteria. The simulator architecture is documented as a system design.</p>
+    <p class="callout sr d4"><strong>Coming soon:</strong> Twinvoke is under development. The product page presents the intended capability and assurance workflow without claiming general availability.</p>
   </div>
 </div></details>
-<details class="architecture-detail" id="evaluation"><summary>AI System Evaluation dimensions</summary><div class="architecture-content">
+<details class="architecture-detail" id="agentproving"><summary>AgentProving assurance pipeline</summary><div class="architecture-content">
   <div class="container">
-
-
-    <p class="sec-desc wide sr d2">Evaluating an AI system takes more than a model-accuracy benchmark. A model can score well on a leaderboard and still fail in production because it picked the wrong tool, ignored a policy, or quietly blew through budget. Evaluation has to look at the whole run.</p>
-    <div class="spec-grid sr d3">
-      <div class="spec-item"><span class="n">•</span> Task success</div>
-      <div class="spec-item"><span class="n">•</span> Tool selection</div>
-      <div class="spec-item"><span class="n">•</span> Reasoning trajectory</div>
-      <div class="spec-item"><span class="n">•</span> Policy compliance</div>
-      <div class="spec-item"><span class="n">•</span> Hallucination</div>
-      <div class="spec-item"><span class="n">•</span> Security</div>
-      <div class="spec-item"><span class="n">•</span> Latency</div>
-      <div class="spec-item"><span class="n">•</span> Cost</div>
-      <div class="spec-item"><span class="n">•</span> Reliability</div>
-      <div class="spec-item"><span class="n">•</span> Human escalation</div>
-      <div class="spec-item"><span class="n">•</span> Business outcome</div>
-      <div class="spec-item"><span class="n">•</span> Recovery behavior</div>
+    <p class="sec-desc wide sr d2">AgentProving evaluates complete agent runs rather than isolated model responses. Agents operate against simulated services while the assurance pipeline records decisions, tool calls, state changes, recovery behaviour, policy adherence, latency, and cost.</p>
+    <div class="tagcloud sr d3">
+      <span class="tag">Digital twin services</span>
+      <span class="tag">Adversarial scenarios</span>
+      <span class="tag">Tool-call accuracy</span>
+      <span class="tag">Policy boundaries</span>
+      <span class="tag">Failure recovery</span>
+      <span class="tag">Cost guardrails</span>
+      <span class="tag">Run comparison</span>
+      <span class="tag">Evidence receipts</span>
     </div>
-    <p class="sec-desc wide sr d3" style="margin-top:12px;margin-bottom:0">All twelve dimensions roll up into one idea we call <strong>Production Readiness</strong>: a system should be evaluated against all of this before it is deployed, not after it has already failed in front of a customer.</p>
+    <p class="callout sr d4"><strong>Demonstration:</strong> connect one agent workflow and review its simulated actions, failure handling, scorecard, and evidence receipt with the DevHeal team.</p>
   </div>
 </div></details>
-<details class="architecture-detail" id="certification"><summary>AI System Certification assessment model</summary><div class="architecture-content"><div class="container"><p class="sec-desc">A proposed extension of Evaluation that combines task success, policy adherence, tool accuracy, security, recovery, and cost into a structured readiness assessment.</p><p class="callout">The design defines an internal engineering assessment, distinct from external regulatory or industry certification. Assessment criteria are tied to the workflow and deployment context.</p></div></div></details>
 <details class="architecture-detail" id="compiler"><summary>Compiler, Recovery Engine, and Edge Runtime</summary><div class="architecture-content">
   <div class="container">
     <div class="sec-label sr">Also on the Roadmap</div>
