@@ -274,29 +274,22 @@
     <p class="callout sr d4"><strong>Coming soon:</strong> Twinvoke is under development. The product page presents the intended capability and assurance workflow without claiming general availability.</p>
   </div>
 </div></details>
-<details class="architecture-detail" id="evaluation"><summary>AI System Evaluation dimensions</summary><div class="architecture-content">
+<details class="architecture-detail" id="agentproving"><summary>AgentProving assurance pipeline</summary><div class="architecture-content">
   <div class="container">
-
-
-    <p class="sec-desc wide sr d2">Evaluating an AI system takes more than a model-accuracy benchmark. A model can score well on a leaderboard and still fail in production because it picked the wrong tool, ignored a policy, or quietly blew through budget. Evaluation has to look at the whole run.</p>
-    <div class="spec-grid sr d3">
-      <div class="spec-item"><span class="n">•</span> Task success</div>
-      <div class="spec-item"><span class="n">•</span> Tool selection</div>
-      <div class="spec-item"><span class="n">•</span> Reasoning trajectory</div>
-      <div class="spec-item"><span class="n">•</span> Policy compliance</div>
-      <div class="spec-item"><span class="n">•</span> Hallucination</div>
-      <div class="spec-item"><span class="n">•</span> Security</div>
-      <div class="spec-item"><span class="n">•</span> Latency</div>
-      <div class="spec-item"><span class="n">•</span> Cost</div>
-      <div class="spec-item"><span class="n">•</span> Reliability</div>
-      <div class="spec-item"><span class="n">•</span> Human escalation</div>
-      <div class="spec-item"><span class="n">•</span> Business outcome</div>
-      <div class="spec-item"><span class="n">•</span> Recovery behavior</div>
+    <p class="sec-desc wide sr d2">AgentProving evaluates complete agent runs rather than isolated model responses. Agents operate against simulated services while the assurance pipeline records decisions, tool calls, state changes, recovery behaviour, policy adherence, latency, and cost.</p>
+    <div class="tagcloud sr d3">
+      <span class="tag">Digital twin services</span>
+      <span class="tag">Adversarial scenarios</span>
+      <span class="tag">Tool-call accuracy</span>
+      <span class="tag">Policy boundaries</span>
+      <span class="tag">Failure recovery</span>
+      <span class="tag">Cost guardrails</span>
+      <span class="tag">Run comparison</span>
+      <span class="tag">Evidence receipts</span>
     </div>
-    <p class="sec-desc wide sr d3" style="margin-top:12px;margin-bottom:0">All twelve dimensions roll up into one idea we call <strong>Production Readiness</strong>: a system should be evaluated against all of this before it is deployed, not after it has already failed in front of a customer.</p>
+    <p class="callout sr d4"><strong>Demonstration:</strong> connect one agent workflow and review its simulated actions, failure handling, scorecard, and evidence receipt with the DevHeal team.</p>
   </div>
 </div></details>
-<details class="architecture-detail" id="certification"><summary>AI System Certification assessment model</summary><div class="architecture-content"><div class="container"><p class="sec-desc">A proposed extension of Evaluation that combines task success, policy adherence, tool accuracy, security, recovery, and cost into a structured readiness assessment.</p><p class="callout">The design defines an internal engineering assessment, distinct from external regulatory or industry certification. Assessment criteria are tied to the workflow and deployment context.</p></div></div></details>
 <details class="architecture-detail" id="compiler"><summary>Compiler, Recovery Engine, and Edge Runtime</summary><div class="architecture-content">
   <div class="container">
     <div class="sec-label sr">Also on the Roadmap</div>
