@@ -744,6 +744,7 @@ footer a:focus-visible{outline:2px solid var(--accent);outline-offset:4px;border
 .catalogue-kind{font-family:var(--mono);font-size:.7rem;color:var(--text-muted);margin-bottom:14px;text-transform:uppercase;letter-spacing:.05em}
 .product-featured{border-color:color-mix(in srgb,var(--accent) 48%,var(--border));background:linear-gradient(145deg,color-mix(in srgb,var(--accent) 9%,var(--glass)),var(--glass))}
 .product-featured::after{opacity:1}
+.p-card .product-promise{font-size:1.08rem;line-height:1.45;font-weight:700;letter-spacing:-.02em;color:var(--text);margin-bottom:10px}
 .twinvoke-hero{position:relative;overflow:hidden}
 .twinvoke-hero::after{content:'';position:absolute;width:420px;height:420px;right:-130px;top:-160px;border-radius:50%;background:radial-gradient(circle,color-mix(in srgb,var(--accent) 22%,transparent),transparent 68%);pointer-events:none}
 .status-pill{display:inline-flex;align-items:center;gap:8px;padding:8px 13px;border:1px solid color-mix(in srgb,var(--accent) 40%,var(--border));border-radius:999px;background:color-mix(in srgb,var(--accent) 8%,var(--glass));color:var(--accent);font-family:var(--mono);font-size:.72rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;margin-bottom:20px}
