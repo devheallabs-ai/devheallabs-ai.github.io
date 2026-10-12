@@ -4,8 +4,8 @@ const fs = require('node:fs');
 const path = require('node:path');
 const crypto = require('node:crypto');
 const root = path.resolve(__dirname, '../..');
-const release = path.join(root, 'dh-adom/releases/1.1.0');
-const pages = ['', 'whitepaper', 'specification', 'architecture', 'implementation', 'evaluation', 'security', 'research', 'downloads', 'adoption', 'schemas', 'conformance'];
+const release = path.join(root, 'dh-adom/releases/1.1.1');
+const pages = ['', 'whitepaper', 'specification', 'architecture', 'implementation', 'evaluation', 'security', 'research', 'downloads', 'adoption', 'schemas', 'conformance', 'licensing'];
 test('every publication link, image and paper fragment resolves', () => {
   for (const page of pages) {
     const file = path.join(root, 'dh-adom', page, 'index.html');
@@ -48,4 +48,22 @@ test('current paper preserves multiline contracts and semantic conformance table
   const spec = fs.readFileSync(path.join(root, 'dh-adom/specification/index.html'), 'utf8');
   assert.match(spec, /<th scope="col">ID<\/th>/);
   assert.doesNotMatch(spec, /<p>\| CR-/);
+});
+
+test('current adoption terms and full license texts ship together', () => {
+  for (const page of pages) {
+    const html = fs.readFileSync(path.join(root, 'dh-adom', page, 'index.html'), 'utf8');
+    assert.ok(html.includes('/dh-adom/licensing/'), page);
+    assert.ok(!html.includes('retain separate research-and-evaluation terms'), page);
+    assert.ok(html.includes('CC BY 4.0') && html.includes('Apache-2.0'), page);
+  }
+  for (const name of ['LICENSE.md', 'Apache-2.0.txt', 'CC-BY-4.0.txt']) {
+    assert.equal(fs.readFileSync(path.join(release, name), 'utf8'), fs.readFileSync(path.join(root, 'dh-adom/source/11-Licensing-and-Citation', name), 'utf8'));
+  }
+  const manifest = JSON.parse(fs.readFileSync(path.join(release, 'manifest.json')));
+  assert.ok(manifest.sha256['LICENSE.md']);
+  for (const [name, expected] of Object.entries(manifest.sha256)) {
+    const bytes = fs.readFileSync(path.join(root, 'dh-adom/source', name));
+    assert.equal(crypto.createHash('sha256').update(bytes).digest('hex'), expected, name);
+  }
 });

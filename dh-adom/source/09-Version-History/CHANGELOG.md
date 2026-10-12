@@ -1,3 +1,7 @@
+# Licensing release 1.1.1 - 7 October 2026
+
+Commercial adoption: Apache-2.0 for implementation materials and CC BY 4.0 for publication prose and diagrams. Includes explicit scope, full license texts and PDF notices. Earlier release bytes remain unchanged. Technical behavior is unchanged.
+
 # Changelog
 
 ## Publication 1.1.0 - 2026-10-07
