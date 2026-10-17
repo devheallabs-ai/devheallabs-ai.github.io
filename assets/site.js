@@ -37,6 +37,39 @@
 
   var burger = document.querySelector('.hamburger');
   var links = document.querySelector('.nav-links');
+  var disclosures = document.querySelectorAll('.nav-disclosure');
+  function closeDropdowns() {
+    disclosures.forEach(function (button) {
+      button.setAttribute('aria-expanded', 'false');
+      button.parentElement.classList.remove('drop-open');
+    });
+  }
+  disclosures.forEach(function (button, index) {
+    var item = button.parentElement;
+    var menu = item.querySelector('.nav-drop');
+    if (!menu) return;
+    menu.id = menu.id || 'nav-dropdown-' + index;
+    button.setAttribute('aria-controls', menu.id);
+    item.classList.add('has-disclosure');
+    button.addEventListener('click', function () {
+      var open = button.getAttribute('aria-expanded') !== 'true';
+      closeDropdowns();
+      button.setAttribute('aria-expanded', String(open));
+      item.classList.toggle('drop-open', open);
+    });
+    item.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape') { closeDropdowns(); button.focus(); }
+    });
+    item.addEventListener('focusout', function (event) {
+      if (!item.contains(event.relatedTarget)) {
+        button.setAttribute('aria-expanded', 'false');
+        item.classList.remove('drop-open');
+      }
+    });
+  });
+  document.addEventListener('click', function (event) {
+    if (!event.target.closest('.nav-has-drop')) closeDropdowns();
+  });
   if (burger && links) {
     links.id = links.id || 'primary-navigation';
     burger.setAttribute('aria-controls', links.id);

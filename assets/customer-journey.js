@@ -10,6 +10,9 @@
     if (query.get('offer') === 'pilot' && form.elements.request) form.elements.request.value = 'Free pilot';
     var map = {
       'partnership': 'Partnership & collaboration',
+      'enterprise-partner': 'Enterprise collaboration',
+      'technology-partner': 'Technology partnership',
+      'research-partner': 'Research collaboration',
       'steadystate': 'SteadyState platform demonstration',
       'dummu': 'SteadyState platform demonstration',
       'nova': 'Nova model demonstration',
