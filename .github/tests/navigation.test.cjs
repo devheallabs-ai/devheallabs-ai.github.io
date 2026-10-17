@@ -19,3 +19,10 @@ test('malformed and missing fragments do not interrupt navigation initialization
     vm.createContext(ctx); vm.runInContext(reveal, ctx); assert.doesNotThrow(() => ctx.revealFragment());
   }
 });
+
+test('scrollable dropdowns have no pointer gap below their parent', () => {
+  const css = fs.readFileSync(path.join(__dirname, '../../assets/style.css'), 'utf8');
+  const dropdown = css.match(/\.nav-drop\{([^}]+)\}/)[1];
+  assert.match(dropdown, /top:100%;/);
+  assert.doesNotMatch(dropdown, /top:calc/);
+});
