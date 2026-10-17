@@ -6,8 +6,10 @@
   if (form) {
     var query = new URLSearchParams(location.search);
     var param = query.get('interest');
+    if (query.get('offer') === 'collaboration' && form.elements.request) form.elements.request.value = 'Partnership discussion';
     if (query.get('offer') === 'pilot' && form.elements.request) form.elements.request.value = 'Free pilot';
     var map = {
+      'partnership': 'Partnership & collaboration',
       'steadystate': 'SteadyState platform demonstration',
       'dummu': 'SteadyState platform demonstration',
       'nova': 'Nova model demonstration',

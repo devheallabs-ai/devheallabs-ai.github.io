@@ -18,3 +18,5 @@ test('clipboard denial leaves a manual-copy route',async()=>{const x=setup();awa
 for (const [interest,label] of Object.entries({steadystate:"SteadyState platform demonstration",dummu:"SteadyState platform demonstration",nova:"Nova model demonstration",podotl:"Podotl intelligence demonstration"})) { test(`product enquiry selects ${interest}`,()=>{ const x=setup(true,interest); assert.equal(x.form.elements.interest.value,label); const html=fs.readFileSync(path.join(__dirname,"../../contact/index.html"),"utf8"); assert.ok(html.includes(`<option>${label}</option>`)); }); }
 
 test("free pilot query selects request without submitting",()=>{const x=setup(true,"nova","pilot");assert.equal(x.form.elements.request.value,"Free pilot");assert.equal(x.form.elements.interest.value,"Nova model demonstration");assert.equal(x.node("enquiry-result").hidden,true);});
+
+test("partnership CTA selects collaboration enquiry",()=>{const x=setup(true,"partnership","collaboration");assert.equal(x.form.elements.interest.value,"Partnership & collaboration");assert.equal(x.form.elements.request.value,"Partnership discussion");assert.equal(x.node("enquiry-result").hidden,true);});
