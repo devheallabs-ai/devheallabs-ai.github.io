@@ -11,7 +11,8 @@ test('every publication link, image and paper fragment resolves', () => {
     const file = path.join(root, 'dh-adom', page, 'index.html');
     const html = fs.readFileSync(file, 'utf8');
     assert.equal((html.match(/<h1>/g) || []).length, 1, page);
-    assert.ok(!html.includes('Autonomous Twin') && !html.includes('devheallabs.in'), page);
+    assert.ok(!html.includes('Autonomous Twin'), page);
+    assert.match(html, /<link rel="canonical" href="https:\/\/devheallabs\.com\/dh-adom\//, page);
     const ids = [...html.matchAll(/\bid="([^"]+)"/g)].map(m => m[1]);
     assert.equal(new Set(ids).size, ids.length, `duplicate IDs: ${page}`);
     for (const [, ref] of html.matchAll(/(?:href|src)="([^"]+)"/g)) {
