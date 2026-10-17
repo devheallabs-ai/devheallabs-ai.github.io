@@ -1,60 +1,14 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Inspect it. Run it. Adapt it. — DH-ADOM — DevHeal Labs</title><meta name="description" content="A small Python reference library makes the core routing and delegation concepts executable, alongside repository templates and machine-readable contracts."><link rel="canonical" href="https://devheallabs.com/dh-adom/implementation/"><link rel="icon" href="/favicon.png"><meta property="og:title" content="Inspect it. Run it. Adapt it. — DH-ADOM"><meta property="og:description" content="A small Python reference library makes the core routing and delegation concepts executable, alongside repository templates and machine-readable contracts."><meta property="og:url" content="https://devheallabs.com/dh-adom/implementation/"><meta property="og:type" content="article"><meta property="og:image" content="https://devheallabs.com/logo.png"><link rel="stylesheet" href="/assets/style.css?v=20261017-portfolio"><link rel="stylesheet" href="/dh-adom/assets/publication.css?v=20261007-adom11"><meta name="robots" content="index,follow"><meta name="twitter:card" content="summary"><meta name="author" content="Sai Narender Nuckala"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Inspect it. Run it. Adapt it.", "description": "A small Python reference library makes the core routing and delegation concepts executable, alongside repository templates and machine-readable contracts.", "url": "https://devheallabs.com/dh-adom/implementation/", "datePublished": "2026-10-06", "dateModified": "2026-10-07", "author": {"@type": "Person", "name": "Sai Narender Nuckala"}, "publisher": {"@type": "Organization", "name": "DevHeal Labs AI", "url": "https://devheallabs.com/"}, "version": "1.1"}</script></head><body>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Inspect it. Run it. Adapt it. — DH-ADOM — DevHeal Labs</title><meta name="description" content="A small Python reference library makes the core routing and delegation concepts executable, alongside repository templates and machine-readable contracts."><link rel="canonical" href="https://devheallabs.com/dh-adom/implementation/"><link rel="icon" href="/favicon.png"><meta property="og:title" content="Inspect it. Run it. Adapt it. — DH-ADOM"><meta property="og:description" content="A small Python reference library makes the core routing and delegation concepts executable, alongside repository templates and machine-readable contracts."><meta property="og:url" content="https://devheallabs.com/dh-adom/implementation/"><meta property="og:type" content="article"><meta property="og:image" content="https://devheallabs.com/logo.png"><link rel="stylesheet" href="/assets/style.css?v=20261017-interactive"><link rel="stylesheet" href="/dh-adom/assets/publication.css?v=20261007-adom11"><meta name="robots" content="index,follow"><meta name="twitter:card" content="summary"><meta name="author" content="Sai Narender Nuckala"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Inspect it. Run it. Adapt it.", "description": "A small Python reference library makes the core routing and delegation concepts executable, alongside repository templates and machine-readable contracts.", "url": "https://devheallabs.com/dh-adom/implementation/", "datePublished": "2026-10-06", "dateModified": "2026-10-07", "author": {"@type": "Person", "name": "Sai Narender Nuckala"}, "publisher": {"@type": "Organization", "name": "DevHeal Labs AI", "url": "https://devheallabs.com/"}, "version": "1.1"}</script></head><body>
 <a class="skip-link" href="#main-content">Skip to content</a>
 
-<nav class="nav" id="nav" aria-label="Main navigation">
-  <div class="nav-inner">
-    <a href="/" class="nav-logo"><img src="/logo.png?v=20261014" alt="" class="logo-icon">DevHeal<span>Labs AI</span></a>
-    <ul class="nav-links">
-      <li class="nav-has-drop"><a href="/products/">Products</a><ul class="nav-drop nav-drop-wide">
-        <li class="nav-group-title">Platforms</li>
-        <li><a href="/products/steadystate/"><strong>SteadyState</strong> <span class="nd-sub">Autonomous platform for infrastructure operations</span></a></li>
-        <li><a href="/agentproving/"><strong>D-AgentProving</strong> <span class="nd-sub">Autonomous agent stress-testing &amp; assurance</span></a></li>
-        <li><a href="/twinvoke/"><strong>D-TwinVoke</strong> <span class="nd-sub">Enterprise digital twin &amp; blast-radius simulation</span></a></li>
-        <li><a href="/products/nova/">Nova <span class="nd-sub">Local intelligence for infrastructure teams</span></a></li>
-        <li><a href="/products/podotl/">Podotl <span class="nd-sub">IT support and telemetry intelligence</span></a></li>
-        <li class="nav-group-title">Development &amp; infrastructure</li>
-        <li><a href="/products/#build">NC &middot; NC UI &middot; NC AI <span class="nd-sub">Compiler, UI layer &amp; zero-cloud CPU inference</span></a></li>
-        <li><a href="/products/#govern">AGP &middot; HiveANT &middot; SwarmOps <span class="nd-sub">Governance protocol &amp; multi-agent operations</span></a></li>
-        <li><a href="/products/">Explore all products &rarr;</a></li>
-      </ul></li>
-      <li><a href="/solutions/">Solutions</a></li>
-      <li class="nav-has-drop"><a href="/industries/">Industries</a><ul class="nav-drop">
-        <li><a href="/industries/financial-services/">Financial Services <span class="nd-sub">Air-gapped risk &amp; maker-checker workflows</span></a></li>
-        <li><a href="/industries/technology/">Technology &amp; SaaS <span class="nd-sub">Autonomous SRE &amp; CI/CD agent assurance</span></a></li>
-        <li><a href="/industries/healthcare/">Healthcare &amp; Life Sciences <span class="nd-sub">PHI-isolated local CPU inference</span></a></li>
-        <li><a href="/industries/industrial/">Manufacturing &amp; Industrial <span class="nd-sub">Edge binary execution &amp; OT/IT fault twins</span></a></li>
-        <li><a href="/industries/">All target industries &rarr;</a></li>
-      </ul></li>
-      <li class="nav-has-drop"><a href="/proof/">Engineering &amp; Proof</a><ul class="nav-drop">
-        <li class="nav-group-title">Verification &amp; Evidence</li>
-        <li><a href="/proof/">Workflows &amp; Evaluation</a></li>
-        <li><a href="/benchmarks/">Benchmarks &amp; Measurement Protocol</a></li>
-        <li><a href="/developers/">Developers &amp; 60-Second Verify</a></li>
-        <li class="nav-group-title">Architecture &amp; IP</li>
-        <li><a href="/technology/">System Architecture Reference</a></li>
-        <li><a href="/whitepaper/">Technical Whitepaper</a></li>
-        <li><a href="/ip/">Patents &amp; IP (4 Families Pending)</a></li>
-        <li><a href="/dh-adom/">DH-ADOM Operating Model</a></li>
-        <li><a href="/roadmap/">Engineering roadmap</a></li>
-      </ul></li>
-      <li class="nav-has-drop"><a href="/company/">Company</a><ul class="nav-drop">
-        <li><a href="/company/">About DevHeal Labs</a></li>
-        <li><a href="/why-devheal/">Why DevHeal</a></li>
-        <li><a href="/services/">Engineering Services</a></li>
-        <li><a href="/enterprise/">Enterprise Deployment</a></li>
-        <li><a href="/security/">Deployment &amp; Security</a></li>
-        <li><a href="/design-partner/">Design Partner Programme</a></li>
-      </ul></li>
-      <li><a href="/contact/">Contact</a></li>
-      <li><a href="/contact/?offer=pilot" class="nav-cta">Request a free pilot</a></li>
-    </ul>
-    <button class="theme-toggle" id="themeToggle" aria-label="Toggle colour theme" title="Toggle colour theme">
+<nav class="nav" id="nav" aria-label="Main navigation"><div class="nav-inner"><a href="/" class="nav-logo"><img src="/logo.png?v=20261014" alt="" class="logo-icon">DevHeal<span>Labs AI</span></a><ul class="nav-links">
+<li class="nav-has-drop"><a href="/products/">Products</a><button type="button" class="nav-disclosure" aria-label="Show Products menu" aria-expanded="false"><span aria-hidden="true">⌄</span></button><ul class="nav-drop"><li><a href="/products/steadystate/">SteadyState</a></li><li><a href="/agentproving/">D-AgentProving</a></li><li><a href="/twinvoke/">D-TwinVoke</a></li><li><a href="/products/nova/">Nova</a></li><li><a href="/products/podotl/">Podotl</a></li><li><a href="/products/">All products &rarr;</a></li></ul></li>
+<li><a href="/solutions/">Solutions</a></li><li><a href="/industries/">Industries</a></li><li><a href="/partners/">Partners</a></li>
+<li class="nav-has-drop"><a href="/proof/">Resources</a><button type="button" class="nav-disclosure" aria-label="Show Resources menu" aria-expanded="false"><span aria-hidden="true">⌄</span></button><ul class="nav-drop"><li><a href="/technology/">Architecture</a></li><li><a href="/developers/">Developers</a></li><li><a href="/benchmarks/">Benchmarks</a></li><li><a href="/whitepaper/">Whitepaper</a></li><li><a href="/ip/">Patents &amp; IP</a></li><li><a href="/dh-adom/">DH-ADOM</a></li></ul></li>
+<li class="nav-has-drop"><a href="/company/">Company</a><button type="button" class="nav-disclosure" aria-label="Show Company menu" aria-expanded="false"><span aria-hidden="true">⌄</span></button><ul class="nav-drop"><li><a href="/company/our-story/">Our story</a></li><li><a href="/company/">About DevHeal</a></li><li><a href="/services/">Engineering services</a></li><li><a href="/security/">Security</a></li><li><a href="/contact/">Contact us</a></li></ul></li><li><a class="nav-cta" href="/contact/?offer=pilot">Start a free pilot</a></li></ul><button class="theme-toggle" id="themeToggle" aria-label="Toggle colour theme" title="Toggle colour theme">
       <svg class="icon-light" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1 1M18 18l1 1M5 19l1-1M18 6l1-1"/></svg>
       <svg class="icon-dark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.8z"/></svg>
-    </button>
-    <button class="hamburger" aria-label="Open menu" aria-expanded="false">&#9776;</button>
-  </div>
-</nav>
+    </button><button class="hamburger" aria-label="Open menu" aria-expanded="false">&#9776;</button></div></nav>
 
 <main id="main-content" class="dh-main"><div class="container"><header class="dh-heading"><a class="dh-kicker" href="/research/">DevHeal Research / DH-ADOM</a><h1>Inspect it. Run it. Adapt it.</h1><p>A small Python reference library makes the core routing and delegation concepts executable, alongside repository templates and machine-readable contracts.</p><div class="dh-meta">White paper 1.1 · Publication package 1.1.1 · 7 October 2026</div></header><nav class="dh-nav" aria-label="DH-ADOM publication"><a href="/dh-adom/">Overview</a><a href="/dh-adom/whitepaper/">White paper</a><a href="/dh-adom/specification/">Specification</a><a href="/dh-adom/architecture/">Architecture</a><a href="/dh-adom/implementation/" aria-current="page">Implementation</a><a href="/dh-adom/evaluation/">Evaluation</a><a href="/dh-adom/security/">Security</a><a href="/dh-adom/research/">Research</a><a href="/dh-adom/downloads/">Downloads</a><a href="/dh-adom/conformance/">Conformance</a><a href="/dh-adom/schemas/">Schemas & API</a><a href="/dh-adom/adoption/">Adoption</a><a href="/dh-adom/licensing/">Licensing</a></nav><section class="dh-section"><h2>Run the included example.</h2><p>Download and extract the publication ZIP. From its <code>DH-ADOM/04-Reference-Implementation</code> directory, use Python 3.11 or later:</p><pre>python -m unittest discover -s tests -v
 python -m examples.demo</pre><p>The demo returns <code>COMPLETE</code> for <code>TASK-DEMO</code> and records four audit events. It demonstrates control flow using deterministic specialist execution.</p><a href="/dh-adom/downloads/">Download the source package →</a></section><section class="dh-section"><h2>What the reference library demonstrates.</h2><div class="dh-table"><table><thead><tr><th>Component</th><th>Included behavior</th><th>Integration boundary</th></tr></thead><tbody><tr><td>Registry</td><td>Agent identity records and feature-owner lookup</td><td>In-memory storage</td></tr><tr><td>Policy</td><td>Identity, declared depth, step/cost budgets and permission checks</td><td>Runtime metering and filesystem containment require host enforcement</td></tr><tr><td>Specialist</td><td>Deterministic completion and audit events</td><td>Connect model and tool execution in the host</td></tr><tr><td>Audit</td><td>In-memory timestamped event records</td><td>Durable storage and denied-attempt logging require integration</td></tr><tr><td>Interfaces</td><td>JSON schemas and OpenAPI outline</td><td>No HTTP server is bundled</td></tr></tbody></table></div></section><section class="dh-section"><h2>Bring the method into a repository.</h2><ol><li>Define engineering rules in the constitution.</li><li>Assign a Root coordinator and one owner for each meaningful feature domain.</li><li>Declare agent capabilities, permissions, budgets and lifecycle state.</li><li>Use the supplied delegation contract for task scope and acceptance criteria.</li><li>Persist implementation evidence and a handoff that another session can use.</li><li>Evaluate the normative requirements against the actual host runtime.</li></ol><p>Templates are in <code>03-Reference-Templates</code>. Library source and tests are in <code>04-Reference-Implementation</code>.</p></section><aside class="dh-source">DH-ADOM publication prose and diagrams: CC BY 4.0. Code, templates and schemas: Apache-2.0. <a href="/dh-adom/licensing/">License scope and attribution</a>. Source: DH-ADOM publication package 1.1.1. Specification and runtime 1.0. <a href="/dh-adom/downloads/">Original documents, citation and source inventory →</a></aside></div></main><footer>
@@ -102,7 +56,7 @@ python -m examples.demo</pre><p>The demo returns <code>COMPLETE</code> for <code
       <div class="f-col">
         <h5>Company</h5>
         <ul>
-          <li><a href="/company/">About DevHeal Labs</a></li>
+          <li><a href="/company/">About DevHeal Labs</a></li><li><a href="/company/our-story/">Our story</a></li><li><a href="/partners/">Partnerships</a></li>
           <li><a href="/services/">Engineering Services</a></li>
           <li><a href="/contact/">Book a Workflow Demo</a></li>
         </ul>
@@ -119,6 +73,6 @@ python -m examples.demo</pre><p>The demo returns <code>COMPLETE</code> for <code
   </div>
 </footer>
 
-<script src="/assets/site.js?v=20261017-portfolio"></script>
+<script src="/assets/site.js?v=20261017-interactive"></script>
 <dialog id="diagram-viewer" aria-labelledby="diagram-title"><header><h2 id="diagram-title">Diagram</h2><div class="dh-actions"><button type="button" data-zoom="out" aria-label="Zoom out">−</button><output id="diagram-scale">100%</output><button type="button" data-zoom="in" aria-label="Zoom in">+</button><button type="button" id="diagram-close">Close</button></div></header><div class="diagram-scroll" tabindex="0" aria-label="Scrollable diagram"><img id="diagram-image" alt=""></div></dialog><script src="/dh-adom/assets/publication.js?v=20261007-adom11"></script></body>
 </html>
