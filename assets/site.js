@@ -146,10 +146,12 @@
   document.querySelectorAll('.nav-links a[href]').forEach(function (a) {
     var href = a.getAttribute('href');
     if (href.indexOf('#') !== -1 || href.indexOf('mailto:') === 0) return;
-    var url = new URL(href, location.href);
-    if (url.origin === location.origin && normalizePath(url.pathname) === path) {
-      a.classList.add('active');
-      a.setAttribute('aria-current', 'page');
-    }
+    try {
+      var url = new URL(href, location.href);
+      if (url.origin === location.origin && normalizePath(url.pathname) === path) {
+        a.classList.add('active');
+        a.setAttribute('aria-current', 'page');
+      }
+    } catch (e) {}
   });
 })();
