@@ -1,0 +1,5 @@
+.physical-stage{margin-top:32px;border:1px solid var(--line);border-radius:24px;overflow:hidden;background:#0b1528;box-shadow:var(--glass-shadow)}
+.stage-viewport{height:clamp(320px,48vw,620px);position:relative;background:radial-gradient(ellipse at 50% 30%,#223c62,#091222)}
+.stage-viewport canvas,.stage-fallback{display:block;width:100%;height:100%;object-fit:cover}.stage-viewport canvas{touch-action:pan-y;cursor:grab}.stage-viewport canvas:active{cursor:grabbing}.stage-viewport [hidden]{display:none}
+.stage-toolbar{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:20px 24px;color:#c0d6f5;border-top:1px solid #31435c;font-size:.85rem}.stage-toolbar>div{display:flex;gap:10px}
+.stage-toolbar button{font:inherit;color:#e6f0ff;background:#1c3455;border:1px solid #526c90;padding:10px 16px;border-radius:100px;cursor:pointer}.stage-toolbar button:focus-visible{outline:3px solid #72b9ff;outline-offset:3px}.stage-description{color:#a9bfdc;font-size:.85rem;line-height:1.7;padding:0 24px 22px;max-width:900px}
