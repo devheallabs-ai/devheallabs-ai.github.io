@@ -3,3 +3,6 @@
 .github/dh-adom/originals/** -text -whitespace
 dh-adom/source/** -text whitespace=cr-at-eol
 dh-adom/releases/** -text whitespace=cr-at-eol
+physical-ai/downloads/** -text
+physical-ai/images/** -text
+physical-ai/videos/** -text
