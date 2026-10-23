@@ -1,4 +1,4 @@
-.mino-hero{padding:150px 0 40px}.mino-split{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.mino-hero{padding:64px 0 40px}.mino-split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px;align-items:center}
 .mino-page h1{font-size:clamp(2.6rem,4.5vw,4.6rem);line-height:1.08;letter-spacing:-.045em;margin:20px 0 26px}
 .mino-page .lead{font-size:1.17rem;line-height:1.75;color:var(--text-muted);max-width:820px}
 .mino-note{font-size:.88rem;line-height:1.7;color:var(--text-muted);margin:22px 0;max-width:840px}
@@ -20,5 +20,5 @@
 .mino-reading{max-width:900px}.mino-reading h2{font-size:1.5rem;margin:30px 0 14px}.mino-reading p{line-height:1.8;color:var(--text-muted)}
 .mino-reading details{margin:14px 0;padding:20px;border:1px solid var(--line);border-radius:var(--radius);background:var(--glass)}.mino-reading summary{font-weight:600;cursor:pointer}.mino-reading details p{margin-top:14px}
 .mino-page a:focus-visible,.mino-page summary:focus-visible{outline:3px solid var(--accent);outline-offset:4px}
-@media(max-width:900px){.mino-split,.mino-demo{grid-template-columns:1fr;gap:28px}.mino-hero{padding-top:120px}}
+@media(max-width:900px){.mino-split,.mino-demo{grid-template-columns:1fr;gap:28px}.mino-hero{padding-top:44px}}
 @media(max-width:600px){.mino-grid{grid-template-columns:1fr}.mino-card,.mino-model>div{padding:22px}.mino-subnav{gap:4px}.mino-subnav a{padding:10px;font-size:.88rem}.mino-page h1{font-size:2.65rem}}

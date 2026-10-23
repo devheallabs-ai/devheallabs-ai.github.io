@@ -1,5 +1,5 @@
-.pai-page .pai-hero{padding:150px 0 40px}
-.pai-hero-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:48px;align-items:center;margin-top:22px}
+.pai-page .pai-hero{padding:64px 0 40px}
+.pai-hero-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:40px;align-items:center;margin-top:22px}
 .pai-hero h1{font-size:clamp(2.5rem,4.2vw,4.4rem);line-height:1.06;letter-spacing:-.045em;margin:0 0 24px}
 .pai-hero .lead{font-size:1.15rem;line-height:1.75;color:var(--text-muted)}
 .pai-context{font-size:.88rem;line-height:1.7;color:var(--text-muted);max-width:850px;margin-top:24px}
@@ -15,10 +15,10 @@
 .pai-media video{display:block;width:100%;aspect-ratio:16/9;background:#080b14;object-fit:contain}
 .pai-media>img{width:100%;aspect-ratio:16/9;object-fit:contain;background:#080b14}
 .pai-media figcaption{padding:14px 18px;color:var(--text-muted);font-size:.8rem;line-height:1.6}.pai-media figcaption a{color:var(--accent)}
-.pai-feature{display:grid;grid-template-columns:.7fr 1.3fr;gap:44px;align-items:center;padding:44px 0;border-bottom:1px solid var(--line)}
+.pai-feature{display:grid;grid-template-columns:minmax(0,.7fr) minmax(0,1.3fr);gap:40px;align-items:center;padding:40px 0;border-bottom:1px solid var(--line)}
 .pai-feature h3{font-size:1.8rem;letter-spacing:-.03em;line-height:1.2;margin-bottom:18px}.pai-feature p{color:var(--text-muted);line-height:1.8}
 .pai-lifecycle{list-style:none;display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:28px 0;padding:0;counter-reset:stage}
 .pai-lifecycle li{padding:20px;border:1px solid var(--line);border-radius:var(--radius);background:var(--glass);counter-increment:stage}.pai-lifecycle li:before{content:counter(stage,decimal-leading-zero) ' / ';color:var(--accent);font-family:var(--mono);font-size:.8rem}
 .pai-next{background:var(--accent-wash)}.pai-download{margin-top:24px}.pai-download a{color:var(--accent);font-weight:600}
-@media(max-width:900px){.pai-hero-grid,.pai-feature{grid-template-columns:1fr;gap:28px}.pai-page .pai-hero{padding-top:120px}.pai-feature{padding:32px 0}}
+@media(max-width:900px){.pai-hero-grid,.pai-feature{grid-template-columns:1fr;gap:28px}.pai-page .pai-hero{padding-top:44px}.pai-feature{padding:32px 0}}
 @media(max-width:600px){.pai-grid{grid-template-columns:1fr}.pai-card>div{padding:22px}.pai-lifecycle{grid-template-columns:repeat(2,1fr)}.pai-subnav{gap:4px}.pai-subnav a{padding:10px;font-size:.82rem}.pai-hero h1{font-size:2.65rem}}

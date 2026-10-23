@@ -57,20 +57,20 @@ async function mount(host) {
       beam([1.4,3.1,0],[1.7,2.1,1.3],.14,dark,arm);box(.5,.25,.4,white,arm,1.7,2,1.3);
       for(let i=0;i<4;i++)movers.push(box(.65,.5,.65,blue,scene,-5+i*3,1.4,0));
     }
-    let angle=.65,elevation=.55,paused=reduced.matches,visible=false,time=0,last=0,frame=0;
+    let angle=.65,elevation=.55,paused=reduced.matches,visible=false,time=0,last=0,frame=0,lost=false;
     const pause=host.querySelector('[data-stage-pause]'),reset=host.querySelector('[data-stage-reset]');
-    function view(){const distance=factory?17:19;camera.position.set(Math.sin(angle)*Math.cos(elevation)*distance,Math.sin(elevation)*distance,Math.cos(angle)*Math.cos(elevation)*distance);camera.lookAt(0,factory?1:2,0);}
-    function render(now=0){frame=0;if(!visible||document.hidden)return;const delta=last?Math.min((now-last)/1000,.05):0;last=now;if(!paused)time+=delta;
+    function view(){const distance=(factory?17:19)*Math.max(1,1.15/camera.aspect);camera.position.set(Math.sin(angle)*Math.cos(elevation)*distance,Math.sin(elevation)*distance,Math.cos(angle)*Math.cos(elevation)*distance);camera.lookAt(0,factory?1:2,0);}
+    function render(now=0){frame=0;if(lost||!visible||document.hidden)return;const delta=last?Math.min((now-last)/1000,.05):0;last=now;if(!paused)time+=delta;
       if(drone){drone.position.z=Math.sin(time*.32)*2.8;drone.position.y=5.5+Math.sin(time*1.1)*.12;drone.rotation.z=Math.sin(time*.6)*.035;drone.rotation.y=Math.sin(time*.32)*.12;rotors.forEach((r,i)=>r.rotation.y=time*24*(i%2?1:-1));scan.position.z=drone.position.z;movers[0].position.z=drone.position.z;}
       if(arm){arm.rotation.y=Math.sin(time*.7)*.6;movers.forEach((m,i)=>m.position.x=((time*.7+i*3)%12)-6);}
       view();renderer.render(scene,camera);if(!paused)frame=requestAnimationFrame(render);
     }
-    function wake(){if(!frame){last=0;frame=requestAnimationFrame(render);}}
-    function size(){renderer.setSize(viewport.clientWidth,viewport.clientHeight,false);camera.aspect=viewport.clientWidth/viewport.clientHeight;camera.updateProjectionMatrix();wake();}
+    function wake(){if(!lost&&!frame){last=0;frame=requestAnimationFrame(render);}}
+    function size(){const width=Math.max(1,viewport.clientWidth),height=Math.max(1,viewport.clientHeight);renderer.setSize(width,height,false);camera.aspect=width/height;camera.updateProjectionMatrix();wake();}
     new ResizeObserver(size).observe(viewport);
     new IntersectionObserver(entries=>{visible=entries[0].isIntersecting;if(visible)wake();else{cancelAnimationFrame(frame);frame=0;}},{threshold:.05}).observe(host);
     document.addEventListener('visibilitychange',()=>{if(document.hidden){cancelAnimationFrame(frame);frame=0;}else wake();});
-    function label(){pause.textContent=paused?'Play motion':'Pause motion';}
+    function label(){pause.textContent=paused?'Play motion':'Pause motion';pause.setAttribute('aria-pressed',String(paused));}
     pause.addEventListener('click',()=>{paused=!paused;label();wake();});reset.addEventListener('click',()=>{angle=.65;elevation=.55;wake();});
     reduced.addEventListener('change',()=>{paused=reduced.matches;label();wake();});
     let pointer=null;
@@ -87,7 +87,8 @@ async function mount(host) {
     canvas.addEventListener('pointerdown',e=>{pointer={id:e.pointerId,x:e.clientX,y:e.clientY};canvas.setPointerCapture(e.pointerId);});
     canvas.addEventListener('pointermove',e=>{if(!pointer||pointer.id!==e.pointerId)return;angle-=(e.clientX-pointer.x)*.006;elevation=Math.max(.2,Math.min(1.2,elevation+(e.clientY-pointer.y)*.004));pointer.x=e.clientX;pointer.y=e.clientY;wake();});
     ['pointerup','pointercancel'].forEach(type=>canvas.addEventListener(type,()=>pointer=null));
-    canvas.addEventListener('webglcontextlost',e=>{e.preventDefault();cancelAnimationFrame(frame);frame=0;canvas.hidden=true;host.querySelector('.stage-fallback').hidden=false;pause.hidden=true;reset.hidden=true;});
+    canvas.addEventListener('webglcontextlost',e=>{e.preventDefault();lost=true;cancelAnimationFrame(frame);frame=0;canvas.hidden=true;host.querySelector('.stage-fallback').hidden=false;pause.hidden=true;reset.hidden=true;});
+    canvas.addEventListener('webglcontextrestored',()=>{lost=false;canvas.hidden=false;host.querySelector('.stage-fallback').hidden=true;pause.hidden=false;reset.hidden=false;size();});
     size();label();canvas.hidden=false;host.querySelector('.stage-fallback').hidden=true;pause.hidden=false;reset.hidden=false;
   } catch(error) { console.warn('3D preview unavailable; keeping the simulation image.',error); }
 }
