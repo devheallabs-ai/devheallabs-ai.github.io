@@ -89,7 +89,7 @@ async function mount(host) {
     ['pointerup','pointercancel'].forEach(type=>canvas.addEventListener(type,()=>pointer=null));
     canvas.addEventListener('webglcontextlost',e=>{e.preventDefault();lost=true;cancelAnimationFrame(frame);frame=0;canvas.hidden=true;host.querySelector('.stage-fallback').hidden=false;pause.hidden=true;reset.hidden=true;});
     canvas.addEventListener('webglcontextrestored',()=>{lost=false;canvas.hidden=false;host.querySelector('.stage-fallback').hidden=true;pause.hidden=false;reset.hidden=false;size();});
-    size();label();canvas.hidden=false;host.querySelector('.stage-fallback').hidden=true;pause.hidden=false;reset.hidden=false;
+    size();view();renderer.render(scene,camera);label();canvas.hidden=false;host.querySelector('.stage-fallback').hidden=true;pause.hidden=false;reset.hidden=false;
   } catch(error) { console.warn('3D preview unavailable; keeping the simulation image.',error); }
 }
 const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){observer.unobserve(entry.target);mount(entry.target);}}),{rootMargin:'250px'});
