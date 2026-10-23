@@ -30,3 +30,12 @@ test('Physical AI pilot preselects the matching form option without submitting',
  const html=fs.readFileSync(path.join(__dirname,'../../contact/index.html'),'utf8');
  assert.ok(html.includes('<option>Physical AI demonstration &amp; pilot</option>'));
 });
+
+
+test('Mino partnership link selects the enquiry and collaboration request',()=>{
+ const x=setup(true,'mino','collaboration');
+ assert.equal(x.form.elements.interest.value,'Mino product & partnership enquiry');
+ assert.equal(x.form.elements.request.value,'Partnership discussion');
+ assert.equal(x.node('enquiry-result').hidden,true);
+ assert.ok(fs.readFileSync(path.join(__dirname,'../../contact/index.html'),'utf8').includes('<option>Mino product &amp; partnership enquiry</option>'));
+});

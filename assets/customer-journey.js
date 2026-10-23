@@ -9,6 +9,7 @@
     if (query.get('offer') === 'collaboration' && form.elements.request) form.elements.request.value = 'Partnership discussion';
     if (query.get('offer') === 'pilot' && form.elements.request) form.elements.request.value = 'Free pilot';
     var map = {
+      'mino': 'Mino product & partnership enquiry',
       'physical-ai': 'Physical AI demonstration & pilot',
       'partnership': 'Partnership & collaboration',
       'enterprise-partner': 'Enterprise collaboration',

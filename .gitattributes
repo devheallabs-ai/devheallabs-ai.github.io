@@ -6,3 +6,5 @@ dh-adom/releases/** -text whitespace=cr-at-eol
 physical-ai/downloads/** -text
 physical-ai/images/** -text
 physical-ai/videos/** -text
+
+products/mino/media/** -text
