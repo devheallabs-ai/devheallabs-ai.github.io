@@ -19,6 +19,7 @@
       'dummu': 'SteadyState platform demonstration',
       'nova': 'Nova model demonstration',
       'podotl': 'Podotl intelligence demonstration',
+        'wattrue': 'Wattrue walkthrough & energy intelligence',
       'agentproving': 'D-AgentProving assurance demonstration',
       'twinvoke': 'D-TwinVoke digital twin early access',
       'services': 'Custom AI engineering & integration',
