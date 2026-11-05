@@ -192,7 +192,7 @@
 // Consent-first analytics and enquiries (see /privacy/#analytics).
 (function () {
   var s = document.createElement('script');
-  s.src = '/assets/dmove-analytics.js?v=20261105';
+  s.src = '/assets/dmove-analytics.js?v=20261105b';
   s.defer = true;
   document.head.appendChild(s);
 })();
