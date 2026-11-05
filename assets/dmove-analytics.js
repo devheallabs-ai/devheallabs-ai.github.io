@@ -21,6 +21,40 @@
   }
   function consented() { return choice() === "granted"; }
 
+
+  // The enquiry form arrives unstyled; dress it in the site's own tokens.
+  function style() {
+    if (document.getElementById("dmove-widget-style")) return;
+    var css = document.createElement("style");
+    css.id = "dmove-widget-style";
+    css.textContent = [
+      "#dmove-visitor-widget section{max-width:640px}",
+      "#dmove-visitor-widget h3{font-size:1.15rem;margin:0 0 .4rem}",
+      "#dmove-visitor-widget ul{list-style:none;padding:0;margin:0 0 1rem}",
+      "#dmove-visitor-widget li{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;color:var(--text-muted,#5b6270)}",
+      "#dmove-visitor-widget form{display:grid;gap:.75rem;margin-top:1rem}",
+      "#dmove-visitor-widget form h3,#dmove-visitor-widget form h4{margin:0}",
+      "#dmove-visitor-widget input[type=text],#dmove-visitor-widget input[type=email],#dmove-visitor-widget select,#dmove-visitor-widget textarea{width:100%;box-sizing:border-box;padding:.65rem .8rem;border:1px solid var(--border,#d0d5dd);border-radius:var(--radius-sm,8px);background:var(--card,#fff);color:var(--text,inherit);font:inherit}",
+      "#dmove-visitor-widget textarea{min-height:110px;resize:vertical}",
+      "#dmove-visitor-widget label{display:flex;gap:.5rem;align-items:flex-start;font-size:.95rem;color:var(--text-muted,inherit)}",
+      "#dmove-visitor-widget input[type=checkbox]{margin-top:.25rem}",
+      "#dmove-visitor-widget button[type=submit]{justify-self:start;padding:.7rem 1.3rem;border:0;border-radius:var(--radius-sm,8px);background:var(--accent,#1552b8);color:var(--accent-fg,#fff);font:inherit;font-weight:600;cursor:pointer}",
+      "#dmove-visitor-widget a{color:var(--accent,#1552b8)}"
+    ].join("\n");
+    document.head.appendChild(css);
+  }
+
+  // Give each field a name screen readers announce, from its visible hint.
+  function label(slot) {
+    var fields = slot.querySelectorAll("input[placeholder],textarea[placeholder],select");
+    for (var i = 0; i < fields.length; i++) {
+      var f = fields[i];
+      if (!f.getAttribute("aria-label")) {
+        f.setAttribute("aria-label", f.placeholder || "Product");
+      }
+    }
+  }
+
   function start() {
     if (!window.DMoveVisitor || visitor) return;
     try {
@@ -32,7 +66,12 @@
     } catch (e) { return; }
     var slot = document.getElementById("dmove-visitor-widget");
     // The form loads its content from D-Move; if that fails the slot stays empty.
-    if (slot) visitor.mountWidget("#dmove-visitor-widget", { noticeVersion: NOTICE_VERSION }).catch(function () {});
+    if (slot) {
+      style();
+      visitor.mountWidget("#dmove-visitor-widget", { noticeVersion: NOTICE_VERSION })
+        .then(function () { label(slot); })
+        .catch(function () {});
+    }
   }
 
   function banner() {
